@@ -1,0 +1,448 @@
+/* ----------------------------------------------
+   NexusBI Business Intelligence Website
+   Services Page Styles - Mobile First
+---------------------------------------------- */
+
+/* Services Header */
+.services-header {
+  padding: var(--space-l) var(--space-m);
+  text-align: center;
+}
+
+.services-header h1 {
+  margin-bottom: var(--space-m);
+}
+
+.services-header p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-l);
+  font-size: 1rem;
+}
+
+/* Services Navigation */
+.services-nav {
+  margin: var(--space-l) 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-s);
+}
+
+.services-nav-inner {
+  display: flex;
+  gap: var(--space-s);
+  padding: 0 var(--space-m);
+  min-width: max-content;
+}
+
+.service-nav-item {
+  padding: var(--space-xs) var(--space-m);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+  background: rgba(7, 32, 48, 0.3);
+}
+
+.service-nav-item:hover {
+  background: rgba(206, 166, 78, 0.1);
+  border-color: var(--color-primary);
+}
+
+.service-nav-item.active {
+  background: rgba(206, 166, 78, 0.2);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Service Block */
+.service-block {
+  padding: var(--space-xl) var(--space-m);
+  border-top: 1px solid var(--color-border);
+}
+
+.service-block:first-child {
+  border-top: none;
+}
+
+.service-block:nth-child(even) {
+  background: rgba(7, 32, 48, 0.3);
+}
+
+.service-block-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-content h2 {
+  margin-bottom: var(--space-m);
+  font-size: 1.75rem;
+}
+
+.service-description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-m);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.service-media {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.service-img-container {
+  position: relative;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  aspect-ratio: 16/9;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.service-img-container:hover .service-img {
+  transform: scale(1.05);
+}
+
+.service-benefits {
+  margin-top: var(--space-l);
+  padding: var(--space-m);
+  background: rgba(7, 32, 48, 0.5);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-border);
+}
+
+.benefits-title {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-m);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  list-style: none;
+}
+
+.benefits-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+}
+
+.benefit-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.service-cta {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-m);
+}
+
+.service-tag {
+  background: rgba(206, 166, 78, 0.1);
+  border: 1px solid rgba(206, 166, 78, 0.3);
+  padding: 4px 10px;
+  border-radius: var(--radius-m);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Case Studies Section */
+.case-studies {
+  padding: var(--space-xl) var(--space-m);
+  background: var(--color-bg-alt);
+}
+
+.case-studies-container {
+  margin-top: var(--space-xl);
+}
+
+.case-study-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  margin-bottom: var(--space-l);
+}
+
+.case-study-content {
+  padding: var(--space-l);
+}
+
+.case-study-content h3 {
+  margin-bottom: var(--space-s);
+  font-size: 1.4rem;
+}
+
+.case-study-content p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-m);
+}
+
+.case-study-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.case-study-metrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+  margin: var(--space-m) 0;
+}
+
+.metric {
+  background: rgba(7, 32, 48, 0.3);
+  padding: var(--space-m);
+  border-radius: var(--radius-s);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.metric-label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: var(--space-xl) var(--space-m);
+}
+
+.testimonial-container {
+  margin-top: var(--space-l);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+.testimonial-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-m);
+  padding: var(--space-l);
+  position: relative;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-content {
+  position: relative;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-m);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-content:before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 60px;
+  color: rgba(206, 166, 78, 0.2);
+  font-family: serif;
+}
+
+.testimonial-client {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.client-name {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+.client-position {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.client-company {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-top: 2px;
+}
+
+/* FAQ Section - Services Specific */
+.service-faq {
+  padding: var(--space-xl) var(--space-m);
+}
+
+/* Related Services */
+.related-services {
+  padding: var(--space-xl) var(--space-m);
+}
+
+.related-services-container {
+  margin-top: var(--space-l);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+.related-service-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--color-border);
+}
+
+.related-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(206, 166, 78, 0.3);
+}
+
+.related-service-content {
+  padding: var(--space-m);
+}
+
+.related-service-title {
+  margin-bottom: var(--space-s);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.related-service-description {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-m);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.related-service-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+/* Small tablet breakpoint */
+@media (min-width: 576px) {
+  .services-nav-inner {
+    justify-content: center;
+  }
+  
+  .service-nav-item {
+    font-size: 1rem;
+    padding: var(--space-xs) var(--space-l);
+  }
+  
+  .benefits-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .case-study-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonial-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .related-services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium breakpoint */
+@media (min-width: 768px) {
+  .services-header {
+    padding: var(--space-xl) 0;
+  }
+  
+  .services-header p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+  }
+  
+  .service-block-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .service-block:nth-child(even) .service-block-inner {
+    flex-direction: row-reverse;
+  }
+  
+  .service-content {
+    padding-right: var(--space-l);
+  }
+  
+  .service-block:nth-child(even) .service-content {
+    padding-right: 0;
+    padding-left: var(--space-l);
+  }
+  
+  .service-content h2 {
+    margin-top: 0;
+  }
+  
+  .case-study-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large breakpoint */
+@media (min-width: 992px) {
+  .testimonial-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .related-services-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large breakpoint */
+@media (min-width: 1200px) {
+  .services-nav-inner {
+    gap: var(--space-m);
+  }
+}
