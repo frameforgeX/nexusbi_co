@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAIWidget();
   initFormAnimations();
   initRandomBITip();
-  initFAQInteraction(); // Add this line
+  initFAQInteraction();
+  initSpecializationTabs(); // Add this line to initialize the tabbed interface
 });
 
 // Navigation functionality
@@ -25,6 +26,7 @@ function initNavigation() {
   const navLinks = document.querySelector('.nav-links');
   const links = document.querySelectorAll('.nav-links a');
   const header = document.querySelector('header');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
   // Toggle mobile menu
   if (hamburger) {
@@ -33,6 +35,22 @@ function initNavigation() {
       hamburger.classList.toggle('active');
     });
   }
+
+  // Handle dropdown menus in mobile view
+  dropdowns.forEach(dropdown => {
+    const dropdownLink = dropdown.querySelector('a');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    
+    // For touch devices, first tap shows dropdown, second navigates
+    if ('ontouchstart' in window) {
+      dropdownLink.addEventListener('touchstart', function(e) {
+        if (window.innerWidth < 768 && !dropdownMenu.classList.contains('show')) {
+          e.preventDefault();
+          dropdownMenu.classList.add('show');
+        }
+      });
+    }
+  });
 
   // Smooth scroll for navigation links that point to sections within the current page
   links.forEach(link => {
@@ -985,6 +1003,58 @@ document.addEventListener('DOMContentLoaded', function() {
         
         observer.observe(piCircle);
     }
+});
+
+// Initialize tab functionality for specialization tabs
+function initSpecializationTabs() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab panes
+        tabPanes.forEach(pane => {
+          pane.classList.remove('active');
+        });
+        
+        // Show the corresponding tab pane
+        const targetId = this.getAttribute('data-tab');
+        const targetPane = document.getElementById(targetId);
+        
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  });
+}
+
+// Add direct implementation of tabs to run immediately
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.specialization-tabs .tab-button');
+  const tabPanes = document.querySelectorAll('.specialization-tabs .tab-pane');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons and panes
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanes.forEach(pane => pane.classList.remove('active'));
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      // Find and activate the corresponding pane
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(tabId)?.classList.add('active');
+    });
+  });
 });
 
 // Create folder structure if it doesn't exist

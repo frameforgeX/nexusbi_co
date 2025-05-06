@@ -276,6 +276,68 @@ header {
   width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  background: rgba(7, 36, 48, 0.95);
+  backdrop-filter: blur(15px);
+  min-width: 250px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-medium);
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  padding: var(--space-s) 0;
+  z-index: var(--z-dropdown);
+  list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+}
+
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-menu a {
+  padding: var(--space-s) var(--space-m);
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border-left: 3px solid transparent;
+  font-size: 0.85rem; /* Smaller text size for mobile */
+}
+
+.dropdown-menu a:after {
+  display: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(206, 166, 78, 0.1);
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -402,9 +464,9 @@ header {
   min-height: 40vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: linear-gradient(rgba(7, 32, 48, 0.8), rgba(7, 32, 48, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-  text-align: center;
+  justify-content: flex-start;
+  background: white;
+  text-align: left;
   padding-top: 70px; /* Account for smaller fixed header on mobile */
   padding-bottom: var(--space-l);
 }
@@ -412,15 +474,15 @@ header {
 .page-hero-content {
   max-width: 100%;
   padding: 0 var(--space-m);
+  color: var(--color-secondary);
 }
 
-.text-center {
-  text-align: center;
-  max-width: 100%;
-  margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.6;
-  padding: 0 var(--space-m);
+.page-hero-content h1 {
+  color: var(--color-secondary);
+}
+
+.page-hero-content p {
+  color: rgba(11, 48, 64, 0.7);
 }
 
 /* Contact CTA Section - Common to all pages */
@@ -813,6 +875,10 @@ header {
   .nav-links {
     display: flex;
     gap: var(--space-m);
+  }
+
+  .dropdown-menu a {
+    font-size: 0.9rem; /* Medium size for desktop */
   }
   
   .feature-list {
