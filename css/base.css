@@ -209,6 +209,12 @@ header {
   z-index: var(--z-fixed);
   transition: all var(--transition-normal);
   padding: var(--space-xs) 0;
+  width: 100%;
+}
+
+header.scrolled {
+  background: rgba(7, 36, 48, 0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .glass-nav {
@@ -238,8 +244,14 @@ header {
 }
 
 .nav-links {
-  display: none; /* Hidden on mobile */
+  display: none; /* Hidden on mobile by default */
   list-style: none;
+}
+
+/* Mobile menu active state */
+.nav-links.active {
+  display: flex; /* Show when active class is added */
+  max-height: unset; /* Override the initial max-height */
 }
 
 .nav-links a {
@@ -276,6 +288,38 @@ header {
   width: 100%;
 }
 
+/* Hamburger menu styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: var(--z-fixed);
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 3px;
+  transition: all var(--transition-fast);
+}
+
+/* Animate hamburger to X when active */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* Dropdown Menu Styles */
 .dropdown {
   position: relative;
@@ -300,10 +344,30 @@ header {
   list-style: none;
 }
 
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+/* Show dropdown menu on hover for desktop */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile dropdown menu styles - controlled via JS */
+@media (max-width: 767px) {
+  .dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+    background: rgba(7, 36, 48, 0.5);
+    border: none;
+    border-left: 2px solid var(--color-primary);
+    margin-left: var(--space-m);
+    margin-top: var(--space-xs);
+  }
 }
 
 .dropdown-menu li {
@@ -336,22 +400,6 @@ header {
   background-color: rgba(206, 166, 78, 0.1);
   color: var(--color-primary);
   border-left: 3px solid var(--color-primary);
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-text);
-  border-radius: 3px;
-  transition: all var(--transition-fast);
 }
 
 /* Footer - Mobile First */
@@ -467,7 +515,7 @@ header {
   justify-content: flex-start;
   background: white;
   text-align: left;
-  padding-top: 70px; /* Account for smaller fixed header on mobile */
+  padding-top: 100px; /* Increased to account for fixed header on mobile */
   padding-bottom: var(--space-l);
 }
 
@@ -479,6 +527,7 @@ header {
 
 .page-hero-content h1 {
   color: var(--color-secondary);
+  font-size: 2rem; /* Smaller on mobile */
 }
 
 .page-hero-content p {
@@ -860,6 +909,10 @@ header {
     font-size: 1.75rem;
   }
   
+  .page-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
   .container {
     padding: var(--space-m) 0;
   }
@@ -936,6 +989,10 @@ header {
     font-size: 3rem;
   }
   
+  .page-hero-content h1 {
+    font-size: 3rem;
+  }
+  
   h2 {
     font-size: 2.5rem;
   }
@@ -982,6 +1039,10 @@ header {
   }
   
   h1 {
+    font-size: 3.5rem;
+  }
+  
+  .page-hero-content h1 {
     font-size: 3.5rem;
   }
   

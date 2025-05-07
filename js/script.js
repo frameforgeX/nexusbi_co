@@ -31,7 +31,7 @@ function initNavigation() {
   // Toggle mobile menu
   if (hamburger) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+      navLinks.classList.toggle('active'); // Changed from 'open' to 'active' to match CSS
       hamburger.classList.toggle('active');
     });
   }
@@ -39,14 +39,13 @@ function initNavigation() {
   // Handle dropdown menus in mobile view
   dropdowns.forEach(dropdown => {
     const dropdownLink = dropdown.querySelector('a');
-    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
     
-    // For touch devices, first tap shows dropdown, second navigates
-    if ('ontouchstart' in window) {
-      dropdownLink.addEventListener('touchstart', function(e) {
-        if (window.innerWidth < 768 && !dropdownMenu.classList.contains('show')) {
+    // For mobile devices
+    if (window.innerWidth < 768) {
+      dropdownLink.addEventListener('click', function(e) {
+        if (window.innerWidth < 768) {
           e.preventDefault();
-          dropdownMenu.classList.add('show');
+          dropdown.classList.toggle('active');
         }
       });
     }
@@ -56,6 +55,11 @@ function initNavigation() {
   links.forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
+      
+      // Skip dropdown toggles on mobile
+      if (window.innerWidth < 768 && link.parentElement.classList.contains('dropdown')) {
+        return;
+      }
       
       // Only handle links that are anchor links or point to sections within the current page
       if (href.startsWith('#') || (href.includes('#') && href.split('#')[0] === window.location.pathname.split('/').pop())) {
@@ -71,8 +75,8 @@ function initNavigation() {
         }
 
         // Close mobile menu if open
-        if (navLinks.classList.contains('open')) {
-          navLinks.classList.remove('open');
+        if (navLinks.classList.contains('active')) {
+          navLinks.classList.remove('active');
           hamburger.classList.remove('active');
         }
       }
@@ -85,6 +89,30 @@ function initNavigation() {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+    }
+  });
+  
+  // Close menu when clicking outside of it
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth < 768 && 
+        navLinks.classList.contains('active') && 
+        !e.target.closest('.nav-links') && 
+        !e.target.closest('.hamburger')) {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+  });
+  
+  // Handle window resize - reset mobile menu state when returning to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+      
+      // Reset dropdowns
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
     }
   });
 }
@@ -1007,31 +1035,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize tab functionality for specialization tabs
 function initSpecializationTabs() {
-  document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab-button');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-    
-    tabs.forEach(tab => {
-      tab.addEventListener('click', function() {
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        this.classList.add('active');
-        
-        // Hide all tab panes
-        tabPanes.forEach(pane => {
-          pane.classList.remove('active');
-        });
-        
-        // Show the corresponding tab pane
-        const targetId = this.getAttribute('data-tab');
-        const targetPane = document.getElementById(targetId);
-        
-        if (targetPane) {
-          targetPane.classList.add('active');
-        }
+  const tabs = document.querySelectorAll('.tab-button');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      this.classList.add('active');
+      
+      // Hide all tab panes
+      tabPanes.forEach(pane => {
+        pane.classList.remove('active');
       });
+      
+      // Show the corresponding tab pane
+      const targetId = this.getAttribute('data-tab');
+      const targetPane = document.getElementById(targetId);
+      
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
     });
   });
 }
