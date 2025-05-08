@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormAnimations();
   initRandomBITip();
   initFAQInteraction();
-  initSpecializationTabs(); // Add this line to initialize the tabbed interface
+  initStudiosSection(); // Replacing duplicate initialization with a single function call
 });
 
 // Navigation functionality
@@ -788,7 +788,9 @@ function initFAQInteraction() {
   const faqItems = document.querySelectorAll('.faq-item');
   const filterButtons = document.querySelectorAll('.filter-btn');
   const expandAllBtn = document.getElementById('faq-expand-all');
+  const resetSearchBtn = document.getElementById('reset-search');
   const resultsInfo = document.getElementById('faq-results-info');
+  const resultsCount = document.getElementById('results-count');
   const noResults = document.getElementById('faq-no-results');
 
   let allExpanded = false;
@@ -798,40 +800,34 @@ function initFAQInteraction() {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
     
-    // Make sure the initial state is correct - answer should be hidden
+    // Set initial state correctly
     if (!item.classList.contains('active')) {
-      answer.style.maxHeight = '0';
-      answer.style.opacity = '0';
+      answer.style.height = '0';
     } else {
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-      answer.style.opacity = '1';
+      answer.style.height = answer.scrollHeight + 'px';
     }
     
     question.addEventListener('click', () => {
-      // Check if the item is already active
+      // Check if this item is already active
       const isActive = item.classList.contains('active');
       
-      // Close all other items first
+      // First close all FAQ items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
-          const otherAnswer = otherItem.querySelector('.faq-answer');
           otherItem.classList.remove('active');
-          otherAnswer.style.maxHeight = '0';
-          otherAnswer.style.opacity = '0';
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          otherAnswer.style.height = '0';
         }
       });
       
-      // Toggle active class on the clicked item only if it wasn't already active
-      // If it was active, we've already closed it
+      // Then toggle the clicked item only if it wasn't already active
       if (!isActive) {
         item.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        answer.style.opacity = '1';
+        answer.style.height = answer.scrollHeight + 'px';
       } else {
         // If it was active, now close it too
         item.classList.remove('active');
-        answer.style.maxHeight = '0';
-        answer.style.opacity = '0';
+        answer.style.height = '0';
       }
       
       // Update expand all button text
@@ -856,6 +852,31 @@ function initFAQInteraction() {
     });
   }
   
+  // Reset search button
+  if (resetSearchBtn) {
+    resetSearchBtn.addEventListener('click', () => {
+      // Show all FAQ items
+      faqItems.forEach(item => {
+        item.style.display = '';
+      });
+      
+      // Reset filter buttons
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-category') === 'all') {
+          btn.classList.add('active');
+        }
+      });
+      
+      // Hide results info
+      if (resultsInfo) resultsInfo.classList.add('hide');
+      if (noResults) noResults.classList.add('hide');
+      
+      // Update expand all button
+      updateExpandAllButton();
+    });
+  }
+  
   // Expand/Collapse all FAQs
   if (expandAllBtn) {
     expandAllBtn.addEventListener('click', toggleAllFAQs);
@@ -863,13 +884,47 @@ function initFAQInteraction() {
   
   // Filter FAQs by category
   function filterFAQByCategory(category) {
+    let visibleCount = 0;
+    
     faqItems.forEach(item => {
       if (category === 'all' || item.getAttribute('data-category') === category) {
-        item.style.display = 'block';
+        item.style.display = '';
+        visibleCount++;
       } else {
         item.style.display = 'none';
       }
     });
+    
+    // Update results count
+    if (resultsCount) resultsCount.textContent = visibleCount;
+    
+    // Show/hide results info
+    if (resultsInfo) {
+      if (category !== 'all') {
+        resultsInfo.classList.remove('hide');
+      } else {
+        resultsInfo.classList.add('hide');
+      }
+    }
+    
+    // Show/hide no results message
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove('hide');
+      } else {
+        noResults.classList.add('hide');
+      }
+    }
+    
+    // Close all FAQs when changing category
+    faqItems.forEach(item => {
+      item.classList.remove('active');
+      const answer = item.querySelector('.faq-answer');
+      if (answer) answer.style.height = '0';
+    });
+    
+    // Update expand all button
+    updateExpandAllButton();
   }
   
   // Toggle all FAQs between expanded and collapsed states
@@ -880,8 +935,7 @@ function initFAQInteraction() {
         if (item.style.display !== 'none') {
           const answer = item.querySelector('.faq-answer');
           item.classList.remove('active');
-          answer.style.maxHeight = '0';
-          answer.style.opacity = '0';
+          answer.style.height = '0';
         }
       });
       expandAllBtn.textContent = 'Show All Answers';
@@ -891,8 +945,7 @@ function initFAQInteraction() {
         if (item.style.display !== 'none') {
           const answer = item.querySelector('.faq-answer');
           item.classList.add('active');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          answer.style.opacity = '1';
+          answer.style.height = answer.scrollHeight + 'px';
         }
       });
       expandAllBtn.textContent = 'Hide All Answers';
@@ -903,6 +956,8 @@ function initFAQInteraction() {
   
   // Update Expand All button text based on current state
   function updateExpandAllButton() {
+    if (!expandAllBtn) return;
+    
     // Check if all visible FAQs are expanded
     const visibleItems = Array.from(faqItems).filter(item => item.style.display !== 'none');
     const expandedItems = visibleItems.filter(item => item.classList.contains('active'));
@@ -971,71 +1026,111 @@ document.addEventListener('DOMContentLoaded', function() {
     // Rest of your existing script.js code below
 });
 
-// Studios Section Interactive Tabs
-document.addEventListener('DOMContentLoaded', function() {
-    // Studio tabs functionality
-    const studioTabs = document.querySelectorAll('.studio-tab');
-    const studioContents = document.querySelectorAll('.studio-content');
-    
-    studioTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Remove active class from all tabs
-            studioTabs.forEach(t => t.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            this.classList.add('active');
-            
-            // Show corresponding content
-            const targetStudio = this.getAttribute('data-studio');
-            studioContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === targetStudio) {
-                    content.classList.add('active');
-                }
-            });
-        });
+// Studios Section Interactive Tabs - Single implementation
+function initStudiosSection() {
+  // Studio tabs functionality
+  const studioTabs = document.querySelectorAll('.studio-tab');
+  const studioContents = document.querySelectorAll('.studio-content');
+  const studiosWrapper = document.querySelector('.studios-tabs-wrapper');
+  
+  if (!studioTabs.length || !studioContents.length) return;
+  
+  // Initialize with the first tab active if none are marked as active
+  const hasActiveTab = Array.from(studioTabs).some(tab => tab.classList.contains('active'));
+  if (!hasActiveTab && studioTabs.length > 0) {
+    studioTabs[0].classList.add('active');
+    if (studioContents.length > 0) {
+      const firstContentId = studioTabs[0].getAttribute('data-studio');
+      const firstContent = document.getElementById(firstContentId);
+      if (firstContent) firstContent.classList.add('active');
+    }
+  }
+  
+  studioTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs
+      studioTabs.forEach(t => t.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      this.classList.add('active');
+      
+      // Show corresponding content
+      const targetStudio = this.getAttribute('data-studio');
+      studioContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === targetStudio) {
+          content.classList.add('active');
+        }
+      });
+      
+      // If we're on mobile, scroll the clicked tab into view
+      if (window.innerWidth < 768 && studiosWrapper) {
+        const tabRect = this.getBoundingClientRect();
+        const wrapperRect = studiosWrapper.getBoundingClientRect();
+        
+        // If tab is not fully visible in the wrapper
+        if (tabRect.right > wrapperRect.right || tabRect.left < wrapperRect.left) {
+          const scrollAmount = this.offsetLeft - (studiosWrapper.offsetWidth / 2) + (this.offsetWidth / 2);
+          studiosWrapper.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
     });
-    
-    // Add hover effects for visual elements
+  });
+  
+  // Add hover effects for visual elements - only on devices that support hover
+  if (window.matchMedia("(hover: hover)").matches) {
     const studioVisuals = document.querySelectorAll('.studio-content-visual');
     
     studioVisuals.forEach(visual => {
-        visual.addEventListener('mousemove', function(e) {
-            // Create parallax effect on hover
-            const rect = visual.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const xPercent = x / rect.width - 0.5;
-            const yPercent = y / rect.height - 0.5;
-            
-            visual.style.transform = `perspective(1000px) rotateY(${xPercent * 5}deg) rotateX(${yPercent * -5}deg)`;
-        });
+      visual.addEventListener('mousemove', function(e) {
+        // Create subtle parallax effect on hover
+        const rect = visual.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         
-        visual.addEventListener('mouseleave', function() {
-            // Reset transform on mouse leave
-            visual.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-        });
+        const xPercent = x / rect.width - 0.5;
+        const yPercent = y / rect.height - 0.5;
+        
+        visual.style.transform = `perspective(1000px) rotateY(${xPercent * 3}deg) rotateX(${yPercent * -3}deg)`;
+      });
+      
+      visual.addEventListener('mouseleave', function() {
+        // Reset transform on mouse leave
+        visual.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        visual.style.transition = 'transform 0.5s ease';
+      });
+    });
+  }
+  
+  // Performance indicator animation
+  const piCircles = document.querySelectorAll('.pi-circle-fill');
+  if (piCircles.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const circle = entry.target;
+          circle.style.animation = 'none';
+          setTimeout(() => {
+            circle.style.animation = 'circle-fill 2s ease-out forwards';
+          }, 100);
+        }
+      });
     });
     
-    // Performance indicator animation
-    const piCircle = document.querySelector('.pi-circle-fill');
-    if (piCircle) {
-        // Reset animation when visible in viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    piCircle.style.animation = 'none';
-                    setTimeout(() => {
-                        piCircle.style.animation = 'circle-fill 2s ease-out forwards';
-                    }, 100);
-                }
-            });
-        });
-        
-        observer.observe(piCircle);
-    }
-});
+    piCircles.forEach(circle => observer.observe(circle));
+  }
+  
+  // Ensure responsive behavior on window resize
+  window.addEventListener('resize', () => {
+    // Reset transforms on resize to prevent glitches
+    document.querySelectorAll('.studio-content-visual').forEach(visual => {
+      visual.style.transform = 'none';
+    });
+  });
+}
 
 // Initialize tab functionality for specialization tabs
 function initSpecializationTabs() {
