@@ -31,8 +31,12 @@ function initNavigation() {
   // Toggle mobile menu
   if (hamburger) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active'); // Changed from 'open' to 'active' to match CSS
+      navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
+      
+      // Improve accessibility
+      const expanded = navLinks.classList.contains('active');
+      hamburger.setAttribute('aria-expanded', expanded.toString());
     });
   }
 
@@ -41,14 +45,12 @@ function initNavigation() {
     const dropdownLink = dropdown.querySelector('a');
     
     // For mobile devices
-    if (window.innerWidth < 768) {
-      dropdownLink.addEventListener('click', function(e) {
-        if (window.innerWidth < 768) {
-          e.preventDefault();
-          dropdown.classList.toggle('active');
-        }
-      });
-    }
+    dropdownLink.addEventListener('click', function(e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
   });
 
   // Smooth scroll for navigation links that point to sections within the current page
@@ -100,6 +102,7 @@ function initNavigation() {
         !e.target.closest('.hamburger')) {
       navLinks.classList.remove('active');
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
     }
   });
   
@@ -108,6 +111,7 @@ function initNavigation() {
     if (window.innerWidth >= 768) {
       navLinks.classList.remove('active');
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       
       // Reset dropdowns
       dropdowns.forEach(dropdown => {

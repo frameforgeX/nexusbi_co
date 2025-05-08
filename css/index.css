@@ -5,7 +5,7 @@
 
 /* Hero Section - Mobile First */
 .hero-section {
-  min-height: 80vh; /* Reduced from 100vh to 80vh for mobile */
+  min-height: 85vh; /* Slightly increased height for better visibility on mobile */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,23 +13,35 @@
   overflow: hidden;
   padding: 0 var(--space-m);
   text-align: center;
+  padding-top: 70px; /* Increased padding to account for the fixed header on mobile */
 }
 
 #typing-text {
-  min-height: 80px;
-  font-size: 2rem;
+  min-height: 70px; /* Reduced height for mobile */
+  font-size: 1.75rem; /* Smaller font for mobile */
+  font-weight: 700;
+  line-height: 1.3; /* Improved line height for readability */
 }
 
 .hero-content {
   max-width: 100%;
   z-index: var(--z-elevated);
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-m); /* Reduced spacing for mobile */
 }
 
 .subheading {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Smaller font for mobile */
   color: var(--color-text-muted);
-  margin-bottom: var(--space-l);
+  margin-bottom: var(--space-m); /* Reduced spacing */
+  line-height: 1.5; /* Improved readability */
+  max-width: 90%; /* Control width on small screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  padding: 0.8rem 1.5rem; /* Slightly larger touch target on mobile */
+  font-size: 1rem;
 }
 
 .pulse-animation {
@@ -55,7 +67,7 @@
   top: 0;
   left: 0;
   z-index: var(--z-base);
-  opacity: 0.3;
+  opacity: 0.2; /* Reduced opacity on mobile for better text visibility */
 }
 
 .mouse-gradient {
@@ -64,8 +76,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(206, 166, 78, 0.15), transparent 500px);
-  opacity: 0.5;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(206, 166, 78, 0.15), transparent 300px); /* Smaller gradient radius for mobile */
+  opacity: 0.4; /* Reduced opacity */
   pointer-events: none;
   z-index: var(--z-base);
 }
@@ -1082,11 +1094,12 @@
     min-height: 100vh; /* Restore to 100vh for larger screens */
     justify-content: flex-start;
     text-align: left;
+    padding-top: 0;
   }
   
   #typing-text {
     min-height: 120px;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Larger font for desktop */
   }
   
   .hero-content {
@@ -1095,177 +1108,23 @@
   }
   
   .subheading {
-    font-size: 1.25rem;
-  }
-  
-  .sample-design-container .split-section {
-    min-height: 250px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .sample-design-container .split-content {
-    width: 60%;
-    padding-right: var(--space-xl);
-  }
-  
-  .sample-design-container .split-image {
-    width: 40%;
-  }
-  
-  .sample-design-container .split-content,
-  .sample-design-container .split-image {
-    height: 100%;
-  }
-  
-  .sample-design-container .split-content h2 {
-    font-size: 2rem;
-  }
-  
-  .sample-design-image {
+    font-size: 1.25rem; /* Larger font for desktop */
     max-width: 100%;
-    border-radius: var(--radius-l);
-    object-fit: cover;
+    margin-left: 0;
+    margin-right: 0;
   }
   
-  .about-section h2.section-title, 
-  .expertise-section h2.section-title,
-  .approach-section h2.section-title {
-    text-align: left;
+  .cta-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
   }
   
-  .about-section h2.section-title:after,
-  .expertise-section h2.section-title:after,
-  .approach-section h2.section-title:after {
-    left: 0;
-    transform: none;
+  .data-flow-animation {
+    opacity: 0.3; /* Restore opacity for larger screens */
   }
   
-  .stat-container {
-    justify-content: space-between;
+  .mouse-gradient {
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(206, 166, 78, 0.15), transparent 500px); /* Larger gradient radius for desktop */
+    opacity: 0.5;
   }
-  
-  .stat-item {
-    width: auto;
-  }
-  
-  .stat-value {
-    font-size: 2.3rem;
-  }
-  
-  .studio-content {
-    flex-direction: row;
-  }
-  
-  .studio-content-side {
-    width: 50%;
-    padding: var(--space-l);
-    padding-bottom: var(--space-s); /* Reduced padding at the bottom for medium screens */
-    text-align: left;
-  }
-  
-  .studio-content-side h3,
-  .studio-highlight {
-    text-align: left;
-  }
-  
-  .studio-btn {
-    align-self: flex-start;
-    padding: var(--space-s) var(--space-xl);
-    margin-top: var(--space-m);
-  }
-  
-  .studio-content-visual {
-    width: 50%;
-  }
-  
-  .studios-content-container {
-    min-height: 450px; /* Reduced from 500px */
-    height: auto;
-  }
-  
-  .faq-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .faq-controls {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .faq-filter {
-    justify-content: flex-start;
-  }
-}
-
-/* Large breakpoint */
-@media (min-width: 992px) {
-  .hero-content {
-    max-width: 800px;
-  }
-  
-  #typing-text {
-    font-size: 3rem;
-  }
-  
-  .subheading {
-    font-size: 1.3rem;
-  }
-  
-  .sample-design-image {
-    max-width: 100%;
-  }
-  
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .feature-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .pi-chart {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .pi-circle {
-    width: 160px;
-    height: 160px;
-  }
-  
-  .pi-value {
-    font-size: 2.5rem;
-  }
-  
-  .reporting-diagram {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .reporting-node {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .reporting-node.central {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .digital-connections {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .digital-node {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Remove the underline for section titles in the sample design container */
-.sample-design-container .section-title:after {
-  display: none;
 }

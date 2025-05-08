@@ -248,10 +248,53 @@ header.scrolled {
   list-style: none;
 }
 
-/* Mobile menu active state */
-.nav-links.active {
-  display: flex; /* Show when active class is added */
-  max-height: unset; /* Override the initial max-height */
+/* Mobile menu styles */
+@media (max-width: 767px) {
+  .nav-links {
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(11, 48, 64, 0.95);
+    backdrop-filter: blur(20px);
+    padding: var(--space-m) 0;
+    gap: var(--space-m);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-medium);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-normal), 
+                visibility var(--transition-normal),
+                transform var(--transition-normal);
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: var(--space-s) var(--space-m);
+    width: 100%;
+  }
+}
+
+/* Desktop menu styles */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: var(--space-m);
+  }
 }
 
 .nav-links a {
