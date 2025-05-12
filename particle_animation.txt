@@ -1,0 +1,203 @@
+/* PARTICLE ANIMATION WITH CURSOR EFFECT */
+/* This file contains all necessary code to implement a background particle animation with interactive cursor effects */
+
+HTML:
+<!-- Particles background container -->
+<div id="particles-js"></div>
+
+CSS:
+/* Particle canvas - place this in your CSS file */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Cursor trail effect - this creates the dots that follow your cursor */
+.cursor-trail {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(230, 210, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: fade-out 1s linear forwards;
+}
+
+@keyframes fade-out {
+    0% { opacity: 0.8; transform: scale(1) translate(-50%, -50%); }
+    100% { opacity: 0; transform: scale(0.3) translate(-50%, -50%); }
+}
+
+/* Optional animation for background glow effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+    animation: pulse 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.5; }
+}
+
+Javascript:
+// Wait for DOM content to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles
+    initParticles();
+    
+    // Add cursor interactive effect
+    addCursorEffect();
+});
+
+// Initialize particle.js
+function initParticles() {
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#e8d4ff"  // You can change this color to match your theme
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                },
+                opacity: {
+                    value: 0.3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#a67cff",  // You can change this color to match your theme
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 0.6
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    }
+}
+
+// Add interactive cursor trail effect
+function addCursorEffect() {
+    // Interactive cursor effect
+    document.addEventListener('mousemove', (e) => {
+        const cursor = document.createElement('div');
+        cursor.classList.add('cursor-trail');
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+        document.body.appendChild(cursor);
+        
+        setTimeout(() => {
+            cursor.remove();
+        }, 1000);
+    });
+}
+
+/* IMPLEMENTATION NOTES
+ * 
+ * 1. REQUIRED LIBRARIES:
+ *    - You need to include the particles.js library in your HTML before your script.js:
+ *      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ * 
+ * 2. HTML SETUP:
+ *    - Add the particle container div with id="particles-js" to your HTML
+ *    - Make sure it's positioned at the beginning of your body or where you want the background
+ * 
+ * 3. CSS CONSIDERATIONS:
+ *    - The #particles-js element has z-index: -1 to position it behind your content
+ *    - For the cursor trail effect to work properly, ensure your body has position: relative
+ * 
+ * 4. CUSTOMIZATION:
+ *    - Particle color: Change the "color.value" and "line_linked.color" values
+ *    - Particle density: Adjust "number.value" (higher = more particles)
+ *    - Particle speed: Adjust "move.speed" value
+ *    - Cursor trail size: Modify the .cursor-trail width and height values
+ *    - Cursor trail color: Change the background color in .cursor-trail
+ *
+ * 5. MOBILE CONSIDERATIONS:
+ *    - The cursor trail effect only works on devices with mouse pointers
+ *    - Consider disabling or modifying for touch devices using:
+ *      if ('ontouchstart' in window || navigator.maxTouchPoints) { // disable cursor effect for touch devices }
+ */

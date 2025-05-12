@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initTypingAnimation();
   initSVGAnimation();
-  initMouseGradient();
+  // Replaced initMouseGradient with particle animation
+  initParticles();
+  addCursorEffect();
   initScrollAnimations();
   initCounters();
   initDashboardCharts();
@@ -240,18 +242,113 @@ function initSVGAnimation() {
   svg.appendChild(defs);
 }
 
-// Mouse-tracking gradient background effect
-function initMouseGradient() {
-  const mouseGradient = document.getElementById('mouse-gradient');
-  
-  if (!mouseGradient) return;
-  
+// Initialize particles
+function initParticles() {
+  if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
+          particles: {
+              number: {
+                  value: 80,
+                  density: {
+                      enable: true,
+                      value_area: 800
+                  }
+              },
+              color: {
+                  value: "#e8d4ff"  // You can change this color to match your theme
+              },
+              shape: {
+                  type: "circle",
+                  stroke: {
+                      width: 0,
+                      color: "#000000"
+                  },
+              },
+              opacity: {
+                  value: 0.3,
+                  random: true,
+                  anim: {
+                      enable: true,
+                      speed: 1,
+                      opacity_min: 0.1,
+                      sync: false
+                  }
+              },
+              size: {
+                  value: 3,
+                  random: true,
+                  anim: {
+                      enable: false,
+                      speed: 40,
+                      size_min: 0.1,
+                      sync: false
+                  }
+              },
+              line_linked: {
+                  enable: true,
+                  distance: 150,
+                  color: "#a67cff",  // You can change this color to match your theme
+                  opacity: 0.2,
+                  width: 1
+              },
+              move: {
+                  enable: true,
+                  speed: 2,
+                  direction: "none",
+                  random: false,
+                  straight: false,
+                  out_mode: "out",
+                  bounce: false,
+                  attract: {
+                      enable: true,
+                      rotateX: 600,
+                      rotateY: 1200
+                  }
+              }
+          },
+          interactivity: {
+              detect_on: "canvas",
+              events: {
+                  onhover: {
+                      enable: true,
+                      mode: "grab"
+                  },
+                  onclick: {
+                      enable: true,
+                      mode: "push"
+                  },
+                  resize: true
+              },
+              modes: {
+                  grab: {
+                      distance: 140,
+                      line_linked: {
+                          opacity: 0.6
+                      }
+                  },
+                  push: {
+                      particles_nb: 4
+                  }
+              }
+          },
+          retina_detect: true
+      });
+  }
+}
+
+// Add interactive cursor trail effect
+function addCursorEffect() {
+  // Interactive cursor effect
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth * 100;
-    const y = e.clientY / window.innerHeight * 100;
-    
-    mouseGradient.style.setProperty('--mouse-x', `${x}%`);
-    mouseGradient.style.setProperty('--mouse-y', `${y}%`);
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor-trail');
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      document.body.appendChild(cursor);
+      
+      setTimeout(() => {
+          cursor.remove();
+      }, 1000);
   });
 }
 
