@@ -1,5 +1,5 @@
 /* ----------------------------------------------
-   InsightPulse Business Intelligence Website
+   Nexus Business Intelligence Website
    JavaScript Functionality
 ---------------------------------------------- */
 

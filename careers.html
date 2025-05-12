@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - NexusBI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/careers.css">
+    <meta name="description" content="Explore career opportunities at NexusBI. Join our team of business intelligence experts and help shape the future of data-driven decision making.">
+    <meta name="theme-color" content="#121212">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo">
+                </a>            </div>            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="studios.html">Studios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studios.html#business-solutions">Business Solutions Studio</a></li>
+                        <li><a href="studios.html#regulatory-reporting">Regulatory Reporting Studio</a></li>
+                        <li><a href="studios.html#corporate-services">Corporate Services Studio</a></li>
+                        <li><a href="studios.html#digital-strategy">Digital Strategy & Innovation Studio</a></li>
+                    </ul>
+                </li>
+                <li><a href="teams.html">Our Team</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Careers Hero Section -->
+        <section class="page-hero careers-hero">
+            <div class="container">
+                <div class="page-hero-content reveal-animation">
+                    <h1>Join Our Team</h1>
+                    <p class="lead">Build your career with a company that's shaping the future of business intelligence</p>
+                </div>
+            </div>
+            <div class="mouse-gradient" id="mouse-gradient"></div>
+        </section>
+
+        <!-- Careers Introduction -->
+        <section class="careers-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text reveal-animation">
+                        <h2>Be Part of Our <span class="highlight-text">Success Story</span></h2>
+                        
+                        <!-- Interactive Stats Counter Section -->
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="number-container">
+                                    <div class="stat-number" data-count="50">0</div>
+                                    <div class="stat-symbol">+</div>
+                                </div>
+                                <div class="stat-label">Team Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="number-container">
+                                    <div class="stat-number" data-count="25">0</div>
+                                    <div class="stat-symbol">%</div>
+                                </div>
+                                <div class="stat-label">Annual Growth</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="number-container">
+                                    <div class="stat-number" data-count="92">0</div>
+                                    <div class="stat-symbol">%</div>
+                                </div>
+                                <div class="stat-label">Employee Satisfaction</div>
+                            </div>
+                        </div>
+                        
+                        <div class="services-description">
+                            <p>At NexusBI, we're passionate about helping businesses make better decisions through data. Our team combines technical expertise with business acumen to deliver exceptional value to our clients. We're looking for talented individuals who share our commitment to excellence, innovation, and client success.</p>
+                            <p class="highlight-paragraph">Join us on our mission to transform business intelligence for companies across industries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mouse-move parallax effect container -->
+            <div class="careers-parallax-overlay">
+                <div class="parallax-element element-1" data-speed="0.05"></div>
+                <div class="parallax-element element-2" data-speed="-0.03"></div>
+                <div class="parallax-element element-3" data-speed="0.08"></div>
+                <div class="parallax-element element-4" data-speed="-0.06"></div>
+            </div>
+        </section>
+
+        <!-- Current Openings Section -->
+        <section class="job-listings-section">
+            <div class="container">
+                <!-- Job Filter Buttons -->
+                <div class="job-filters-container reveal-animation" data-delay="200">
+                    <h3 class="filters-title">Current Openings</h3>
+                    <div class="job-filters" id="job-filters">
+                        <button class="filter-btn active" data-filter="all">
+                            <span class="filter-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                                </svg>
+                            </span>
+                            <span class="filter-text">All</span>
+                        </button>
+                        <button class="filter-btn" data-filter="technology">
+                            <span class="filter-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                                </svg>
+                            </span>
+                            <span class="filter-text">Technology</span>
+                        </button>
+                        <button class="filter-btn" data-filter="analysis">
+                            <span class="filter-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                                </svg>
+                            </span>
+                            <span class="filter-text">Analysis</span>
+                        </button>
+                        <button class="filter-btn" data-filter="consulting">
+                            <span class="filter-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
+                                </svg>
+                            </span>
+                            <span class="filter-text">Consulting</span>
+                        </button>
+                        <button class="filter-btn" data-filter="operations">
+                            <span class="filter-icon">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.8,2 12.5,2H11.5Z" />
+                                </svg>
+                            </span>
+                            <span class="filter-text">Operations</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="job-listings-grid">
+                    <!-- Data Analyst Job -->
+                    <div class="job-listing-card reveal-animation" data-category="analysis">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h2 class="job-category-name">Senior Data Analyst</h2>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        Hybrid (3 days in-office)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>We're looking for an experienced Data Analyst to join our team and help clients extract meaningful insights from their data. In this role, you'll work closely with our consulting team to develop data models, create visualizations, and provide data-driven recommendations to clients.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Design and develop reports and dashboards using tools like Power BI, Tableau, or similar</li>
+                                <li>Extract, transform, and load data from various sources</li>
+                                <li>Identify trends and patterns in complex datasets</li>
+                                <li>Collaborate with cross-functional teams to understand business requirements</li>
+                                <li>Present findings to stakeholders and provide actionable recommendations</li>
+                                <li>Implement data quality and governance procedures</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Statistics, Mathematics, Computer Science, or related field</li>
+                                <li>3+ years experience in data analysis and business intelligence</li>
+                                <li>Proficiency in SQL and Excel</li>
+                                <li>Experience with visualization tools like Power BI or Tableau</li>
+                                <li>Strong problem-solving and analytical skills</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                            <div class="job-date">Posted: May 2, 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Software Developer Job -->
+                    <div class="job-listing-card reveal-animation" data-delay="150" data-category="technology">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h2 class="job-category-name">Full Stack Developer</h2>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        Remote (with occasional travel)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>We are seeking a talented Full Stack Developer to join our technology team. In this role, you'll be responsible for developing and implementing custom business intelligence solutions for our clients, working with the latest technologies to create scalable, efficient applications.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Design and build advanced applications for various business requirements</li>
+                                <li>Develop back-end components and connect applications to other web services</li>
+                                <li>Create and maintain front-end functionality with a focus on user experience</li>
+                                <li>Optimize applications for maximum performance and scalability</li>
+                                <li>Collaborate with designers, product managers, and other developers</li>
+                                <li>Implement security and data protection measures</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Computer Science or related field</li>
+                                <li>3+ years experience in full stack development</li>
+                                <li>Proficiency in JavaScript and at least one modern framework (React, Angular, Vue)</li>
+                                <li>Experience with server-side languages (Python, Node.js, etc.)</li>
+                                <li>Familiarity with database technology (SQL, NoSQL)</li>
+                                <li>Understanding of API design and development</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                            <div class="job-date">Posted: April 28, 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Business Consultant Job -->
+                    <div class="job-listing-card reveal-animation" data-delay="300" data-category="consulting">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h2 class="job-category-name">Business Intelligence Consultant</h2>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        Hybrid (flexible)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>We're looking for a Business Intelligence Consultant to help our clients derive value from their data assets. In this client-facing role, you'll assess business needs, design comprehensive BI strategies, and help implement solutions that drive business growth and efficiency.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Understand client business needs and translate them into analytical requirements</li>
+                                <li>Design and implement business intelligence roadmaps and strategies</li>
+                                <li>Lead client workshops to identify KPIs and analytical opportunities</li>
+                                <li>Work with technical teams to ensure proper implementation of solutions</li>
+                                <li>Present findings and recommendations to executive stakeholders</li>
+                                <li>Stay current with industry trends and best practices</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Business, Finance, Computer Science, or related field</li>
+                                <li>5+ years experience in business intelligence or data consulting</li>
+                                <li>Strong understanding of data warehousing principles and BI methodologies</li>
+                                <li>Experience with major BI platforms and tools</li>
+                                <li>Excellent communication and presentation skills</li>
+                                <li>Ability to translate complex technical concepts to non-technical audiences</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                            <div class="job-date">Posted: May 8, 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Operations Manager Job -->
+                    <div class="job-listing-card reveal-animation" data-delay="450" data-category="operations">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.8,2 12.5,2H11.5Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h2 class="job-category-name">Operations Manager</h2>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        On-site
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>We are seeking an experienced Operations Manager to oversee our daily business operations and ensure they run smoothly and efficiently. This role will be responsible for developing and implementing operational strategies, processes, and policies that support our company's growth and delivery of exceptional client service.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Develop and implement operational strategies, policies, and procedures</li>
+                                <li>Oversee project management processes and ensure timely delivery</li>
+                                <li>Manage resource allocation and team scheduling</li>
+                                <li>Implement quality control procedures and process improvements</li>
+                                <li>Liaise between leadership, clients, and delivery teams</li>
+                                <li>Monitor operational performance metrics and KPIs</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Business Administration or related field</li>
+                                <li>5+ years experience in operations management, preferably in consulting</li>
+                                <li>Strong leadership and team management skills</li>
+                                <li>Experience with project management methodologies</li>
+                                <li>Excellent communication and interpersonal skills</li>
+                                <li>Ability to multi-task and manage competing priorities</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                            <div class="job-date">Posted: May 5, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process Section -->
+        <section class="application-process">
+            <div class="container">
+                <h2>Our Application Process</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Apply</div>
+                        <div class="step-description">Submit your application through our website with your resume and cover letter.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Initial Screen</div>
+                        <div class="step-description">Our HR team will review your application and contact you for an initial phone interview.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Interview</div>
+                        <div class="step-description">Meet with the hiring manager and team members for a more in-depth discussion.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Assessment</div>
+                        <div class="step-description">Complete a skills assessment related to the position you're applying for.</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-title">Offer</div>
+                        <div class="step-description">Successful candidates will receive a job offer outlining compensation and benefits.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card reveal-animation">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28">
+                                <path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M17,15H13V17H11V15H7V13H11V11H9V9H11V7H13V9H17V11H13V13H17V15Z" />
+                            </svg>
+                        </div>
+                        <div class="benefit-title">Comprehensive Healthcare</div>
+                        <div class="benefit-description">Medical, dental, and vision insurance with coverage for you and your family.</div>
+                    </div>
+                    <div class="benefit-card reveal-animation" data-delay="100">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28">
+                                <path fill="currentColor" d="M19,3H14.82C14.25,1.44 12.53,0.64 11,1.2C10.14,1.5 9.5,2.16 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M7.5,13.5L9,12L11,14L15.5,9.5L17,11L11,17L7.5,13.5Z" />
+                            </svg>
+                        </div>
+                        <div class="benefit-title">Flexible Work</div>
+                        <div class="benefit-description">Hybrid and flexible work arrangements to support work-life balance.</div>
+                    </div>
+                    <div class="benefit-card reveal-animation" data-delay="200">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28">
+                                <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
+                            </svg>
+                        </div>
+                        <div class="benefit-title">Professional Development</div>
+                        <div class="benefit-description">Ongoing learning opportunities, certifications, and career growth programs.</div>
+                    </div>
+                    <div class="benefit-card reveal-animation" data-delay="300">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28">
+                                <path fill="currentColor" d="M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8C9.3,8 10,8.7 10,9.5M17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8C16.3,8 17,8.7 17,9.5M12,17.23C10.25,17.23 8.71,16.5 7.81,15.42L9.23,14C9.68,14.72 10.75,15.23 12,15.23C13.25,15.23 14.32,14.72 14.77,14L16.19,15.42C15.29,16.5 13.75,17.23 12,17.23Z" />
+                            </svg>
+                        </div>
+                        <div class="benefit-title">Great Culture</div>
+                        <div class="benefit-description">Collaborative, inclusive environment with regular team events and activities.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Culture Section -->
+        <section class="culture-section">
+            <div class="container">
+                <h2>Our Company Culture</h2>
+                <div class="culture-grid">
+                    <div class="culture-card reveal-animation">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHRlYW0lMjBjb2xsYWJvcmF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Team Collaboration" class="culture-img">
+                        <div class="culture-content">
+                            <div class="culture-title">Collaborative Environment</div>
+                            <div class="culture-description">We believe in the power of teamwork and foster an environment where ideas are freely shared and diverse perspectives are valued.</div>
+                        </div>
+                    </div>
+                    <div class="culture-card reveal-animation" data-delay="100">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGluasdf23yZWF0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Innovation" class="culture-img">
+                        <div class="culture-content">
+                            <div class="culture-title">Innovation-Driven</div>
+                            <div class="culture-description">We're constantly pushing boundaries and exploring new technologies to deliver cutting-edge solutions to our clients.</div>
+                        </div>
+                    </div>
+                    <div class="culture-card reveal-animation" data-delay="200">
+                        <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZW1wbG95ZWUlMjB3ZWxsYmVpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Work-Life Balance" class="culture-img">
+                        <div class="culture-content">
+                            <div class="culture-title">Work-Life Balance</div>
+                            <div class="culture-description">We understand the importance of life outside work and support our team members in maintaining a healthy balance.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="careers-cta-section">
+            <div class="container">
+                <div class="cta-content reveal-animation">
+                    <h2>Don't See the Right Position?</h2>
+                    <p>We're always looking for talented individuals to join our team. Send us your resume, and we'll keep you in mind for future opportunities.</p>
+                    <a href="contact.html" class="cta-button">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="studios.html">Studios</a></li>
+                            <li><a href="teams.html">Our Team</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html#accounting">Accounting & Financial Management</a></li>
+                            <li><a href="services.html#tax">Tax Advisory & Compliance</a></li>
+                            <li><a href="services.html#consulting">Consulting & Strategy</a></li>
+                            <li><a href="services.html#audit">Audit & Assurance</a></li>
+                        </ul>
+                    </div>                    <div class="footer-column">
+                        <h3>Contact</h3>
+                        <address>
+                            <p>123 Business Avenue</p>
+                            <p>Suite 500, Tech City</p>
+                            <p>California, 94103</p>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p><a href="mailto:contact@nexusbi.com">contact@nexusbi.com</a></p>
+                        </address>
+                        <ul>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Connect</h3>
+                        <ul class="social-links">
+                            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexusBI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Consultation Widget -->
+    <div id="ai-widget-container" class="ai-widget-container">
+        <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open chat assistant">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M12,2C6.486,2,2,6.486,2,12v0.031C2,17.514,6.486,22,12,22s10-4.486,10-10v-0.031C22,6.486,17.514,2,12,2z M12,20 c-4.411,0-8-3.589-8-8v-0.031c0-4.411,3.589-8,8-8s8,3.589,8,8V12C20,16.411,16.411,20,12,20z M13,7h-2v6h2V7z M13,15h-2v2h2 V15z" />
+            </svg>
+        </button>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script>
+        // Animation for number counting
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to animate counting
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = 2000; // 2 seconds
+                const step = Math.max(1, Math.floor(target / (duration / 30))); // Update every 30ms
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = current;
+                    }
+                }, 30);
+            }
+
+            // Initialize counters when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counterElements = entry.target.querySelectorAll('.stat-number');
+                        counterElements.forEach(animateCounter);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe the stats container
+            const statsContainer = document.querySelector('.stats-container');
+            if (statsContainer) {
+                observer.observe(statsContainer);
+            }
+
+            // Job Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const jobCards = document.querySelectorAll('.job-listing-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    jobCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mouse movement effect for job cards
+            jobCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--x', x + 'px');
+                    card.style.setProperty('--y', y + 'px');
+                });
+            });
+
+            // Animate job details when they come into view
+            const jobDetailsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const listItems = entry.target.querySelectorAll('.job-details-list li');
+                        listItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, index * 100);
+                        });
+                        jobDetailsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Observe job content sections
+            document.querySelectorAll('.job-listing-content').forEach(content => {
+                jobDetailsObserver.observe(content);
+            });
+        });
+    </script>
+</body>
+</html>
