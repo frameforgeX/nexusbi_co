@@ -126,12 +126,25 @@ function initNavigation() {
 // Typing Animation in Hero Section
 function initTypingAnimation() {
   const typingElement = document.getElementById('typing-text');
+  if (!typingElement) return; // Safety check
+  
   const text = "Decisions Backed by Data. Growth Powered by Insight.";
   let index = 0;
   let isDeleting = false;
   let typingInterval;
+  
+  // Ensure clean start
+  clearTimeout(typingInterval);
+  typingElement.style.transition = 'none';
+  typingElement.style.opacity = '1';
+  typingElement.textContent = '|';
 
   function type() {
+    // Clear any existing timeouts to prevent animation issues
+    if (typingInterval) {
+      clearTimeout(typingInterval);
+    }
+
     // Create cursor effect
     const currentText = text.substring(0, index);
     typingElement.textContent = currentText + (index < text.length ? '|' : '');
@@ -139,27 +152,49 @@ function initTypingAnimation() {
     if (!isDeleting && index < text.length) {
       // Typing forward
       index++;
-      typingInterval = setTimeout(type, 80 + Math.random() * 50); // Variable speed
-    } else if (isDeleting && index > 0) {
-      // Deleting
-      index--;
-      typingInterval = setTimeout(type, 40);
-    } else {
-      // Change direction
-      isDeleting = !isDeleting;
+      typingInterval = setTimeout(type, 80 + Math.random() * 30); // Reduced randomness for stability
+    } else if (isDeleting) {
+      // Smooth disappear effect using CSS opacity
+      typingElement.style.transition = 'opacity 0.8s ease-out';
+      typingElement.style.opacity = '0';
       
-      if (isDeleting) {
-        // Pause before deleting
-        typingInterval = setTimeout(type, 2000);
-      } else {
-        // Pause before typing again
-        typingInterval = setTimeout(type, 500);
-      }
+      // After the fade-out completes, reset text and fade back in
+      setTimeout(() => {
+        // Reset transition to none for immediate reset
+        typingElement.style.transition = 'none';
+        index = 0;
+        typingElement.textContent = '|';
+        isDeleting = false;
+        
+        // Force browser reflow to ensure transition is applied
+        typingElement.offsetHeight;
+        
+        // Now fade back in
+        setTimeout(() => {
+          typingElement.style.transition = 'opacity 0.6s ease-in';
+          typingElement.style.opacity = '1';
+          
+          // Start typing again after fade-in completes
+          setTimeout(() => {
+            typingInterval = setTimeout(type, 200);
+          }, 600);
+        }, 50);
+      }, 800);
+    } else {
+      // Full text displayed, pause before disappearing
+      isDeleting = true;
+      typingInterval = setTimeout(type, 2000);
     }
   }
-
-  // Start typing animation
-  type();
+  // Start typing animation with a small delay to ensure DOM is ready
+  setTimeout(type, 100);
+  
+  // Clean up animation on page unload to prevent memory leaks
+  window.addEventListener('beforeunload', () => {
+    if (typingInterval) {
+      clearTimeout(typingInterval);
+    }
+  });
 }
 
 // SVG Data Flow Animation
