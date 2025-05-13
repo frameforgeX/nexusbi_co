@@ -5,7 +5,6 @@
 
 /* News Hero Section */
 .news-hero {
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
   position: relative;
   overflow: hidden;
 }

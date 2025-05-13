@@ -70,13 +70,9 @@ html {
 }
 
 body {
-  font-family: var(--font-main);
-  line-height: 1.6;
+  font-family: var(--font-main);  line-height: 1.6;
   color: var(--color-text);
   background: var(--color-bg);
-  background-image: 
-    radial-gradient(ellipse at top right, rgba(206, 166, 78, 0.15), transparent 70%),
-    radial-gradient(ellipse at bottom left, rgba(7, 178, 178, 0.08), transparent 70%);
   background-attachment: fixed;
   overflow-x: hidden;
 }
@@ -333,16 +329,9 @@ header {
   opacity: 0.3;
 }
 
+/* Mouse gradient removed to keep only particles.js background */
 .mouse-gradient {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(206, 166, 78, 0.15), transparent 500px);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: var(--z-base);
+  display: none;
 }
 
 /* KPI Section */

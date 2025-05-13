@@ -22,7 +22,6 @@
 /* Studios Overview */
 .studios-overview {
   padding: var(--space-xl) var(--space-m);
-  background: rgba(7, 32, 48, 0.3);
   position: relative;
 }
 

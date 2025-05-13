@@ -24,7 +24,6 @@
   position: relative;
   padding: var(--space-xl) var(--space-m);
   overflow: hidden;
-  background: rgba(7, 32, 48, 0.2);
   border-bottom: 1px solid var(--color-border);
 }
 

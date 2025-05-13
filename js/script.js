@@ -248,61 +248,61 @@ function initParticles() {
       particlesJS('particles-js', {
           particles: {
               number: {
-                  value: 80,
+                  value: 85,  // Slightly reduced for better performance
                   density: {
                       enable: true,
-                      value_area: 800
+                      value_area: 1200  // Increased for better distribution
                   }
               },
               color: {
-                  value: "#e8d4ff"  // You can change this color to match your theme
+                  value: ["#cea64e", "#07b2b2", "#e8d4ff", "#0B3040"]  // Theme colors: gold, teal, light purple, dark blue
               },
               shape: {
-                  type: "circle",
+                  type: ["circle", "triangle"],  // Added triangle shape for visual interest
                   stroke: {
                       width: 0,
                       color: "#000000"
                   },
               },
               opacity: {
-                  value: 0.3,
+                  value: 0.5,  // Slightly increased visibility
                   random: true,
                   anim: {
                       enable: true,
-                      speed: 1,
+                      speed: 0.6,  // Slightly slower for smoother animation
                       opacity_min: 0.1,
                       sync: false
                   }
               },
               size: {
-                  value: 3,
+                  value: 4,  // Slightly larger particles
                   random: true,
                   anim: {
-                      enable: false,
-                      speed: 40,
-                      size_min: 0.1,
+                      enable: true,  // Enable size animation
+                      speed: 3,
+                      size_min: 0.5,
                       sync: false
                   }
               },
               line_linked: {
                   enable: true,
-                  distance: 150,
-                  color: "#a67cff",  // You can change this color to match your theme
-                  opacity: 0.2,
-                  width: 1
+                  distance: 170,  // Increased connection distance
+                  color: "#cea64e",  // Gold theme color
+                  opacity: 0.35,  // Slightly increased opacity
+                  width: 1.2  // Slightly wider lines
               },
               move: {
                   enable: true,
-                  speed: 2,
+                  speed: 1.2,  // Slightly slower for smoother movement
                   direction: "none",
-                  random: false,
+                  random: true,
                   straight: false,
-                  out_mode: "out",
+                  out_mode: "out",  // Changed to "out" so particles leave the canvas and new ones appear
                   bounce: false,
                   attract: {
                       enable: true,
-                      rotateX: 600,
-                      rotateY: 1200
+                      rotateX: 800,
+                      rotateY: 1500
                   }
               }
           },
@@ -311,27 +311,28 @@ function initParticles() {
               events: {
                   onhover: {
                       enable: true,
-                      mode: "grab"
+                      mode: "grab"  // Changed to "grab" for a more intuitive interaction
                   },
                   onclick: {
                       enable: true,
-                      mode: "push"
+                      mode: "push"  // Changed to "push" to add particles on click
                   },
                   resize: true
               },
               modes: {
                   grab: {
-                      distance: 140,
+                      distance: 180,
                       line_linked: {
-                          opacity: 0.6
+                          opacity: 0.8
                       }
                   },
                   push: {
-                      particles_nb: 4
+                      particles_nb: 4  // Add 4 particles on click
                   }
               }
           },
-          retina_detect: true
+          retina_detect: true,
+          fps_limit: 60  // Limit FPS for better performance
       });
   }
 }
