@@ -154,6 +154,7 @@
 
 .filters-title {
   margin-bottom: var(--space-m);
+  margin-top: var(--space-l);
   font-size: 1.8rem;
 }
 
