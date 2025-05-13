@@ -1,5 +1,5 @@
 /* ----------------------------------------------
-   InsightPulse Business Intelligence Website
+   Nexus Business Intelligence Website
    JavaScript Functionality
 ---------------------------------------------- */
 
@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initTypingAnimation();
   initSVGAnimation();
-  initMouseGradient();
+  // Replaced initMouseGradient with particle animation
+  initParticles();
+  addCursorEffect();
   initScrollAnimations();
   initCounters();
   initDashboardCharts();
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAIWidget();
   initFormAnimations();
   initRandomBITip();
-  initFAQInteraction();
+  // Removed initFAQInteraction as we don't have FAQs on home page
   initStudiosSection(); // Replacing duplicate initialization with a single function call
 });
 
@@ -124,12 +126,25 @@ function initNavigation() {
 // Typing Animation in Hero Section
 function initTypingAnimation() {
   const typingElement = document.getElementById('typing-text');
+  if (!typingElement) return; // Safety check
+  
   const text = "Decisions Backed by Data. Growth Powered by Insight.";
   let index = 0;
   let isDeleting = false;
   let typingInterval;
+  
+  // Ensure clean start
+  clearTimeout(typingInterval);
+  typingElement.style.transition = 'none';
+  typingElement.style.opacity = '1';
+  typingElement.textContent = '|';
 
   function type() {
+    // Clear any existing timeouts to prevent animation issues
+    if (typingInterval) {
+      clearTimeout(typingInterval);
+    }
+
     // Create cursor effect
     const currentText = text.substring(0, index);
     typingElement.textContent = currentText + (index < text.length ? '|' : '');
@@ -137,27 +152,49 @@ function initTypingAnimation() {
     if (!isDeleting && index < text.length) {
       // Typing forward
       index++;
-      typingInterval = setTimeout(type, 80 + Math.random() * 50); // Variable speed
-    } else if (isDeleting && index > 0) {
-      // Deleting
-      index--;
-      typingInterval = setTimeout(type, 40);
-    } else {
-      // Change direction
-      isDeleting = !isDeleting;
+      typingInterval = setTimeout(type, 80 + Math.random() * 30); // Reduced randomness for stability
+    } else if (isDeleting) {
+      // Smooth disappear effect using CSS opacity
+      typingElement.style.transition = 'opacity 0.8s ease-out';
+      typingElement.style.opacity = '0';
       
-      if (isDeleting) {
-        // Pause before deleting
-        typingInterval = setTimeout(type, 2000);
-      } else {
-        // Pause before typing again
-        typingInterval = setTimeout(type, 500);
-      }
+      // After the fade-out completes, reset text and fade back in
+      setTimeout(() => {
+        // Reset transition to none for immediate reset
+        typingElement.style.transition = 'none';
+        index = 0;
+        typingElement.textContent = '|';
+        isDeleting = false;
+        
+        // Force browser reflow to ensure transition is applied
+        typingElement.offsetHeight;
+        
+        // Now fade back in
+        setTimeout(() => {
+          typingElement.style.transition = 'opacity 0.6s ease-in';
+          typingElement.style.opacity = '1';
+          
+          // Start typing again after fade-in completes
+          setTimeout(() => {
+            typingInterval = setTimeout(type, 200);
+          }, 600);
+        }, 50);
+      }, 800);
+    } else {
+      // Full text displayed, pause before disappearing
+      isDeleting = true;
+      typingInterval = setTimeout(type, 2000);
     }
   }
-
-  // Start typing animation
-  type();
+  // Start typing animation with a small delay to ensure DOM is ready
+  setTimeout(type, 100);
+  
+  // Clean up animation on page unload to prevent memory leaks
+  window.addEventListener('beforeunload', () => {
+    if (typingInterval) {
+      clearTimeout(typingInterval);
+    }
+  });
 }
 
 // SVG Data Flow Animation
@@ -240,18 +277,114 @@ function initSVGAnimation() {
   svg.appendChild(defs);
 }
 
-// Mouse-tracking gradient background effect
-function initMouseGradient() {
-  const mouseGradient = document.getElementById('mouse-gradient');
-  
-  if (!mouseGradient) return;
-  
+// Initialize particles
+function initParticles() {
+  if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
+          particles: {
+              number: {
+                  value: 85,  // Slightly reduced for better performance
+                  density: {
+                      enable: true,
+                      value_area: 1200  // Increased for better distribution
+                  }
+              },
+              color: {
+                  value: ["#cea64e", "#07b2b2", "#e8d4ff", "#0B3040"]  // Theme colors: gold, teal, light purple, dark blue
+              },
+              shape: {
+                  type: ["circle", "triangle"],  // Added triangle shape for visual interest
+                  stroke: {
+                      width: 0,
+                      color: "#000000"
+                  },
+              },
+              opacity: {
+                  value: 0.5,  // Slightly increased visibility
+                  random: true,
+                  anim: {
+                      enable: true,
+                      speed: 0.6,  // Slightly slower for smoother animation
+                      opacity_min: 0.1,
+                      sync: false
+                  }
+              },
+              size: {
+                  value: 4,  // Slightly larger particles
+                  random: true,
+                  anim: {
+                      enable: true,  // Enable size animation
+                      speed: 3,
+                      size_min: 0.5,
+                      sync: false
+                  }
+              },
+              line_linked: {
+                  enable: true,
+                  distance: 170,  // Increased connection distance
+                  color: "#cea64e",  // Gold theme color
+                  opacity: 0.35,  // Slightly increased opacity
+                  width: 1.2  // Slightly wider lines
+              },
+              move: {
+                  enable: true,
+                  speed: 1.2,  // Slightly slower for smoother movement
+                  direction: "none",
+                  random: true,
+                  straight: false,
+                  out_mode: "out",  // Changed to "out" so particles leave the canvas and new ones appear
+                  bounce: false,
+                  attract: {
+                      enable: true,
+                      rotateX: 800,
+                      rotateY: 1500
+                  }
+              }
+          },
+          interactivity: {
+              detect_on: "canvas",
+              events: {
+                  onhover: {
+                      enable: true,
+                      mode: "grab"  // Changed to "grab" for a more intuitive interaction
+                  },
+                  onclick: {
+                      enable: true,
+                      mode: "push"  // Changed to "push" to add particles on click
+                  },
+                  resize: true
+              },
+              modes: {
+                  grab: {
+                      distance: 180,
+                      line_linked: {
+                          opacity: 0.8
+                      }
+                  },
+                  push: {
+                      particles_nb: 4  // Add 4 particles on click
+                  }
+              }
+          },
+          retina_detect: true,
+          fps_limit: 60  // Limit FPS for better performance
+      });
+  }
+}
+
+// Add interactive cursor trail effect
+function addCursorEffect() {
+  // Interactive cursor effect
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth * 100;
-    const y = e.clientY / window.innerHeight * 100;
-    
-    mouseGradient.style.setProperty('--mouse-x', `${x}%`);
-    mouseGradient.style.setProperty('--mouse-y', `${y}%`);
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor-trail');
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      document.body.appendChild(cursor);
+      
+      setTimeout(() => {
+          cursor.remove();
+      }, 1000);
   });
 }
 
@@ -792,10 +925,13 @@ function initFAQInteraction() {
   const resultsInfo = document.getElementById('faq-results-info');
   const resultsCount = document.getElementById('results-count');
   const noResults = document.getElementById('faq-no-results');
+  const searchInput = document.getElementById('faq-search-input');
 
   let allExpanded = false;
+  let currentCategory = 'all';
+  let isSearchActive = false;
   
-  // Toggle FAQ items when clicked
+  // Toggle FAQ items when clicked with smooth animation
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
@@ -811,7 +947,7 @@ function initFAQInteraction() {
       // Check if this item is already active
       const isActive = item.classList.contains('active');
       
-      // First close all FAQ items
+      // First close all FAQ items with smooth transitions
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
@@ -820,13 +956,28 @@ function initFAQInteraction() {
         }
       });
       
-      // Then toggle the clicked item only if it wasn't already active
+      // Then toggle the clicked item with smooth transition
       if (!isActive) {
         item.classList.add('active');
-        answer.style.height = answer.scrollHeight + 'px';
+        // Add slight delay for better visual effect
+        setTimeout(() => {
+          answer.style.height = `${answer.scrollHeight}px`;
+        }, 10);
+        
+        // Add highlight pulse animation effect
+        const content = item.querySelector('.faq-answer-content');
+        content.classList.add('highlight-animation');
+        setTimeout(() => {
+          content.classList.remove('highlight-animation');
+        }, 1500);
       } else {
-        // If it was active, now close it too
+        // If it was active, now close it too with animation
         item.classList.remove('active');
+        answer.style.height = `${answer.scrollHeight}px`;
+        
+        // Force reflow to ensure animation works
+        answer.offsetHeight; 
+        
         answer.style.height = '0';
       }
       
@@ -835,41 +986,64 @@ function initFAQInteraction() {
     });
   });
   
-  // Filter by category
+  // Filter by category with improved interaction
   if (filterButtons) {
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
+        // Add tactile feedback
+        button.classList.add('pulse');
+        setTimeout(() => {
+          button.classList.remove('pulse');
+        }, 300);
+        
         // Remove active class from all buttons
         filterButtons.forEach(btn => btn.classList.remove('active'));
         
         // Add active class to clicked button
         button.classList.add('active');
         
+        // Store current category
+        currentCategory = button.getAttribute('data-category');
+        
+        // Clear search if active
+        if (isSearchActive && searchInput) {
+          searchInput.value = '';
+          isSearchActive = false;
+        }
+        
         // Filter FAQs based on category
-        const category = button.getAttribute('data-category');
-        filterFAQByCategory(category);
+        filterFAQByCategory(currentCategory);
       });
     });
   }
   
-  // Reset search button
+  // Reset search button with improved interaction
   if (resetSearchBtn) {
     resetSearchBtn.addEventListener('click', () => {
-      // Show all FAQ items
-      faqItems.forEach(item => {
-        item.style.display = '';
-      });
+      // Clear search input
+      if (searchInput) searchInput.value = '';
+      isSearchActive = false;
       
-      // Reset filter buttons
+      // Reset to current category
+      filterFAQByCategory(currentCategory);
+      
+      // Reset filter buttons if we were in search mode
       filterButtons.forEach(btn => {
         btn.classList.remove('active');
-        if (btn.getAttribute('data-category') === 'all') {
+        if (btn.getAttribute('data-category') === currentCategory) {
           btn.classList.add('active');
         }
       });
       
-      // Hide results info
-      if (resultsInfo) resultsInfo.classList.add('hide');
+      // Hide results info with fade-out effect
+      if (resultsInfo) {
+        resultsInfo.style.opacity = '0';
+        setTimeout(() => {
+          resultsInfo.classList.add('hide');
+          resultsInfo.style.opacity = '1';
+        }, 300);
+      }
+      
       if (noResults) noResults.classList.add('hide');
       
       // Update expand all button
@@ -877,18 +1051,140 @@ function initFAQInteraction() {
     });
   }
   
-  // Expand/Collapse all FAQs
+  // Search functionality
+  if (searchInput) {
+    // Debounce function to limit search frequency
+    function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+      };
+    }
+    
+    const performSearch = debounce(function() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      
+      // If search is empty, revert to category filtering
+      if (searchTerm === '') {
+        isSearchActive = false;
+        filterFAQByCategory(currentCategory);
+        if (resultsInfo) resultsInfo.classList.add('hide');
+        return;
+      }
+      
+      isSearchActive = true;
+      let matchCount = 0;
+      
+      // Remove existing highlights
+      document.querySelectorAll('.highlight-term').forEach(el => {
+        el.outerHTML = el.innerHTML;
+      });
+      
+      // Search in both question and answer content
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+          // Only show if it also matches the current category filter
+          if (currentCategory === 'all' || item.getAttribute('data-category') === currentCategory) {
+            item.style.display = '';
+            matchCount++;
+            
+            // Highlight matches
+            highlightMatches(item, searchTerm);
+          } else {
+            item.style.display = 'none';
+          }
+        } else {
+          item.style.display = 'none';
+        }
+        
+        // Close item
+        item.classList.remove('active');
+        const answerEl = item.querySelector('.faq-answer');
+        answerEl.style.height = '0';
+      });
+      
+      // Update results info
+      if (resultsCount) resultsCount.textContent = matchCount;
+      
+      if (resultsInfo) {
+        resultsInfo.classList.remove('hide');
+        // Animate the results count
+        resultsCount.classList.add('highlight-animation');
+        setTimeout(() => {
+          resultsCount.classList.remove('highlight-animation');
+        }, 1500);
+      }
+      
+      // Show/hide no results message
+      if (noResults) {
+        if (matchCount === 0) {
+          noResults.classList.remove('hide');
+        } else {
+          noResults.classList.add('hide');
+        }
+      }
+      
+      // Update expand all button
+      updateExpandAllButton();
+    }, 300); // 300ms delay for typing
+    
+    searchInput.addEventListener('input', performSearch);
+    
+    // Clear search when ESC key is pressed
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === "Escape") {
+        searchInput.value = '';
+        isSearchActive = false;
+        filterFAQByCategory(currentCategory);
+        if (resultsInfo) resultsInfo.classList.add('hide');
+        if (noResults) noResults.classList.add('hide');
+      }
+    });
+  }
+  
+  // Highlight search matches
+  function highlightMatches(item, searchTerm) {
+    const questionEl = item.querySelector('.faq-question h3');
+    const answerEl = item.querySelector('.faq-answer-content');
+    
+    // Helper function to safely replace text with highlighted version
+    function highlightText(element, term) {
+      const html = element.innerHTML;
+      const regex = new RegExp(`(${term})`, 'gi');
+      element.innerHTML = html.replace(regex, '<span class="highlight-term">$1</span>');
+    }
+    
+    // Highlight matches in question
+    highlightText(questionEl, searchTerm);
+    
+    // Highlight matches in answer paragraphs
+    answerEl.querySelectorAll('p').forEach(p => {
+      highlightText(p, searchTerm);
+    });
+  }
+  
+  // Expand/Collapse all FAQs with improved animation
   if (expandAllBtn) {
     expandAllBtn.addEventListener('click', toggleAllFAQs);
   }
   
-  // Filter FAQs by category
+  // Filter FAQs by category with better visual feedback
   function filterFAQByCategory(category) {
     let visibleCount = 0;
     
     faqItems.forEach(item => {
       if (category === 'all' || item.getAttribute('data-category') === category) {
+        // Fade-in effect for items
+        item.style.opacity = '0';
         item.style.display = '';
+        setTimeout(() => {
+          item.style.opacity = '1';
+        }, 50); // Small delay for visual effect
         visibleCount++;
       } else {
         item.style.display = 'none';
@@ -900,9 +1196,9 @@ function initFAQInteraction() {
     
     // Show/hide results info
     if (resultsInfo) {
-      if (category !== 'all') {
+      if (category !== 'all' && !isSearchActive) {
         resultsInfo.classList.remove('hide');
-      } else {
+      } else if (!isSearchActive) {
         resultsInfo.classList.add('hide');
       }
     }
@@ -916,7 +1212,7 @@ function initFAQInteraction() {
       }
     }
     
-    // Close all FAQs when changing category
+    // Close all FAQs when changing category with smooth animation
     faqItems.forEach(item => {
       item.classList.remove('active');
       const answer = item.querySelector('.faq-answer');
@@ -927,29 +1223,39 @@ function initFAQInteraction() {
     updateExpandAllButton();
   }
   
-  // Toggle all FAQs between expanded and collapsed states
+  // Toggle all FAQs between expanded and collapsed states with improved animation
   function toggleAllFAQs() {
     if (allExpanded) {
-      // Collapse all
-      faqItems.forEach(item => {
+      // Collapse all with staggered animation
+      faqItems.forEach((item, index) => {
         if (item.style.display !== 'none') {
-          const answer = item.querySelector('.faq-answer');
-          item.classList.remove('active');
-          answer.style.height = '0';
+          setTimeout(() => {
+            const answer = item.querySelector('.faq-answer');
+            item.classList.remove('active');
+            answer.style.height = '0';
+          }, index * 50); // Stagger effect
         }
       });
       expandAllBtn.textContent = 'Show All Answers';
     } else {
-      // Expand all
-      faqItems.forEach(item => {
+      // Expand all with staggered animation
+      faqItems.forEach((item, index) => {
         if (item.style.display !== 'none') {
-          const answer = item.querySelector('.faq-answer');
-          item.classList.add('active');
-          answer.style.height = answer.scrollHeight + 'px';
+          setTimeout(() => {
+            const answer = item.querySelector('.faq-answer');
+            item.classList.add('active');
+            answer.style.height = answer.scrollHeight + 'px';
+          }, index * 50); // Stagger effect
         }
       });
       expandAllBtn.textContent = 'Hide All Answers';
     }
+    
+    // Add tactile feedback to button
+    expandAllBtn.classList.add('highlight-animation');
+    setTimeout(() => {
+      expandAllBtn.classList.remove('highlight-animation');
+    }, 1000);
     
     allExpanded = !allExpanded;
   }
@@ -971,12 +1277,12 @@ function initFAQInteraction() {
     }
   }
   
-  // Setup feedback functionality
-  setupFeedbackButtons();
+  // Setup improved feedback functionality with animations
+  setupEnhancedFeedbackButtons();
 }
 
-// Handle feedback on FAQ answers
-function setupFeedbackButtons() {
+// Enhanced feedback functionality with better visual feedback
+function setupEnhancedFeedbackButtons() {
   const feedbackButtons = document.querySelectorAll('.feedback-btn');
   
   feedbackButtons.forEach(button => {
@@ -988,41 +1294,33 @@ function setupFeedbackButtons() {
       // Reset all buttons in this container
       buttons.forEach(btn => btn.classList.remove('selected'));
       
-      // Mark this button as selected
+      // Mark this button as selected with animation
       this.classList.add('selected');
-      
-      // Show thank you message
+      this.classList.add('highlight-animation');
       setTimeout(() => {
-        feedbackContainer.innerHTML = '<p>Thank you for your feedback!</p>';
+        this.classList.remove('highlight-animation');
+      }, 1000);
+      
+      // Show thank you message with fade-in effect
+      setTimeout(() => {
+        feedbackContainer.style.opacity = '0';
+        setTimeout(() => {
+          feedbackContainer.innerHTML = '<p>Thank you for your feedback!</p>';
+          feedbackContainer.style.opacity = '1';
+        }, 300);
       }, 500);
       
       // Here you could send the feedback to a backend system
-      // For now, we'll just log it
       console.log('FAQ feedback:', feedback);
     });
   });
 }
 
-// FAQ toggle functionality
+// Handle feedback on FAQ answers
+// Function removed as it has been replaced by setupEnhancedFeedbackButtons
+
+// DOM Content Loaded event
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Toggle active class on the clicked item
-            item.classList.toggle('active');
-            
-            // Close other items when one is opened
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
-        });
-    });
-    
     // Rest of your existing script.js code below
 });
 

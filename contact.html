@@ -12,19 +12,33 @@
     <meta name="description" content="Contact NexusBI for business intelligence solutions and consultation. Get in touch with our team to transform your business today.">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="data:,">
+    <!-- Particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <!-- Particles background container -->
+    <div id="particles-js"></div>
     <header>
         <nav class="glass-nav">
             <div class="logo">
                 <a href="index.html">
                     <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo">
                 </a>
-            </div>
-            <ul class="nav-links">
+            </div>            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="studios.html">Studios</a></li>
+                <li class="dropdown">
+                    <a href="studios.html">Studios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studios.html#business-solutions">Business Solutions Studio</a></li>
+                        <li><a href="studios.html#regulatory-reporting">Regulatory Reporting Studio</a></li>
+                        <li><a href="studios.html#corporate-services">Corporate Services Studio</a></li>
+                        <li><a href="studios.html#digital-strategy">Digital Strategy & Innovation Studio</a></li>
+                    </ul>
+                </li>
+                <li><a href="teams.html">Team</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
@@ -121,7 +135,7 @@
                         <div class="glass-card contact-card">
                             <div class="qr-container">
                                 <h3>Scan to visit our website</h3>
-                                <img src="./Assets/Images/QR_Code.svg" alt="QR Code to Nexus BI Website" class="qr-code">
+                                <img src="./Assets/Images/QR_Code.png" alt="QR Code to Nexus BI Website" class="qr-code">
                                 <p>Scan this QR code with your smartphone to visit our website instantly</p>
                             </div>
                         </div>
@@ -258,7 +272,7 @@
                                 <h4>Can I schedule a virtual consultation?</h4>
                                 <p>Yes! We offer both in-person and virtual consultations. Simply indicate your preference when filling out the contact form.</p>
                             </div>
-                            <a href="index.html#faq-section" class="learn-more">View All FAQs</a>
+                            <a href="about.html#faq-section" class="learn-more">View All FAQs</a>
                         </div>
                     </div>
                 </div>
@@ -272,13 +286,14 @@
                 <div class="footer-logo">
                     <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo" class="footer-logo-img">
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h3>Quick Links</h3>
-                        <ul>
+                <div class="footer-links">                    <div class="footer-column">
+                        <h3>Quick Links</h3>                        <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="studios.html">Studios</a></li>
+                            <li><a href="teams.html">Team</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="news.html">News</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>

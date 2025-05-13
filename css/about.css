@@ -6,7 +6,6 @@
 /* Hero Section - Mobile First */
 .hero-secondary {
     position: relative;
-    background: var(--color-gradient-dark);
     padding: var(--space-xl) var(--space-m); /* Reduced padding for mobile with horizontal padding */
     text-align: center;
 }

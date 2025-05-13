@@ -3,9 +3,8 @@
    Contact Page Styles - Mobile First
 ---------------------------------------------- */
 
-/* White Theme Overrides */
+/* Theme Overrides - Transparent background to allow particles.js to show */
 body {
-    background-color: #ffffff;
     color: #333333;
 }
 

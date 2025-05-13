@@ -1,0 +1,624 @@
+/* ----------------------------------------------
+   NexusBI Business Intelligence Website
+   Team Page Styles - Mobile First
+---------------------------------------------- */
+
+/* Team Hero Section */
+.team-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Team Introduction */
+.team-intro {
+  padding: var(--space-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-intro .intro-content {
+  position: relative;
+  z-index: 2;
+}
+
+.team-intro .intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-intro h2 {
+  margin-bottom: var(--space-m);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.highlight-text {
+  color: var(--color-primary);
+  position: relative;
+}
+
+.highlight-paragraph {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: var(--space-m);
+  color: var(--color-primary);
+}
+
+/* Stats Container */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-l);
+  margin: var(--space-l) 0;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  max-width: 250px;
+  padding: var(--space-m);
+  border-radius: 10px;
+  background: rgba(7, 32, 48, 0.6);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.number-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: var(--space-s);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-symbol {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-left: 2px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+/* Team Parallax Effect */
+.team-parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.parallax-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.element-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-primary);
+  top: -100px;
+  left: -100px;
+}
+
+.element-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--color-accent);
+  bottom: -50px;
+  right: 10%;
+}
+
+.element-3 {
+  width: 150px;
+  height: 150px;
+  background: var(--color-primary);
+  top: 30%;
+  right: -50px;
+}
+
+.element-4 {
+  width: 250px;
+  height: 250px;
+  background: var(--color-accent);
+  bottom: 20%;
+  left: 10%;
+}
+
+/* Leadership Section */
+.team-leadership-section {
+  padding: var(--space-xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  margin-bottom: var(--space-s);
+}
+
+.section-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text-muted);
+}
+
+/* Leadership Team Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+@media (min-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .leadership-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.leadership-card {
+  background: rgba(7, 32, 48, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  height: 100%;
+}
+
+.leadership-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-primary);
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(206, 166, 78, 0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.leadership-card:hover .card-hover-effect {
+  opacity: 1;
+}
+
+.member-image-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.leadership-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+.member-info {
+  padding: var(--space-m);
+  position: relative;
+}
+
+.member-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.member-title {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-s);
+}
+
+.member-bio {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-s);
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--space-s);
+}
+
+.social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Department Teams Section */
+.department-teams-section {
+  padding: var(--space-xl) 0;
+}
+
+/* Department Tabs */
+.department-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+  margin-bottom: var(--space-xl);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-btn {
+  padding: var(--space-s) var(--space-m);
+  background-color: var(--color-bg-alt);
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+.tab-btn:hover {
+  color: var(--color-text);
+  background-color: rgba(7, 32, 48, 0.8);
+}
+
+.tab-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* Department Teams Grid */
+.team-members-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+@media (min-width: 576px) {
+  .team-members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .team-members-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team-member-card {
+  background: rgba(7, 32, 48, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-member-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.team-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-member-card:hover .team-member-image {
+  transform: scale(1.05);
+}
+
+.team-member-info {
+  padding: var(--space-m);
+  text-align: center;
+}
+
+.team-member-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.team-member-title {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+}
+
+/* Department Details */
+.department-details {
+  display: none;
+}
+
+.department-details.active {
+  display: block;
+}
+
+.department-description {
+  max-width: 800px;
+  margin: 0 auto var(--space-l);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Company Values Section */
+.company-values-section {
+  padding: var(--space-xl) 0;
+  background-color: rgba(7, 32, 48, 0.4);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l);
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  background: rgba(7, 32, 48, 0.6);
+  border-radius: 10px;
+  padding: var(--space-m);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(206, 166, 78, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-s);
+  color: var(--color-primary);
+}
+
+.value-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: var(--space-s);
+}
+
+.value-description {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Join Our Team CTA */
+.team-cta-section {
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  margin-bottom: var(--space-m);
+}
+
+.cta-content p {
+  margin-bottom: var(--space-l);
+  color: var(--color-text-muted);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: var(--space-s) var(--space-xl);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-primary);
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: var(--space-xl) 0;
+  background-color: rgba(7, 32, 48, 0.2);
+}
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-slides {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 0 var(--space-m);
+}
+
+.testimonial-content {
+  background: rgba(7, 32, 48, 0.6);
+  border-radius: 10px;
+  padding: var(--space-l);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-content:before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 4rem;
+  color: rgba(206, 166, 78, 0.2);
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-m);
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.testimonial-author-title {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.testimonial-controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+}
+
+.testimonial-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(7, 32, 48, 0.6);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-control-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-m);
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+  background-color: var(--color-primary);
+}
