@@ -6,9 +6,11 @@
     <title>News & Insights - NexusBI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/news.css">    <meta name="description" content="Stay updated with the latest news, trends, and insights from NexusBI on business intelligence, data analytics, and industry developments.">
+    <link rel="stylesheet" href="./css/news.css">
+    <link rel="stylesheet" href="./css/news-paper.css">
+    <meta name="description" content="Stay updated with the latest news, trends, and insights from NexusBI on business intelligence, data analytics, and industry developments.">
     <meta name="theme-color" content="#121212">
     <link rel="icon" href="data:,">
     <!-- Particles.js library -->
@@ -46,9 +48,7 @@
                 <span></span>
             </div>
         </nav>
-    </header>
-
-    <main>
+    </header>    <main>
         <!-- News Hero Section -->
         <section class="page-hero news-hero">
             <div class="container">
@@ -60,275 +60,373 @@
             <div class="mouse-gradient" id="mouse-gradient"></div>
         </section>
 
-        <!-- News Introduction -->
-        <section class="news-intro">
-            <div class="container">
-                <div class="intro-content">
-                    <div class="intro-text reveal-animation">
-                        <h2>The Latest <span class="highlight-text">Insights & Updates</span></h2>
-                        
-                        <!-- Interactive Stats Counter Section -->
-                        <div class="stats-container">
-                            <div class="stat-item">
-                                <div class="number-container">
-                                    <div class="stat-number" data-count="100">0</div>
-                                    <div class="stat-symbol">+</div>
-                                </div>
-                                <div class="stat-label">Industry Articles</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="number-container">
-                                    <div class="stat-number" data-count="35">0</div>
-                                    <div class="stat-symbol">+</div>
-                                </div>
-                                <div class="stat-label">Research Papers</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="number-container">
-                                    <div class="stat-number" data-count="15">0</div>
-                                    <div class="stat-symbol">k</div>
-                                </div>
-                                <div class="stat-label">Monthly Readers</div>
-                            </div>
-                        </div>
-                        
-                        <div class="services-description">
-                            <p>At NexusBI, we're committed to sharing valuable insights, industry trends, and company updates to keep you informed. Our team of experts regularly publishes articles, case studies, and research to help you navigate the complex world of business intelligence and data analytics.</p>
-                            <p class="highlight-paragraph">Explore our latest publications and stay ahead in the ever-evolving data landscape.</p>
-                        </div>
-                    </div>
+        <!-- Newspaper Layout -->
+        <section class="newspaper-layout">
+            <!-- Newspaper Header/Masthead -->
+            <div class="newspaper-header reveal-animation">
+                <div class="newspaper-masthead">
+                    <h2 class="newspaper-title">NexusBI Times</h2>
+                    <div class="newspaper-tagline">Your Source for Business Intelligence & Data Analytics</div>
+                </div>
+                <div class="newspaper-date">
+                    <span>May 2025</span>
+                    <div class="newspaper-date-divider"></div>
+                    <span>Vol. 4, Issue 5</span>
+                    <div class="newspaper-date-divider"></div>
+                    <span>Business Intelligence Edition</span>
+                </div>
+            </div>
+
+            <!-- News Filter Buttons -->
+            <div class="news-filters-container reveal-animation" data-delay="200">
+                <h3 class="filters-title">Browse by Category</h3>
+                <div class="news-filters" id="news-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="filter-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                            </svg>
+                        </span>
+                        <span class="filter-text">All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="industry">
+                        <span class="filter-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z" />
+                            </svg>
+                        </span>
+                        <span class="filter-text">Industry</span>
+                    </button>
+                    <button class="filter-btn" data-filter="technology">
+                        <span class="filter-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                            </svg>
+                        </span>
+                        <span class="filter-text">Technology</span>
+                    </button>
+                    <button class="filter-btn" data-filter="analytics">
+                        <span class="filter-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                            </svg>
+                        </span>
+                        <span class="filter-text">Analytics</span>
+                    </button>
+                    <button class="filter-btn" data-filter="company">
+                        <span class="filter-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+                            </svg>
+                        </span>
+                        <span class="filter-text">Company</span>
+                    </button>
                 </div>
             </div>
             
-            <!-- Mouse-move parallax effect container -->
-            <div class="news-parallax-overlay">
-                <div class="parallax-element element-1" data-speed="0.05"></div>
-                <div class="parallax-element element-2" data-speed="-0.03"></div>
-                <div class="parallax-element element-3" data-speed="0.08"></div>
-                <div class="parallax-element element-4" data-speed="-0.06"></div>
-            </div>
-        </section>
-
-        <!-- News Articles Section -->
-        <section class="news-articles-section">
-            <div class="container">
-                <!-- News Filter Buttons -->
-                <div class="news-filters-container reveal-animation" data-delay="200">
-                    <h3 class="filters-title">Browse by Category</h3>
-                    <div class="news-filters" id="news-filters">
-                        <button class="filter-btn active" data-filter="all">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">All</span>
-                        </button>
-                        <button class="filter-btn" data-filter="industry">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Industry</span>
-                        </button>
-                        <button class="filter-btn" data-filter="technology">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Technology</span>
-                        </button>
-                        <button class="filter-btn" data-filter="analytics">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Analytics</span>
-                        </button>
-                        <button class="filter-btn" data-filter="company">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Company</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Featured Article -->
-                <div class="featured-article reveal-animation">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhdGElMjBhbmFseXRpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="Business Intelligence Trends for 2025" class="featured-article-img">
-                    <div class="featured-article-content">
-                        <span class="featured-article-tag">Industry</span>
-                        <h2 class="featured-article-title">Business Intelligence Trends That Will Shape 2025</h2>
-                        <div class="featured-article-meta">
+            <!-- Main Content and Sidebar Layout -->
+            <div class="newspaper-content">
+                <!-- Main Column -->
+                <div class="newspaper-main">
+                    <!-- Featured Article -->
+                    <div class="newspaper-featured reveal-animation">
+                        <h2 class="featured-headline">Business Intelligence Trends That Will Shape 2025</h2>
+                        <p class="featured-subheading">The future of data analytics is evolving rapidly — here's what you need to know</p>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRhdGElMjBhbmFseXRpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="Business Intelligence Trends for 2025" class="featured-image">
+                        <div class="featured-meta">
+                            <div class="featured-author">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaG90b3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=100&q=60" alt="Author" class="featured-author-img">
+                                <span>By Michael Chen</span>
+                            </div>
                             <span>May 10, 2025</span>
                             <span>8 min read</span>
+                            <span class="featured-category">Industry</span>
                         </div>
-                        <p class="featured-article-excerpt">The business intelligence landscape is rapidly evolving with emerging technologies and changing business needs. In this article, we explore the key trends that will define the BI industry in 2025, including AI integration, real-time analytics, and data democratization.</p>
-                        <a href="#" class="featured-article-link">
-                            Read Article
+                        <p class="featured-excerpt">The business intelligence landscape is rapidly evolving with emerging technologies and changing business needs. In this article, we explore the key trends that will define the BI industry in 2025, including AI integration, real-time analytics, and data democratization. As organizations continue to prioritize data-driven decision making, staying ahead of these trends becomes crucial for competitive advantage.</p>
+                        <a href="#" class="featured-continue">
+                            Continue Reading
                             <svg viewBox="0 0 24 24" width="18" height="18">
                                 <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                             </svg>
                         </a>
                     </div>
+                    
+                    <!-- Article Grid -->
+                    <div class="newspaper-articles">
+                        <!-- Article 1 -->
+                        <div class="newspaper-article reveal-animation" data-category="technology">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhdGElMjB2aXN1YWxpemF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Data Visualization Techniques" class="article-image">
+                                <div class="article-category">Technology</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">Advanced Data Visualization Techniques for Complex Datasets</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>April 28, 2025</span>
+                                    <span>6 min read</span>
+                                </div>
+                                <p class="article-excerpt">Learn how to effectively visualize complex datasets with modern techniques that enhance understanding and decision-making processes.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 2 -->
+                        <div class="newspaper-article reveal-animation" data-delay="150" data-category="analytics">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHByZWRpY3RpdmUlMjBhbmFseXRpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Predictive Analytics" class="article-image">
+                                <div class="article-category">Analytics</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">Predictive Analytics: Turning Data into Future Insights</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>April 22, 2025</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <p class="article-excerpt">Discover how predictive analytics is transforming business planning and how companies are leveraging it to gain competitive advantages.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 3 -->
+                        <div class="newspaper-article reveal-animation" data-delay="300" data-category="company">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGNvbXBhbnklMjBvZmZpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="NexusBI Office" class="article-image">
+                                <div class="article-category">Company</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">NexusBI Announces New Strategic Partnership with DataCloud</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>April 15, 2025</span>
+                                    <span>3 min read</span>
+                                </div>
+                                <p class="article-excerpt">We're excited to announce our partnership with DataCloud to enhance our cloud-based analytics solutions for enterprise clients.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 4 -->
+                        <div class="newspaper-article reveal-animation" data-delay="150" data-category="industry">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJldGFpbCUyMGFuYWx5dGljc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Retail Analytics" class="article-image">
+                                <div class="article-category">Industry</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">How Retail Giants Are Leveraging BI to Enhance Customer Experience</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>April 8, 2025</span>
+                                    <span>7 min read</span>
+                                </div>
+                                <p class="article-excerpt">Explore how major retailers are using business intelligence to create personalized customer experiences and drive loyalty.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 5 -->
+                        <div class="newspaper-article reveal-animation" data-delay="300" data-category="technology">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="AI and BI" class="article-image">
+                                <div class="article-category">Technology</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">The Convergence of AI and Business Intelligence: What You Need to Know</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>April 2, 2025</span>
+                                    <span>9 min read</span>
+                                </div>
+                                <p class="article-excerpt">Discover how artificial intelligence is revolutionizing business intelligence and creating new opportunities for data-driven organizations.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 6 -->
+                        <div class="newspaper-article reveal-animation" data-delay="450" data-category="analytics">
+                            <div class="article-image-container">
+                                <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGF0YSUyMHNlY3VyaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Data Security" class="article-image">
+                                <div class="article-category">Analytics</div>
+                            </div>
+                            <div class="article-content">
+                                <h3 class="article-title">
+                                    <a href="#">Data Security in Business Intelligence: Best Practices for 2025</a>
+                                </h3>
+                                <div class="article-meta">
+                                    <span>March 27, 2025</span>
+                                    <span>8 min read</span>
+                                </div>
+                                <p class="article-excerpt">Learn about the latest security practices to protect your valuable business data in an increasingly complex threat landscape.</p>
+                                <a href="#" class="article-link">
+                                    Read More
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button class="btn-load-more">Load More Articles</button>
+                    </div>
                 </div>
                 
-                <!-- News Grid -->
-                <div class="news-grid">
-                    <!-- News Card 1 -->
-                    <div class="news-card reveal-animation" data-category="technology">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhdGElMjB2aXN1YWxpemF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Data Visualization Techniques" class="news-card-img">
-                            <span class="news-tag">Technology</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">Advanced Data Visualization Techniques for Complex Datasets</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>April 28, 2025</span>
-                                <span>6 min read</span>
+                <!-- Sidebar -->
+                <div class="newspaper-sidebar">
+                    <div class="sidebar-sticky">
+                        <!-- Popular Posts -->
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Popular Posts</h3>
+                            <div class="popular-post">
+                                <div class="popular-post-number">1</div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title">
+                                        <a href="#">How AI is Transforming Data Analytics in 2025</a>
+                                    </h4>
+                                    <div class="popular-post-meta">May 5, 2025</div>
+                                </div>
                             </div>
-                            <p class="news-card-excerpt">Learn how to effectively visualize complex datasets with modern techniques that enhance understanding and decision-making processes.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
+                            <div class="popular-post">
+                                <div class="popular-post-number">2</div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title">
+                                        <a href="#">The Rise of Real-Time Decision Intelligence</a>
+                                    </h4>
+                                    <div class="popular-post-meta">April 25, 2025</div>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <div class="popular-post-number">3</div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title">
+                                        <a href="#">10 BI Tools Every Data Analyst Should Know</a>
+                                    </h4>
+                                    <div class="popular-post-meta">April 18, 2025</div>
+                                </div>
+                            </div>
+                            <div class="popular-post">
+                                <div class="popular-post-number">4</div>
+                                <div class="popular-post-content">
+                                    <h4 class="popular-post-title">
+                                        <a href="#">The Future of Cloud-Based Analytics Platforms</a>
+                                    </h4>
+                                    <div class="popular-post-meta">April 10, 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Categories</h3>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#" class="category-name">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" class="category-icon">
+                                            <path fill="currentColor" d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75Z" />
+                                        </svg>
+                                        Industry Trends
+                                    </a>
+                                    <span class="category-count">24</span>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-name">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" class="category-icon">
+                                            <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                                        </svg>
+                                        Technology
+                                    </a>
+                                    <span class="category-count">32</span>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-name">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" class="category-icon">
+                                            <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                                        </svg>
+                                        Analytics
+                                    </a>
+                                    <span class="category-count">18</span>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-name">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" class="category-icon">
+                                            <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+                                        </svg>
+                                        Company News
+                                    </a>
+                                    <span class="category-count">15</span>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-name">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" class="category-icon">
+                                            <path fill="currentColor" d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z" />
+                                        </svg>
+                                        Case Studies
+                                    </a>
+                                    <span class="category-count">11</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Newsletter -->
+                        <div class="sidebar-section sidebar-newsletter">
+                            <h3 class="sidebar-title">Subscribe to Newsletter</h3>
+                            <p class="sidebar-newsletter-description">Get the latest articles and insights delivered directly to your inbox</p>
+                            <form class="sidebar-newsletter-form">
+                                <input type="email" placeholder="Your email address" class="sidebar-newsletter-input" required>
+                                <button type="submit" class="sidebar-newsletter-submit">Subscribe</button>
+                            </form>
+                        </div>
+                        
+                        <!-- Tags Cloud -->
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Popular Tags</h3>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag-item">Analytics</a>
+                                <a href="#" class="tag-item">AI</a>
+                                <a href="#" class="tag-item">Machine Learning</a>
+                                <a href="#" class="tag-item">Data Visualization</a>
+                                <a href="#" class="tag-item">Big Data</a>
+                                <a href="#" class="tag-item">Cloud</a>
+                                <a href="#" class="tag-item">NexusBI</a>
+                                <a href="#" class="tag-item">Security</a>
+                                <a href="#" class="tag-item">Innovation</a>
+                                <a href="#" class="tag-item">Insights</a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- News Card 2 -->
-                    <div class="news-card reveal-animation" data-delay="150" data-category="analytics">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHByZWRpY3RpdmUlMjBhbmFseXRpY3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Predictive Analytics" class="news-card-img">
-                            <span class="news-tag">Analytics</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">Predictive Analytics: Turning Data into Future Insights</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>April 22, 2025</span>
-                                <span>5 min read</span>
-                            </div>
-                            <p class="news-card-excerpt">Discover how predictive analytics is transforming business planning and how companies are leveraging it to gain competitive advantages.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- News Card 3 -->
-                    <div class="news-card reveal-animation" data-delay="300" data-category="company">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGNvbXBhbnklMjBvZmZpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="NexusBI Office" class="news-card-img">
-                            <span class="news-tag">Company</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">NexusBI Announces New Strategic Partnership with DataCloud</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>April 15, 2025</span>
-                                <span>3 min read</span>
-                            </div>
-                            <p class="news-card-excerpt">We're excited to announce our partnership with DataCloud to enhance our cloud-based analytics solutions for enterprise clients.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- News Card 4 -->
-                    <div class="news-card reveal-animation" data-delay="150" data-category="industry">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJldGFpbCUyMGFuYWx5dGljc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Retail Analytics" class="news-card-img">
-                            <span class="news-tag">Industry</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">How Retail Giants Are Leveraging BI to Enhance Customer Experience</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>April 8, 2025</span>
-                                <span>7 min read</span>
-                            </div>
-                            <p class="news-card-excerpt">Explore how major retailers are using business intelligence to create personalized customer experiences and drive loyalty.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- News Card 5 -->
-                    <div class="news-card reveal-animation" data-delay="300" data-category="technology">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGFydGlmaWNpYWwlMjBpbnRlbGxpZ2VuY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="AI and BI" class="news-card-img">
-                            <span class="news-tag">Technology</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">The Convergence of AI and Business Intelligence: What You Need to Know</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>April 2, 2025</span>
-                                <span>9 min read</span>
-                            </div>
-                            <p class="news-card-excerpt">Discover how artificial intelligence is revolutionizing business intelligence and creating new opportunities for data-driven organizations.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- News Card 6 -->
-                    <div class="news-card reveal-animation" data-delay="450" data-category="analytics">
-                        <div class="news-card-img-container">
-                            <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGF0YSUyMHNlY3VyaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Data Security" class="news-card-img">
-                            <span class="news-tag">Analytics</span>
-                        </div>
-                        <div class="news-card-content">
-                            <h3 class="news-card-title">
-                                <a href="#">Data Security in Business Intelligence: Best Practices for 2025</a>
-                            </h3>
-                            <div class="news-card-meta">
-                                <span>March 27, 2025</span>
-                                <span>8 min read</span>
-                            </div>
-                            <p class="news-card-excerpt">Learn about the latest security practices to protect your valuable business data in an increasingly complex threat landscape.</p>
-                            <a href="#" class="news-card-link">
-                                Read More
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Load More Button -->
-                <div class="load-more-container">
-                    <button class="btn-load-more">Load More Articles</button>
                 </div>
             </div>
         </section>
@@ -440,11 +538,37 @@
             if (statsContainer) {
                 observer.observe(statsContainer);
             }
-
+            
             // News Articles Filtering
             const filterButtons = document.querySelectorAll('.filter-btn');
-            const newsCards = document.querySelectorAll('.news-card');
-
+            const newspaperArticles = document.querySelectorAll('.newspaper-article');
+            
+            // Helper function to setup newsletter form
+            function setupNewsletterForm() {
+                const sidebarNewsletterForm = document.querySelector('.sidebar-newsletter-form');
+                if (sidebarNewsletterForm) {
+                    sidebarNewsletterForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        const newsletterSection = document.querySelector('.sidebar-newsletter');
+                        const formHTML = newsletterSection.innerHTML;
+                        
+                        // Replace form with thank you message
+                        newsletterSection.innerHTML = `
+                            <h3 class="sidebar-title">Thank You!</h3>
+                            <p class="sidebar-newsletter-description">Your subscription has been confirmed. You'll receive our next newsletter in your inbox.</p>
+                            <button class="sidebar-newsletter-submit" id="newsletter-reset">Subscribe Again</button>
+                        `;
+                        
+                        // Add event listener to reset button
+                        document.getElementById('newsletter-reset').addEventListener('click', function() {
+                            newsletterSection.innerHTML = formHTML;
+                            setupNewsletterForm();
+                        });
+                    });
+                }
+            }
+            
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     // Remove active class from all buttons
@@ -454,11 +578,11 @@
                     
                     const filter = button.getAttribute('data-filter');
                     
-                    newsCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
+                    newspaperArticles.forEach(article => {
+                        if (filter === 'all' || article.getAttribute('data-category') === filter) {
+                            article.style.display = 'block';
                         } else {
-                            card.style.display = 'none';
+                            article.style.display = 'none';
                         }
                     });
                 });
@@ -477,9 +601,7 @@
                     
                     element.style.transform = `translate(${x}px, ${y}px)`;
                 });
-            });
-
-            // Load more button functionality (simulation)
+            });            // Load more button functionality (simulation)
             const loadMoreBtn = document.querySelector('.btn-load-more');
             if (loadMoreBtn) {
                 loadMoreBtn.addEventListener('click', function() {
@@ -492,6 +614,63 @@
                     }, 1500);
                 });
             }
+              // Handle category links click
+            const categoryLinks = document.querySelectorAll('.category-name');
+            categoryLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Find the filter button that matches this category
+                    const categoryText = this.textContent.trim();
+                    const matchingFilter = Array.from(filterButtons).find(btn => 
+                        btn.querySelector('.filter-text').textContent.trim().toLowerCase() === categoryText.toLowerCase()
+                    );
+                    
+                    if (matchingFilter) {
+                        // Simulate a click on that filter button
+                        matchingFilter.click();
+                        
+                        // Scroll to the articles section
+                        const articlesSection = document.querySelector('.newspaper-articles');
+                        if (articlesSection) {
+                            articlesSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+              // Handle tag cloud clicks
+            const tagItems = document.querySelectorAll('.tag-item');
+            tagItems.forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const tagText = this.textContent.trim().toLowerCase();
+                    
+                    // Filter articles by tag (show any article that contains the tag text in the title or excerpt)
+                    newspaperArticles.forEach(article => {
+                        const title = article.querySelector('.article-title').textContent.toLowerCase();
+                        const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
+                        
+                        if (title.includes(tagText) || excerpt.includes(tagText)) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                    
+                    // Remove active class from all filter buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Scroll to the articles section
+                    const articlesSection = document.querySelector('.newspaper-articles');
+                    if (articlesSection) {
+                        articlesSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+            
+            // Handle sidebar newsletter form submission
+            setupNewsletterForm();
         });
     </script>
 </body>
