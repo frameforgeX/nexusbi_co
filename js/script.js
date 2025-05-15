@@ -8,11 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initTypingAnimation();
   initSVGAnimation();
-  // Add back the mouse gradient effect
-  initMouseGradient();
+  // Replaced initMouseGradient with particle animation
   initParticles();
   addCursorEffect();
-  initParallaxEffect(); // Initialize parallax effect for hero section
   initScrollAnimations();
   initCounters();
   initDashboardCharts();
@@ -279,256 +277,114 @@ function initSVGAnimation() {
   svg.appendChild(defs);
 }
 
-// Initialize mouse gradient effect for hero background
-function initMouseGradient() {
-  // Initialize the mouse gradient effect for hero sections
-  const mouseGradient = document.getElementById('mouse-gradient');
-  
-  if (mouseGradient) {
-    // Determine which section contains the mouse gradient (hero or services-hero)
-    const parentSection = mouseGradient.closest('.hero-section, .page-hero');
-    
-    if (parentSection) {
-      // Use RAF for smoother, more performant animations
-      let ticking = false;
-      let mouseX = 50;
-      let mouseY = 50;
-      
-      // Track mouse only within the parent section for more accurate effect
-      parentSection.addEventListener('mousemove', (e) => {
-        // Get bounds of the section
-        const rect = parentSection.getBoundingClientRect();
-        
-        // Calculate position relative to the section (0-100%)
-        mouseX = ((e.clientX - rect.left) / rect.width) * 100;
-        mouseY = ((e.clientY - rect.top) / rect.height) * 100;
-        
-        // Use requestAnimationFrame to prevent too many updates
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            // Update the CSS variables for the gradient position
-            document.documentElement.style.setProperty('--mouse-x', `${mouseX}%`);
-            document.documentElement.style.setProperty('--mouse-y', `${mouseY}%`);
-            ticking = false;
-          });
-          
-          ticking = true;
-        }
-      }, { passive: true });
-      
-      // Initialize with center position
-      document.documentElement.style.setProperty('--mouse-x', '50%');
-      document.documentElement.style.setProperty('--mouse-y', '50%');
-    }
-  }
-}
-
 // Initialize particles
 function initParticles() {
-  if (typeof particlesJS !== 'undefined') {      particlesJS('particles-js', {
+  if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
           particles: {
               number: {
-                  value: 80,  // Exact match for services page
+                  value: 85,  // Slightly reduced for better performance
                   density: {
                       enable: true,
-                      value_area: 1000  // Exact match for services page
+                      value_area: 1200  // Increased for better distribution
                   }
               },
               color: {
                   value: ["#cea64e", "#07b2b2", "#e8d4ff", "#0B3040"]  // Theme colors: gold, teal, light purple, dark blue
               },
               shape: {
-                  type: ["circle"],  // Only use circles like services page
+                  type: ["circle", "triangle"],  // Added triangle shape for visual interest
                   stroke: {
                       width: 0,
                       color: "#000000"
                   },
-              },              opacity: {
-                  value: 0.35,  // Exact match for services page
+              },
+              opacity: {
+                  value: 0.5,  // Slightly increased visibility
                   random: true,
                   anim: {
                       enable: true,
-                      speed: 0.5,  // Exact match for services page
+                      speed: 0.6,  // Slightly slower for smoother animation
                       opacity_min: 0.1,
                       sync: false
                   }
               },
               size: {
-                  value: 3,  // Exact match for services page
+                  value: 4,  // Slightly larger particles
                   random: true,
                   anim: {
-                      enable: true,
-                      speed: 2,
+                      enable: true,  // Enable size animation
+                      speed: 3,
                       size_min: 0.5,
                       sync: false
                   }
-              },              line_linked: {
+              },
+              line_linked: {
                   enable: true,
-                  distance: 150,  // Exact match for services page
+                  distance: 170,  // Increased connection distance
                   color: "#cea64e",  // Gold theme color
-                  opacity: 0.25,  // Exact match for services page
-                  width: 0.8  // Exact match for services page
-              },              move: {
+                  opacity: 0.35,  // Slightly increased opacity
+                  width: 1.2  // Slightly wider lines
+              },
+              move: {
                   enable: true,
-                  speed: 0.8,  // Exact match for services page
+                  speed: 1.2,  // Slightly slower for smoother movement
                   direction: "none",
                   random: true,
                   straight: false,
-                  out_mode: "out",  // Exact match for services page
+                  out_mode: "out",  // Changed to "out" so particles leave the canvas and new ones appear
                   bounce: false,
                   attract: {
                       enable: true,
-                      rotateX: 600,
-                      rotateY: 1200
+                      rotateX: 800,
+                      rotateY: 1500
                   }
               }
-          },          interactivity: {
+          },
+          interactivity: {
               detect_on: "canvas",
               events: {
                   onhover: {
                       enable: true,
-                      mode: "grab"
+                      mode: "grab"  // Changed to "grab" for a more intuitive interaction
                   },
                   onclick: {
                       enable: true,
-                      mode: "push"
+                      mode: "push"  // Changed to "push" to add particles on click
                   },
                   resize: true
               },
               modes: {
                   grab: {
-                      distance: 150, // Exact match for services page
+                      distance: 180,
                       line_linked: {
-                          opacity: 0.5 // Exact match for services page
+                          opacity: 0.8
                       }
                   },
                   push: {
-                      particles_nb: 4 // Exact match for services page
+                      particles_nb: 4  // Add 4 particles on click
                   }
               }
-          },          retina_detect: true,
-          fps_limit: 60  // Exact match for services page
+          },
+          retina_detect: true,
+          fps_limit: 60  // Limit FPS for better performance
       });
   }
 }
 
 // Add interactive cursor trail effect
 function addCursorEffect() {
-  // Throttle variables
-  let lastCursorCreated = 0;
-  const throttleTime = 60; // Reduced milliseconds between cursor trail elements to match services page
-  
-  // Detect if we're on mobile to disable effect
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (isMobile) return; // Don't add cursor effects on mobile
-  
-  // Interactive cursor effect - only track in the hero section to match services page
+  // Interactive cursor effect
   document.addEventListener('mousemove', (e) => {
-      // Check if we're in the hero/services hero section
-      const heroSection = e.target.closest('.hero-section, .page-hero, .services-hero');
-      if (!heroSection && !document.querySelector('.hero-section, .page-hero, .services-hero').contains(e.target)) {
-          return; // Only create trails in hero sections
-      }
+      const cursor = document.createElement('div');
+      cursor.classList.add('cursor-trail');
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+      document.body.appendChild(cursor);
       
-      const now = Date.now();
-      
-      // Only create new elements if we've passed the throttle time
-      if (now - lastCursorCreated > throttleTime) {
-          // Create cursor trail element
-          const cursor = document.createElement('div');
-          cursor.classList.add('cursor-trail');
-          cursor.style.left = e.pageX + 'px';
-          cursor.style.top = e.pageY + 'px';
-          document.body.appendChild(cursor);
-          
-          // Update the timestamp
-          lastCursorCreated = now;
-          
-          // Remove the element after animation completes
-          setTimeout(() => {
-              cursor.remove();
-          }, 800); // Match the animation duration
-      }
-  }, { passive: true }); // Add passive flag for better performance
-}
-
-// Initialize parallax effect for background elements
-function initParallaxEffect() {
-  // Find sections with parallax elements
-  const sections = [
-    document.querySelector('.hero-section'),
-    document.querySelector('.services-hero'),
-    document.querySelector('.page-hero'), // More generic selector for any page hero
-    // Add other sections if needed
-  ];
-  
-  sections.forEach(section => {
-    if (!section) return;
-    
-    const parallaxElements = section.querySelectorAll('.parallax-element');
-    if (parallaxElements.length === 0) return;
-    
-    // Use requestAnimationFrame for smoother animations
-    let ticking = false;
-    let mouseX = 0;
-    let mouseY = 0;
-    let centerX = 0;
-    let centerY = 0;
-    let rect;
-    
-    // Initialize values on load
-    const updateRect = () => {
-      rect = section.getBoundingClientRect();
-      centerX = rect.width / 2;
-      centerY = rect.height / 2;
-    };
-    
-    // Update rect on window resize
-    window.addEventListener('resize', updateRect);
-    updateRect();
-    
-    section.addEventListener('mousemove', (e) => {
-      // Get mouse position relative to the container
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-      
-      // Use requestAnimationFrame to limit updates for performance
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          // Calculate offset from center (normalized from -1 to 1)
-          const offsetX = (mouseX - centerX) / centerX;
-          const offsetY = (mouseY - centerY) / centerY;
-          
-          // Apply parallax effect to each element
-          parallaxElements.forEach(element => {
-            const speed = parseFloat(element.getAttribute('data-speed')) || 0.1;
-            const x = offsetX * speed * 100;
-            const y = offsetY * speed * 100;
-            
-            element.style.transform = `translate(${x}px, ${y}px)`;
-          });
-          
-          ticking = false;
-        });
-        
-        ticking = true;
-      }
-    }, { passive: true });
-    
-    // Reset position when mouse leaves the section
-    section.addEventListener('mouseleave', () => {
-      parallaxElements.forEach(element => {
-        element.style.transform = 'translate(0, 0)';
-        element.style.transition = 'transform 0.5s ease-out';
-      });
-    });
-    
-    // Remove transition on mouseenter for smoother effect
-    section.addEventListener('mouseenter', () => {
-      parallaxElements.forEach(element => {
-        element.style.transition = 'none';
-      });
-    });
+      setTimeout(() => {
+          cursor.remove();
+      }, 1000);
   });
 }
 

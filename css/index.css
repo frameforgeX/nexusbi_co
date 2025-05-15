@@ -14,7 +14,6 @@
   padding: 0 var(--space-m);
   text-align: center;
   padding-top: 70px; /* Increased padding to account for the fixed header on mobile */
-  z-index: 1; /* Ensure the hero section content is above the particles */
 }
 
 #typing-text {
