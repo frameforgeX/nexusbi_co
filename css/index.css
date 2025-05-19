@@ -22,6 +22,72 @@
   font-weight: 800; /* Increased font weight */
   line-height: 1.3; /* Improved line height for readability */
   text-align: center;
+  position: relative;
+  display: inline-block; /* Important for transform */
+  will-change: transform, opacity;
+}
+
+.char-wrapper {
+  display: inline-block;
+  position: relative;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  z-index: 1;
+}
+
+@keyframes disperse-up {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-150px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateY(-300px) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-down {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(150px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateY(300px) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-left {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  50% { transform: translateX(-150px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateX(-300px) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-right {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  50% { transform: translateX(150px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateX(300px) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-diagonal-upleft {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  50% { transform: translate(-120px, -120px) rotate(-45deg) scale(1.2); opacity: 0.5; }
+  100% { transform: translate(-250px, -250px) rotate(-90deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-diagonal-upright {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  50% { transform: translate(120px, -120px) rotate(45deg) scale(1.2); opacity: 0.5; }
+  100% { transform: translate(250px, -250px) rotate(90deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-diagonal-downleft {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  50% { transform: translate(-120px, 120px) rotate(45deg) scale(1.2); opacity: 0.5; }
+  100% { transform: translate(-250px, 250px) rotate(90deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes disperse-diagonal-downright {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  50% { transform: translate(120px, 120px) rotate(-45deg) scale(1.2); opacity: 0.5; }
+  100% { transform: translate(250px, 250px) rotate(-90deg) scale(0.6); opacity: 0; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .hero-content {
