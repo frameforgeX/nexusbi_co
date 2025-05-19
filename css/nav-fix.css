@@ -1,0 +1,160 @@
+/* 
+   Navigation Fix - Modern Mobile Menu Display
+   Completely redesigned mobile navigation for a compact, modern experience
+*/
+
+/* Mobile Navigation Styles */
+@media (max-width: 767px) {
+  /* Header and navigation container */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9990;
+  }
+  
+  .glass-nav {
+    background: rgba(7, 32, 48, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+    /* Mobile menu container */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 32, 48, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 9999; /* High z-index to ensure it's above everything */
+    display: flex !important; /* Force display flex */
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 70px; /* Add spacing from the top */
+  }
+  
+  /* Active mobile menu */
+  .nav-links.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: flex !important;
+  }
+  
+  /* Navigation items styling */
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-links.active li {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    display: block !important;
+  }
+  
+  /* Navigation links styling */
+  .nav-links a {
+    padding: 0.9rem 0.5rem !important;
+    display: block !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    color: #ffffff !important;
+  }
+  
+  .nav-links a::before {
+    display: none !important; /* Remove underline animation */
+  }
+  
+  /* Dropdown styling */
+  .dropdown .dropdown-menu {
+    position: static !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    padding: 0.5rem 0 !important;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin-left: 1rem !important;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    max-height: 500px !important;
+  }
+  
+  /* Dropdown items */
+  .dropdown-menu li {
+    border-bottom: none !important;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.6rem 1rem !important;
+    font-size: 14px !important;
+  }
+    /* Modern hamburger button */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
+    z-index: 10000 !important; /* Higher than the mobile menu to ensure it's always clickable */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+    /* Add padding to the body when menu is open */
+  body.menu-open {
+    padding-top: 70px;
+  }
+  
+  /* Fix for main content to ensure it doesn't overlay the fixed header */
+  main {
+    padding-top: 70px;
+  }
+}
