@@ -151,9 +151,17 @@
   padding: var(--space-xl) 0;
 }
 
+.team-leadership-section + .team-leadership-section {
+  padding-top: 0; /* Reduce padding between consecutive leadership sections */
+}
+
 .section-header {
   text-align: center;
   margin-bottom: var(--space-xl);
+}
+
+.team-leadership-section + .team-leadership-section .section-header {
+  margin-top: var(--space-xl); /* Add margin to section header in second leadership section */
 }
 
 .section-header h2 {

@@ -52,15 +52,21 @@
                 <span></span>
             </div>
         </nav>
-    </header>
-
-    <main>
+    </header>    <main>
         <!-- Hero Section -->
         <section class="about-hero">
             <div class="container">
-                <div class="hero-content" data-aos="fade-up">
+                <div class="hero-content reveal-animation">
                     <h1>About <span class="gradient-text">NexusBI</span></h1>
                     <p class="subheading">Transforming business data into strategic insights since 2018</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="about-stats">
+            <div class="container">
+                <div class="stats-container" data-aos="fade-up">
                     <div class="hero-stats">
                         <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                             <span class="counter" data-target="250">0</span><span>+</span>
@@ -75,11 +81,11 @@
                             <p>Avg. Client Growth</p>
                         </div>
                     </div>
-                </div>
-                <div class="scroll-indicator">
-                    <span>Scroll to explore</span>
-                    <div class="mouse">
-                        <div class="wheel"></div>
+                    <div class="scroll-indicator">
+                        <span>Scroll to explore</span>
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,8 +285,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Our Values Section -->
+          <!-- Our Values Section -->
         <section class="about-values">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
@@ -288,72 +293,140 @@
                     <div class="section-line"></div>
                 </div>
                 
-                <div class="values-grid">
-                    <div class="value-card" data-aos="fade-up">
-                        <div class="card-front">
-                            <div class="value-icon">
-                                <svg viewBox="0 0 24 24" width="36" height="36">
-                                    <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" />
-                                </svg>
-                            </div>
-                            <h3>Client Partnership</h3>
-                            <div class="flip-prompt">Click to learn more</div>
+                <div class="values-grid" data-aos="fade-up">
+                    <!-- Client Partnership Card -->
+                    <div class="value-card-container">
+                        <div class="value-card-tabs">
+                            <button class="value-card-tab active" data-tab="overview" data-card="client-partnership">Overview</button>
+                            <button class="value-card-tab" data-tab="details" data-card="client-partnership">Details</button>
+                            <button class="value-card-tab" data-tab="pillars" data-card="client-partnership">Pillars</button>
                         </div>
-                        <div class="card-back">
-                            <h3>Client Partnership</h3>
-                            <p>We view ourselves as an extension of your team, committed to your long-term success and growth. Your goals are our goals.</p>
-                            <div class="flip-prompt">Click to flip back</div>
+                        <div class="value-card">
+                            <div class="value-card-content active" data-content="overview" data-card="client-partnership">
+                                <div class="value-icon-large">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="currentColor" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" />
+                                    </svg>
+                                </div>
+                                <h3>Client Partnership</h3>
+                                <p>We view ourselves as an extension of your team, committed to your long-term success and growth.</p>
+                            </div>
+                            <div class="value-card-content" data-content="details" data-card="client-partnership">
+                                <h3>Client Partnership</h3>
+                                <p>We view ourselves as an extension of your team, committed to your long-term success and growth. Your goals are our goals.</p>
+                                <p>This collaborative approach allows us to understand your business deeply and develop tailored solutions that address your specific challenges and opportunities.</p>
+                            </div>
+                            <div class="value-card-content" data-content="pillars" data-card="client-partnership">
+                                <h3>Key Pillars</h3>
+                                <ul class="value-pillar-list">
+                                    <li><strong>Deep Understanding:</strong> We take time to understand your business objectives, challenges, and vision for success.</li>
+                                    <li><strong>Seamless Integration:</strong> Our team works alongside yours, sharing knowledge and expertise to achieve results.</li>
+                                    <li><strong>Long-term Commitment:</strong> We're focused on building lasting relationships that drive sustained growth.</li>
+                                    <li><strong>Transparent Communication:</strong> Clear, honest, and open dialogue at every step of our partnership.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="value-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-front">
-                            <div class="value-icon">
-                                <svg viewBox="0 0 24 24" width="36" height="36">
-                                    <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
-                                </svg>
-                            </div>
-                            <h3>Excellence</h3>
-                            <div class="flip-prompt">Click to learn more</div>
+                    <!-- Excellence Card -->
+                    <div class="value-card-container">
+                        <div class="value-card-tabs">
+                            <button class="value-card-tab active" data-tab="overview" data-card="excellence">Overview</button>
+                            <button class="value-card-tab" data-tab="details" data-card="excellence">Details</button>
+                            <button class="value-card-tab" data-tab="pillars" data-card="excellence">Pillars</button>
                         </div>
-                        <div class="card-back">
-                            <h3>Excellence</h3>
-                            <p>We are relentlessly committed to delivering exceptional quality in everything we do, from our consulting practices to the solutions we implement.</p>
-                            <div class="flip-prompt">Click to flip back</div>
+                        <div class="value-card">
+                            <div class="value-card-content active" data-content="overview" data-card="excellence">
+                                <div class="value-icon-large">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="currentColor" d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
+                                    </svg>
+                                </div>
+                                <h3>Excellence</h3>
+                                <p>We are relentlessly committed to delivering exceptional quality in everything we do.</p>
+                            </div>
+                            <div class="value-card-content" data-content="details" data-card="excellence">
+                                <h3>Excellence</h3>
+                                <p>We are relentlessly committed to delivering exceptional quality in everything we do, from our consulting practices to the solutions we implement.</p>
+                                <p>Our pursuit of excellence extends to every aspect of our service delivery, ensuring that each client receives outcomes that exceed expectations.</p>
+                            </div>
+                            <div class="value-card-content" data-content="pillars" data-card="excellence">
+                                <h3>Key Pillars</h3>
+                                <ul class="value-pillar-list">
+                                    <li><strong>Quality Assurance:</strong> Rigorous testing and validation at every stage of solution development.</li>
+                                    <li><strong>Professional Development:</strong> Continuous learning and skill enhancement for our entire team.</li>
+                                    <li><strong>Best Practices:</strong> Implementation of industry-leading methodologies and tools.</li>
+                                    <li><strong>Measurable Results:</strong> Clear metrics to demonstrate tangible business impact and ROI.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-front">
-                            <div class="value-icon">
-                                <svg viewBox="0 0 24 24" width="36" height="36">
-                                    <path fill="currentColor" d="M17.81,4.47C17.73,4.47 17.65,4.45 17.58,4.41C15.66,3.42 14,3 12,3C10.03,3 8.15,3.47 6.44,4.41C6.2,4.54 5.9,4.45 5.76,4.21C5.63,3.97 5.72,3.66 5.96,3.53C7.82,2.5 9.86,2 12,2C14.14,2 16,2.47 18.04,3.5C18.29,3.65 18.38,3.95 18.25,4.19C18.16,4.37 18,4.47 17.81,4.47M3.5,9.72C3.4,9.72 3.3,9.69 3.21,9.63C3,9.47 2.93,9.16 3.09,8.93C4.08,7.53 5.34,6.43 6.84,5.66C10,4.04 14,4.03 17.15,5.65C18.65,6.42 19.91,7.5 20.9,8.9C21.06,9.12 21,9.44 20.78,9.6C20.55,9.76 20.24,9.71 20.08,9.5C19.18,8.22 18.04,7.23 16.69,6.54C13.82,5.07 10.15,5.07 7.29,6.55C5.93,7.25 4.79,8.25 3.89,9.5C3.81,9.65 3.66,9.72 3.5,9.72Z" />
-                                </svg>
-                            </div>
-                            <h3>Innovation</h3>
-                            <div class="flip-prompt">Click to learn more</div>
+                    <!-- Innovation Card -->
+                    <div class="value-card-container">
+                        <div class="value-card-tabs">
+                            <button class="value-card-tab active" data-tab="overview" data-card="innovation">Overview</button>
+                            <button class="value-card-tab" data-tab="details" data-card="innovation">Details</button>
+                            <button class="value-card-tab" data-tab="pillars" data-card="innovation">Pillars</button>
                         </div>
-                        <div class="card-back">
-                            <h3>Innovation</h3>
-                            <p>We constantly seek new and better ways to solve complex business challenges, embracing emerging technologies and methodologies to deliver cutting-edge solutions.</p>
-                            <div class="flip-prompt">Click to flip back</div>
+                        <div class="value-card">
+                            <div class="value-card-content active" data-content="overview" data-card="innovation">
+                                <div class="value-icon-large">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="currentColor" d="M17.81,4.47C17.73,4.47 17.65,4.45 17.58,4.41C15.66,3.42 14,3 12,3C10.03,3 8.15,3.47 6.44,4.41C6.2,4.54 5.9,4.45 5.76,4.21C5.63,3.97 5.72,3.66 5.96,3.53C7.82,2.5 9.86,2 12,2C14.14,2 16,2.47 18.04,3.5C18.29,3.65 18.38,3.95 18.25,4.19C18.16,4.37 18,4.47 17.81,4.47M3.5,9.72C3.4,9.72 3.3,9.69 3.21,9.63C3,9.47 2.93,9.16 3.09,8.93C4.08,7.53 5.34,6.43 6.84,5.66C10,4.04 14,4.03 17.15,5.65C18.65,6.42 19.91,7.5 20.9,8.9C21.06,9.12 21,9.44 20.78,9.6C20.55,9.76 20.24,9.71 20.08,9.5C19.18,8.22 18.04,7.23 16.69,6.54C13.82,5.07 10.15,5.07 7.29,6.55C5.93,7.25 4.79,8.25 3.89,9.5C3.81,9.65 3.66,9.72 3.5,9.72Z" />
+                                    </svg>
+                                </div>
+                                <h3>Innovation</h3>
+                                <p>We constantly seek new and better ways to solve complex business challenges.</p>
+                            </div>
+                            <div class="value-card-content" data-content="details" data-card="innovation">
+                                <h3>Innovation</h3>
+                                <p>We constantly seek new and better ways to solve complex business challenges, embracing emerging technologies and methodologies to deliver cutting-edge solutions.</p>
+                                <p>Our innovation mindset helps clients stay ahead of industry trends and leverage the latest advancements in data science and business intelligence.</p>
+                            </div>
+                            <div class="value-card-content" data-content="pillars" data-card="innovation">
+                                <h3>Key Pillars</h3>
+                                <ul class="value-pillar-list">
+                                    <li><strong>R&D Investment:</strong> Dedicated resources for exploring new technologies and approaches.</li>
+                                    <li><strong>Experimentation:</strong> Systematic testing of emerging tools and methodologies.</li>
+                                    <li><strong>Creative Problem-Solving:</strong> Novel approaches to tackle challenging business issues.</li>
+                                    <li><strong>Adaptive Thinking:</strong> Flexibility to evolve with changing market conditions and opportunities.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="value-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card-front">
-                            <div class="value-icon">
-                                <svg viewBox="0 0 24 24" width="36" height="36">
-                                    <path fill="currentColor" d="M19,3H14.82C14.25,1.44 12.53,0.64 11,1.2C10.14,1.5 9.5,2.16 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M7.5,13.5L9,12L11,14L15.5,9.5L17,11L11,17L7.5,13.5Z" />
-                                </svg>
-                            </div>
-                            <h3>Integrity</h3>
-                            <div class="flip-prompt">Click to learn more</div>
+                    <!-- Integrity Card -->
+                    <div class="value-card-container">
+                        <div class="value-card-tabs">
+                            <button class="value-card-tab active" data-tab="overview" data-card="integrity">Overview</button>
+                            <button class="value-card-tab" data-tab="details" data-card="integrity">Details</button>
+                            <button class="value-card-tab" data-tab="pillars" data-card="integrity">Pillars</button>
                         </div>
-                        <div class="card-back">
-                            <h3>Integrity</h3>
-                            <p>We operate with transparency, honesty, and ethical standards in all we do, ensuring that our clients can trust our advice and recommendations completely.</p>
-                            <div class="flip-prompt">Click to flip back</div>
+                        <div class="value-card">
+                            <div class="value-card-content active" data-content="overview" data-card="integrity">
+                                <div class="value-icon-large">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="currentColor" d="M19,3H14.82C14.25,1.44 12.53,0.64 11,1.2C10.14,1.5 9.5,2.16 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M7.5,13.5L9,12L11,14L15.5,9.5L17,11L11,17L7.5,13.5Z" />
+                                    </svg>
+                                </div>
+                                <h3>Integrity</h3>
+                                <p>We operate with transparency, honesty, and ethical standards in all we do.</p>
+                            </div>
+                            <div class="value-card-content" data-content="details" data-card="integrity">
+                                <h3>Integrity</h3>
+                                <p>We operate with transparency, honesty, and ethical standards in all we do, ensuring that our clients can trust our advice and recommendations completely.</p>
+                                <p>Our commitment to integrity extends beyond our client relationships to all stakeholders, including our team, partners, and the wider community.</p>
+                            </div>
+                            <div class="value-card-content" data-content="pillars" data-card="integrity">
+                                <h3>Key Pillars</h3>
+                                <ul class="value-pillar-list">
+                                    <li><strong>Transparent Practices:</strong> Clear communication about processes, challenges, and results.</li>
+                                    <li><strong>Ethical Decision-Making:</strong> Doing what's right, even when it's challenging.</li>
+                                    <li><strong>Accountability:</strong> Taking responsibility for our advice, actions, and outcomes.</li>
+                                    <li><strong>Data Privacy:</strong> Strict adherence to confidentiality and information security.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -450,10 +523,9 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </section>    </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-grid">
