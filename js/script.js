@@ -132,12 +132,79 @@ function initTypingAnimation() {
   let index = 0;
   let isDeleting = false;
   let typingInterval;
+  let explosionTimeout;
+  const originalText = text;
   
   // Ensure clean start
   clearTimeout(typingInterval);
   typingElement.style.transition = 'none';
   typingElement.style.opacity = '1';
   typingElement.textContent = '|';
+
+  // Function to create the explosion effect
+  function explodeText() {
+    // Clear any existing timeout
+    if (explosionTimeout) {
+      clearTimeout(explosionTimeout);
+    }
+    
+    // Get the current text
+    const currentText = text.substring(0, index);
+    
+    // Clear the typing element
+    typingElement.innerHTML = '';
+    
+    // Create span for each character
+    for (let i = 0; i < currentText.length; i++) {
+      const char = currentText[i];
+      const charSpan = document.createElement('span');
+      charSpan.className = 'exploding-char';
+      charSpan.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
+      charSpan.style.display = 'inline-block';
+      charSpan.style.position = 'relative';
+      charSpan.style.willChange = 'transform, opacity';
+      typingElement.appendChild(charSpan);
+    }
+    
+    // Apply random explosion animations to each character
+    const chars = typingElement.querySelectorAll('.exploding-char');
+    
+    const animations = [
+      'disperse-up', 
+      'disperse-down', 
+      'disperse-left', 
+      'disperse-right',
+      'disperse-diagonal-upleft',
+      'disperse-diagonal-upright',
+      'disperse-diagonal-downleft',
+      'disperse-diagonal-downright'
+    ];
+    
+    chars.forEach(charSpan => {
+      // Select a random animation
+      const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+      // Random duration between 0.5 and 1.5 seconds
+      const duration = 0.5 + Math.random();
+      // Random delay up to 0.3 seconds for more natural effect
+      const delay = Math.random() * 0.3;
+      
+      charSpan.style.animation = `${randomAnim} ${duration}s ease-out ${delay}s forwards`;
+    });
+    
+    // Reset after the explosion is complete
+    explosionTimeout = setTimeout(() => {
+      // Reset index and prepare for typing again
+      typingElement.innerHTML = '';
+      index = 0;
+      typingElement.textContent = '|';
+      isDeleting = false;
+      
+      // Start typing again
+      setTimeout(() => {
+        typingInterval = setTimeout(type, 300);
+      }, 500);
+    }, 2000); // Wait 2 seconds after the explosion starts
+  }
 
   function type() {
     // Clear any existing timeouts to prevent animation issues
@@ -154,38 +221,15 @@ function initTypingAnimation() {
       index++;
       typingInterval = setTimeout(type, 80 + Math.random() * 30); // Reduced randomness for stability
     } else if (isDeleting) {
-      // Smooth disappear effect using CSS opacity
-      typingElement.style.transition = 'opacity 0.8s ease-out';
-      typingElement.style.opacity = '0';
-      
-      // After the fade-out completes, reset text and fade back in
-      setTimeout(() => {
-        // Reset transition to none for immediate reset
-        typingElement.style.transition = 'none';
-        index = 0;
-        typingElement.textContent = '|';
-        isDeleting = false;
-        
-        // Force browser reflow to ensure transition is applied
-        typingElement.offsetHeight;
-        
-        // Now fade back in
-        setTimeout(() => {
-          typingElement.style.transition = 'opacity 0.6s ease-in';
-          typingElement.style.opacity = '1';
-          
-          // Start typing again after fade-in completes
-          setTimeout(() => {
-            typingInterval = setTimeout(type, 200);
-          }, 600);
-        }, 50);
-      }, 800);
+      // Start explosion effect instead of fade out
+      explodeText();
     } else {
       // Full text displayed, pause before disappearing
       isDeleting = true;
       typingInterval = setTimeout(type, 2000);
     }
   }
+  
   // Start typing animation with a small delay to ensure DOM is ready
   setTimeout(type, 100);
   
@@ -193,6 +237,9 @@ function initTypingAnimation() {
   window.addEventListener('beforeunload', () => {
     if (typingInterval) {
       clearTimeout(typingInterval);
+    }
+    if (explosionTimeout) {
+      clearTimeout(explosionTimeout);
     }
   });
 }
@@ -1484,3 +1531,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function ensureFolderStructure() {
   // This would require backend functionality, but we're doing frontend only
 }
+
+// Subheading Explosion Effect function has been removed
+// The explosion effect is now directly integrated into the initTypingAnimation() function
