@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - NexusBI</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/careers.css">    <meta name="description" content="Explore career opportunities at NexusBI. Join our team of business intelligence experts and help shape the future of data-driven decision making.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/careers.css">
+    <link rel="stylesheet" href="./css/careers-modal.css"><meta name="description" content="Explore career opportunities at NexusBI. Join our team of business intelligence experts and help shape the future of data-driven decision making.">
     <meta name="theme-color" content="#121212">
     <link rel="icon" href="./Assets/Images/logo.png">
     <!-- Particles.js library -->
@@ -207,9 +207,8 @@
                                 <li>Experience with visualization tools like Power BI or Tableau</li>
                                 <li>Strong problem-solving and analytical skills</li>
                             </ul>
-                        </div>
-                        <div class="job-listing-footer">
-                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                        </div>                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply-btn" data-job-title="Senior Data Analyst">Apply Now</a>
                             <div class="job-date">Posted: May 2, 2025</div>
                         </div>
                     </div>
@@ -263,9 +262,8 @@
                                 <li>Familiarity with database technology (SQL, NoSQL)</li>
                                 <li>Understanding of API design and development</li>
                             </ul>
-                        </div>
-                        <div class="job-listing-footer">
-                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                        </div>                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply-btn" data-job-title="Full Stack Developer">Apply Now</a>
                             <div class="job-date">Posted: April 28, 2025</div>
                         </div>
                     </div>
@@ -319,9 +317,8 @@
                                 <li>Excellent communication and presentation skills</li>
                                 <li>Ability to translate complex technical concepts to non-technical audiences</li>
                             </ul>
-                        </div>
-                        <div class="job-listing-footer">
-                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                        </div>                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply-btn" data-job-title="Business Intelligence Consultant">Apply Now</a>
                             <div class="job-date">Posted: May 8, 2025</div>
                         </div>
                     </div>
@@ -375,9 +372,8 @@
                                 <li>Excellent communication and interpersonal skills</li>
                                 <li>Ability to multi-task and manage competing priorities</li>
                             </ul>
-                        </div>
-                        <div class="job-listing-footer">
-                            <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                        </div>                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply-btn" data-job-title="Operations Manager">Apply Now</a>
                             <div class="job-date">Posted: May 5, 2025</div>
                         </div>
                     </div>
@@ -566,19 +562,265 @@
                 </div>
             </div>
         </div>
-    </footer>
-
-    <!-- AI Consultation Widget -->
+    </footer>    <!-- AI Consultation Widget -->
     <div id="ai-widget-container" class="ai-widget-container">
         <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open chat assistant">
             <svg viewBox="0 0 24 24" width="24" height="24">
                 <path fill="currentColor" d="M12,2C6.486,2,2,6.486,2,12v0.031C2,17.514,6.486,22,12,22s10-4.486,10-10v-0.031C22,6.486,17.514,2,12,2z M12,20 c-4.411,0-8-3.589-8-8v-0.031c0-4.411,3.589-8,8-8s8,3.589,8,8V12C20,16.411,16.411,20,12,20z M13,7h-2v6h2V7z M13,15h-2v2h2 V15z" />
             </svg>
         </button>
+    </div>    <!-- Job Application Modal -->
+    <div id="application-modal" class="application-modal">
+        <div class="application-modal-content">
+            <div class="modal-header">
+                <h3>Apply for <span id="job-title-placeholder">Position</span></h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Progress Bar -->
+                <div class="form-progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                    <div class="step active" data-step="1">
+                        1
+                        <span class="step-label">Personal Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        2
+                        <span class="step-label">Resume</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        3
+                        <span class="step-label">Experience</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        4
+                        <span class="step-label">Final Step</span>
+                    </div>
+                </div>
+                  <form id="job-application-form" class="application-form">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-title">Personal Information</h3>
+                        <div class="form-group">
+                            <label for="full-name">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+                                    </svg>
+                                </span>
+                                Full Name
+                            </label>
+                            <input type="text" id="full-name" name="full-name" required>
+                            <span class="error-message">Please enter your full name</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                                    </svg>
+                                </span>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Please enter a valid email address</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                                    </svg>
+                                </span>
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message">Please enter a valid phone number</span>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="nav-button next-btn" data-next="2">
+                                Next Step
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                      <!-- Step 2: Resume Upload -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-title">Resume Upload</h3>
+                        <div class="form-group">
+                            <label for="resume">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M13,13V16H10V13H8L12,9L16,13H13Z" />
+                                    </svg>
+                                </span>
+                                Resume/CV
+                            </label>
+                            <div class="file-input-container">
+                                <label for="resume" class="file-input-button">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" style="margin-right: 8px;">
+                                        <path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" />
+                                    </svg>
+                                    Choose File or Drop Here
+                                </label>
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required style="display: none;">
+                                <div class="file-name" id="file-name">No file chosen</div>
+                            </div>
+                            <span class="error-message">Please upload your resume/CV</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cover-letter">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M21,6V8H3V6H21M3,18H12V16H3V18M3,13H21V11H3V13Z" />
+                                    </svg>
+                                </span>
+                                Cover Letter (Optional)
+                            </label>
+                            <textarea id="cover-letter" name="cover-letter" rows="4"></textarea>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="nav-button prev-btn" data-prev="1">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                                </svg>
+                                Previous
+                            </button>
+                            <button type="button" class="nav-button next-btn" data-next="3">
+                                Next Step
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                      <!-- Step 3: Work Experience -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="step-title">Work Experience</h3>
+                        <div class="form-group">
+                            <label for="current-company">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V3H2V21H22V7H12Z" />
+                                    </svg>
+                                </span>
+                                Current Company (Optional)
+                            </label>
+                            <input type="text" id="current-company" name="current-company">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M20,6H16V4A2,2 0 0,0 14,2H10C8.89,2 8,2.89 8,4V6H4C2.89,6 2,6.89 2,8V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V8A2,2 0 0,0 20,6M10,4H14V6H10V4M12,9A2.5,2.5 0 0,1 14.5,11.5A2.5,2.5 0 0,1 12,14A2.5,2.5 0 0,1 9.5,11.5A2.5,2.5 0 0,1 12,9M17,19H7V17.75C7,16.37 9.24,15.25 12,15.25C14.76,15.25 17,16.37 17,17.75V19Z" />
+                                    </svg>
+                                </span>
+                                Years of Experience
+                            </label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select experience</option>
+                                <option value="0-1">Less than 1 year</option>
+                                <option value="1-3">1-3 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                            <span class="error-message">Please select your experience level</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="skills">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
+                                    </svg>
+                                </span>
+                                Key Skills (Separate with commas)
+                            </label>
+                            <input type="text" id="skills" name="skills" required>
+                            <span class="error-message">Please enter at least one skill</span>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="nav-button prev-btn" data-prev="2">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                                </svg>
+                                Previous
+                            </button>
+                            <button type="button" class="nav-button next-btn" data-next="4">
+                                Next Step
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                      <!-- Step 4: Final Details -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="step-title">Final Details</h3>
+                        <div class="form-group">
+                            <label for="start-date">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+                                    </svg>
+                                </span>
+                                Available Start Date
+                            </label>
+                            <input type="date" id="start-date" name="start-date" required>
+                            <span class="error-message">Please select an available start date</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
+                                    </svg>
+                                </span>
+                                Salary Expectation (Optional)
+                            </label>
+                            <input type="text" id="salary" name="salary" placeholder="e.g. $50,000 - $60,000">
+                        </div>
+                        <div class="form-group">
+                            <label for="referral">
+                                <span class="label-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M16,9C18.33,9 23,10.17 23,12.5V15H17V12.5C17,11 16.19,9.89 15.04,9.05L16,9M8,9C10.33,9 15,10.17 15,12.5V15H1V12.5C1,10.17 5.67,9 8,9M8,7A3,3 0 0,1 5,4A3,3 0 0,1 8,1A3,3 0 0,1 11,4A3,3 0 0,1 8,7M16,7A3,3 0 0,1 13,4A3,3 0 0,1 16,1A3,3 0 0,1 19,4A3,3 0 0,1 16,7Z" />
+                                    </svg>
+                                </span>
+                                How did you hear about us? (Optional)
+                            </label>
+                            <select id="referral" name="referral">
+                                <option value="">Select an option</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="job-board">Job Board</option>
+                                <option value="website">Company Website</option>
+                                <option value="employee">Employee Referral</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="nav-button prev-btn" data-prev="3">
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+                                </svg>
+                                Previous
+                            </button>
+                            <button type="submit" class="nav-button submit-btn">
+                                Submit Application
+                                <svg viewBox="0 0 24 24" width="18" height="18">
+                                    <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <script src="./js/script.js"></script>
-    <script>
+    <script src="./js/script.js"></script>    <script>
         // Animation for number counting
         document.addEventListener('DOMContentLoaded', function() {
             // Function to animate counting
@@ -670,6 +912,267 @@
             // Observe job content sections
             document.querySelectorAll('.job-listing-content').forEach(content => {
                 jobDetailsObserver.observe(content);
+            });            // Application Modal Functionality
+            const modal = document.getElementById('application-modal');
+            const closeBtn = document.getElementById('modal-close');
+            const jobTitlePlaceholder = document.getElementById('job-title-placeholder');
+            const applyButtons = document.querySelectorAll('.job-apply-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const steps = document.querySelectorAll('.step');
+            const formSteps = document.querySelectorAll('.form-step');
+            const nextButtons = document.querySelectorAll('.next-btn');
+            const prevButtons = document.querySelectorAll('.prev-btn');
+            const fileInput = document.getElementById('resume');
+            const fileName = document.getElementById('file-name');
+            let currentStep = 1;
+            
+            // File input change handler
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileName.textContent = this.files[0].name;
+                    fileName.style.color = 'var(--color-primary)';
+                } else {
+                    fileName.textContent = 'No file chosen';
+                    fileName.style.color = 'var(--color-text-muted)';
+                }
+            });
+            
+            // Drag and drop functionality for file input
+            const fileInputButton = document.querySelector('.file-input-button');
+            
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                fileInputButton.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            ['dragenter', 'dragover'].forEach(eventName => {
+                fileInputButton.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                fileInputButton.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                fileInputButton.style.background = 'rgba(206, 166, 78, 0.3)';
+                fileInputButton.style.borderColor = 'var(--color-primary)';
+            }
+            
+            function unhighlight() {
+                fileInputButton.style.background = 'rgba(206, 166, 78, 0.15)';
+                fileInputButton.style.borderColor = 'var(--color-primary)';
+            }
+            
+            fileInputButton.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                fileInput.files = files;
+                
+                if (files.length > 0) {
+                    fileName.textContent = files[0].name;
+                    fileName.style.color = 'var(--color-primary)';
+                }
+            }
+            
+            // Update progress bar
+            function updateProgressBar() {
+                const percent = ((currentStep - 1) / (steps.length - 1)) * 100;
+                progressBar.style.width = `${percent}%`;
+            }
+            
+            // Update active step
+            function updateSteps() {
+                steps.forEach(step => {
+                    const stepNum = parseInt(step.getAttribute('data-step'));
+                    step.classList.remove('active', 'complete');
+                    
+                    if (stepNum === currentStep) {
+                        step.classList.add('active');
+                    } else if (stepNum < currentStep) {
+                        step.classList.add('complete');
+                        step.innerHTML = `
+                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+                            </svg>
+                        `;
+                    } else {
+                        step.textContent = stepNum;
+                    }
+                });
+            }
+            
+            // Show current step
+            function showCurrentStep() {
+                formSteps.forEach(step => {
+                    step.classList.remove('active');
+                    if (parseInt(step.getAttribute('data-step')) === currentStep) {
+                        step.classList.add('active');
+                    }
+                });
+            }
+            
+            // Validate current step
+            function validateStep(stepNumber) {
+                const currentFormStep = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+                const inputs = currentFormStep.querySelectorAll('input[required], select[required], textarea[required]');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    const formGroup = input.closest('.form-group');
+                    formGroup.classList.remove('has-error');
+                    
+                    if (!input.value) {
+                        formGroup.classList.add('has-error');
+                        isValid = false;
+                    } else if (input.type === 'email' && !validateEmail(input.value)) {
+                        formGroup.classList.add('has-error');
+                        isValid = false;
+                    }
+                });
+                
+                return isValid;
+            }
+            
+            function validateEmail(email) {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+            
+            // Next button click handler
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextStep = parseInt(this.getAttribute('data-next'));
+                    
+                    if (validateStep(currentStep)) {
+                        currentStep = nextStep;
+                        updateProgressBar();
+                        updateSteps();
+                        showCurrentStep();
+                    }
+                });
+            });
+            
+            // Previous button click handler
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStep = parseInt(this.getAttribute('data-prev'));
+                    currentStep = prevStep;
+                    updateProgressBar();
+                    updateSteps();
+                    showCurrentStep();
+                });
+            });
+            
+            // Initialize progress bar
+            updateProgressBar();
+            
+            // Open modal when Apply Now button is clicked
+            applyButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const jobTitle = this.getAttribute('data-job-title');
+                    jobTitlePlaceholder.textContent = jobTitle;
+                    modal.classList.add('modal-open');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    
+                    // Reset form to first step
+                    currentStep = 1;
+                    updateProgressBar();
+                    updateSteps();
+                    showCurrentStep();
+                    
+                    // Reset form fields
+                    document.getElementById('job-application-form').reset();
+                    fileName.textContent = 'No file chosen';
+                    fileName.style.color = 'var(--color-text-muted)';
+                    
+                    // Remove any error states
+                    document.querySelectorAll('.form-group').forEach(group => {
+                        group.classList.remove('has-error');
+                    });
+                });
+            });
+            
+            // Close modal when X button is clicked
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('modal-open');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+            
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('modal-open');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+            
+            // Create confetti effect
+            function createConfetti() {
+                const confettiContainer = document.querySelector('.modal-body');
+                const colors = ['#CEA64E', '#E0C088', '#F0D6A0', '#FFFFFF'];
+                
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.width = Math.random() * 10 + 5 + 'px';
+                    confetti.style.height = Math.random() * 10 + 5 + 'px';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    confettiContainer.appendChild(confetti);
+                }
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    const confettiElements = document.querySelectorAll('.confetti');
+                    confettiElements.forEach(element => {
+                        element.remove();
+                    });
+                }, 5000);
+            }
+            
+            // Handle form submission
+            const applicationForm = document.getElementById('job-application-form');
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateStep(currentStep)) {
+                    // Here you would typically send the form data to a server
+                    // For now, let's just show a success message with confetti
+                    createConfetti();
+                    
+                    applicationForm.innerHTML = `
+                        <div class="success-message">
+                            <div class="success-icon">
+                                <svg viewBox="0 0 24 24" width="100%" height="100%">
+                                    <path fill="var(--color-primary)" d="M12,2C6.5,2 2,6.5 2,12C2,17.5 6.5,22 12,22C17.5,22 22,17.5 22,12C22,6.5 17.5,2 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z" />
+                                </svg>
+                            </div>
+                            <h4>Application Submitted!</h4>
+                            <p>Thank you for your interest in joining NexusBI. We've received your application and will review it carefully. Expect to hear from our team within the next few days.</p>
+                        </div>
+                    `;
+                    
+                    // Close the modal after 5 seconds
+                    setTimeout(function() {
+                        modal.classList.remove('modal-open');
+                        document.body.style.overflow = ''; // Re-enable scrolling
+                        
+                        // Reset the form after it's closed
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 500);
+                    }, 5000);
+                }
             });
         });
     </script>
