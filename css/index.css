@@ -189,16 +189,19 @@
 
 /* Background glow effect removed to keep only particles.js animation */
 
-/* Sample Design Section - Mobile First */
+/* Sample Design Section - with background */
 .sample-design-container {
   padding: var(--space-xl) var(--space-m);
   position: relative;
   overflow: hidden;
+  background-color: var(--color-bg-alt);
 }
 
 .sample-design-container .split-content {
   padding-right: var(--space-m);
   text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .sample-design-container .split-content h2 {
@@ -232,13 +235,25 @@
   transform: scale(1.02);
 }
 
-/* About Section - Mobile First */
-.about-section, .expertise-section, .approach-section {
+/* About Section - with background */
+.about-section {
+  padding: var(--space-xl) var(--space-m);
+  position: relative;
+  background-color: var(--color-secondary);
+}
+
+/* Expertise Section - with background */
+.expertise-section {
+  padding: var(--space-xl) var(--space-m);
+  position: relative;
+  background: linear-gradient(rgba(7, 32, 48, 0.75), rgba(7, 32, 48, 0.9));
+}
+
+/* Approach Section - Mobile First */
+.approach-section {
   padding: var(--space-xl) var(--space-m);
   position: relative;
 }
-
-/* Background removed from expertise-section to keep only particles.js animation */
 
 .about-section h2.section-title, 
 .expertise-section h2.section-title,
@@ -289,11 +304,13 @@
   text-align: center;
 }
 
-/* Services Section - Mobile First */
+/* Services Section - with background */
 .services-section {
   padding: var(--space-xl) var(--space-m);
   position: relative;
   overflow: hidden;
+  /* background: linear-gradient(rgba(7, 32, 48, 0.65), rgba(7, 32, 48, 0.8)); */
+  background-color: var(--color-secondary);
 }
 
 .services-grid {
@@ -563,10 +580,11 @@
   font-weight: 700;
 }
 
-/* Studios Section - Home Page Specific - Mobile First */
+/* Studios Section - with background */
 .studios-section {
   padding: var(--space-xl) var(--space-m);
   position: relative;
+  background-color: var(--color-bg-alt);
 }
 
 .section-subtitle {
@@ -1344,6 +1362,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: var(--color-secondary);
 }
 
 .cta-content {
@@ -1402,4 +1421,37 @@
     font-size: 1.1rem;
     padding: var(--space-s) var(--space-xxl);
   }
+}
+
+/* Ensure content is on top of backgrounds */
+.about-section .container,
+.expertise-section .container,
+.services-section .container,
+.studios-section .container,
+.contact-cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure text is readable on darker backgrounds */
+.sample-design-container h2,
+.about-section h2,
+.expertise-section h2,
+.services-section h2,
+.studios-section h2,
+.contact-cta-section h2 {
+  color: var(--color-text-light);
+}
+
+.sample-design-container p,
+.about-section p,
+.expertise-section p,
+.services-section p,
+.studios-section p,
+.contact-cta-section p,
+.about-section li,
+.expertise-section li,
+.feature-text h4,
+.feature-text p {
+  color: var(--color-text-light);
 }
