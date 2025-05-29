@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers - NexusBI</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Careers - NexusBI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/careers.css">
-    <link rel="stylesheet" href="./css/careers-modal.css">
-    <link rel="stylesheet" href="./css/footer-fix.css"><meta name="description"content="Explore career opportunities at NexusBI. Join our team of business intelligence experts and help shape the future of data-driven decision making.">
+    <meta name="description" content="Explore career opportunities at NexusBI. Join our team of business intelligence experts and help shape the future of data-driven decision making.">
     <meta name="theme-color" content="#121212">
-    <link rel="icon" href="./Assets/Images/logo.png">
+    <link rel="icon" href="data:,">
     <!-- Particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -22,7 +23,9 @@
             <div class="logo">
                 <a href="index.html">
                     <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo">
-                </a>            </div>            <ul class="nav-links">
+                </a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li class="dropdown">
@@ -107,275 +110,279 @@
                 <div class="parallax-element element-3" data-speed="0.08"></div>
                 <div class="parallax-element element-4" data-speed="-0.06"></div>
             </div>
-        </section>
-
-        <!-- Current Openings Section -->
-        <section class="job-listings-section">
+        </section>        <!-- Career Opportunities Section -->
+        <section class="career-opportunities">
             <div class="container">
-                <!-- Job Filter Buttons -->
-                <div class="job-filters-container reveal-animation" data-delay="200">
-                    <h3 class="filters-title">Current Openings</h3>
-                    <div class="job-filters" id="job-filters">
-                        <button class="filter-btn active" data-filter="all">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">All</span>
-                        </button>
-                        <button class="filter-btn" data-filter="technology">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Technology</span>
-                        </button>
-                        <button class="filter-btn" data-filter="analysis">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Analysis</span>
-                        </button>
-                        <button class="filter-btn" data-filter="consulting">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Consulting</span>
-                        </button>
-                        <button class="filter-btn" data-filter="operations">
-                            <span class="filter-icon">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.8,2 12.5,2H11.5Z" />
-                                </svg>
-                            </span>
-                            <span class="filter-text">Operations</span>
-                        </button>
+                <h2 class="section-title reveal-animation">Career Opportunities</h2>
+                <div class="opportunities-grid">
+                    <!-- Professional Positions Card -->
+                    <div class="opportunity-card reveal-animation">
+                        <div class="opportunity-image">
+                            <img src="./Assets/Images/impact-employee.jpg" alt="Professional Positions at NexusBI">
+                        </div>
+                        <div class="opportunity-content">                            <h3>Professional Positions</h3>
+                            <p>Join our team of experts and work on cutting-edge business intelligence solutions. We offer diverse opportunities for experienced professionals across technology, analysis, and consulting.</p>
+                            <button class="btn-primary open-jobs" data-category="professional">View Positions</button>
+                        </div>
+                    </div>
+
+                    <!-- NSS Positions Card -->
+                    <div class="opportunity-card reveal-animation" data-delay="150">
+                        <div class="opportunity-image">
+                            <img src="./Assets/Images/impact-employee.jpg" alt="NSS Positions at NexusBI">
+                        </div>
+                        <div class="opportunity-content">
+                            <h3>NSS Positions</h3>
+                            <p>Start your career journey through the National Service Scheme. Gain hands-on experience and mentorship while contributing to impactful projects in the business intelligence sector.</p>
+                            <button class="btn-primary open-jobs" data-category="nss">View Opportunities</button>
+                        </div>
+                    </div>
+
+                    <!-- Internships Card -->
+                    <div class="opportunity-card reveal-animation" data-delay="300">
+                        <div class="opportunity-image">
+                            <img src="./Assets/Images/impact-employee.jpg" alt="Internships at NexusBI">
+                        </div>
+                        <div class="opportunity-content">
+                            <h3>Internships</h3>
+                            <p>Build your foundation in business intelligence through our structured internship programs. Learn from industry experts and work on real-world projects that make a difference.</p>
+                            <button class="btn-primary open-jobs" data-category="internship">Explore Programs</button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="job-listings-grid">
-                    <!-- Data Analyst Job -->
-                    <div class="job-listing-card reveal-animation" data-category="analysis">
-                        <div class="job-listing-header">
-                            <div class="job-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
-                                </svg>
-                            </div>
-                            <div class="job-title-group">
-                                <h2 class="job-category-name">Senior Data Analyst</h2>
-                                <div class="job-meta">
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-                                        </svg>
-                                        Full-time
-                                    </div>
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                                        </svg>
-                                        Hybrid (3 days in-office)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="job-listing-content">
-                            <div class="job-description">
-                                <p>We're looking for an experienced Data Analyst to join our team and help clients extract meaningful insights from their data. In this role, you'll work closely with our consulting team to develop data models, create visualizations, and provide data-driven recommendations to clients.</p>
-                            </div>
-                            <ul class="job-details-list">
-                                <li>Design and develop reports and dashboards using tools like Power BI, Tableau, or similar</li>
-                                <li>Extract, transform, and load data from various sources</li>
-                                <li>Identify trends and patterns in complex datasets</li>
-                                <li>Collaborate with cross-functional teams to understand business requirements</li>
-                                <li>Present findings to stakeholders and provide actionable recommendations</li>
-                                <li>Implement data quality and governance procedures</li>
-                            </ul>
-                        </div>
-                        <div class="job-requirements">
-                            <h4>Requirements:</h4>
-                            <ul>
-                                <li>Bachelor's degree in Statistics, Mathematics, Computer Science, or related field</li>
-                                <li>3+ years experience in data analysis and business intelligence</li>
-                                <li>Proficiency in SQL and Excel</li>
-                                <li>Experience with visualization tools like Power BI or Tableau</li>
-                                <li>Strong problem-solving and analytical skills</li>
-                            </ul>
-                        </div>                        <div class="job-listing-footer">
-                            <a href="#" class="job-apply-btn" data-job-title="Senior Data Analyst">Apply Now</a>
-                            <div class="job-date">Posted: May 2, 2025</div>
-                        </div>
-                    </div>
+            </div>
+        </section>
 
-                    <!-- Software Developer Job -->
-                    <div class="job-listing-card reveal-animation" data-delay="150" data-category="technology">
-                        <div class="job-listing-header">
-                            <div class="job-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
-                                </svg>
-                            </div>
-                            <div class="job-title-group">
-                                <h2 class="job-category-name">Full Stack Developer</h2>
-                                <div class="job-meta">
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-                                        </svg>
-                                        Full-time
-                                    </div>
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                                        </svg>
-                                        Remote (with occasional travel)
+        <!-- Job Listings Modal -->
+        <div id="jobListingsModal" class="job-listings-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Available Positions</h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="job-listings-grid">
+                        <!-- Data Analyst Job -->
+                        <div class="job-listing-card reveal-animation" data-category="analysis">
+                            <div class="job-listing-header">
+                                <div class="job-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                                    </svg>
+                                </div>
+                                <div class="job-title-group">
+                                    <h2 class="job-category-name">Senior Data Analyst</h2>
+                                    <div class="job-meta">
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                            </svg>
+                                            Full-time
+                                        </div>
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                            </svg>
+                                            Hybrid (3 days in-office)
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="job-listing-content">
-                            <div class="job-description">
-                                <p>We are seeking a talented Full Stack Developer to join our technology team. In this role, you'll be responsible for developing and implementing custom business intelligence solutions for our clients, working with the latest technologies to create scalable, efficient applications.</p>
+                            <div class="job-listing-content">
+                                <div class="job-description">
+                                    <p>We're looking for an experienced Data Analyst to join our team and help clients extract meaningful insights from their data. In this role, you'll work closely with our consulting team to develop data models, create visualizations, and provide data-driven recommendations to clients.</p>
+                                </div>
+                                <ul class="job-details-list">
+                                    <li>Design and develop reports and dashboards using tools like Power BI, Tableau, or similar</li>
+                                    <li>Extract, transform, and load data from various sources</li>
+                                    <li>Identify trends and patterns in complex datasets</li>
+                                    <li>Collaborate with cross-functional teams to understand business requirements</li>
+                                    <li>Present findings to stakeholders and provide actionable recommendations</li>
+                                    <li>Implement data quality and governance procedures</li>
+                                </ul>
                             </div>
-                            <ul class="job-details-list">
-                                <li>Design and build advanced applications for various business requirements</li>
-                                <li>Develop back-end components and connect applications to other web services</li>
-                                <li>Create and maintain front-end functionality with a focus on user experience</li>
-                                <li>Optimize applications for maximum performance and scalability</li>
-                                <li>Collaborate with designers, product managers, and other developers</li>
-                                <li>Implement security and data protection measures</li>
-                            </ul>
+                            <div class="job-requirements">
+                                <h4>Requirements:</h4>
+                                <ul>
+                                    <li>Bachelor's degree in Statistics, Mathematics, Computer Science, or related field</li>
+                                    <li>3+ years experience in data analysis and business intelligence</li>
+                                    <li>Proficiency in SQL and Excel</li>
+                                    <li>Experience with visualization tools like Power BI or Tableau</li>
+                                    <li>Strong problem-solving and analytical skills</li>
+                                </ul>
+                            </div>
+                            <div class="job-listing-footer">
+                                <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                                <div class="job-date">Posted: May 2, 2025</div>
+                            </div>
                         </div>
-                        <div class="job-requirements">
-                            <h4>Requirements:</h4>
-                            <ul>
-                                <li>Bachelor's degree in Computer Science or related field</li>
-                                <li>3+ years experience in full stack development</li>
-                                <li>Proficiency in JavaScript and at least one modern framework (React, Angular, Vue)</li>
-                                <li>Experience with server-side languages (Python, Node.js, etc.)</li>
-                                <li>Familiarity with database technology (SQL, NoSQL)</li>
-                                <li>Understanding of API design and development</li>
-                            </ul>
-                        </div>                        <div class="job-listing-footer">
-                            <a href="#" class="job-apply-btn" data-job-title="Full Stack Developer">Apply Now</a>
-                            <div class="job-date">Posted: April 28, 2025</div>
-                        </div>
-                    </div>
 
-                    <!-- Business Consultant Job -->
-                    <div class="job-listing-card reveal-animation" data-delay="300" data-category="consulting">
-                        <div class="job-listing-header">
-                            <div class="job-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
-                                </svg>
-                            </div>
-                            <div class="job-title-group">
-                                <h2 class="job-category-name">Business Intelligence Consultant</h2>
-                                <div class="job-meta">
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-                                        </svg>
-                                        Full-time
-                                    </div>
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                                        </svg>
-                                        Hybrid (flexible)
+                        <!-- Software Developer Job -->
+                        <div class="job-listing-card reveal-animation" data-delay="150" data-category="technology">
+                            <div class="job-listing-header">
+                                <div class="job-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z" />
+                                    </svg>
+                                </div>
+                                <div class="job-title-group">
+                                    <h2 class="job-category-name">Full Stack Developer</h2>
+                                    <div class="job-meta">
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                            </svg>
+                                            Full-time
+                                        </div>
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                            </svg>
+                                            Remote (with occasional travel)
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="job-listing-content">
-                            <div class="job-description">
-                                <p>We're looking for a Business Intelligence Consultant to help our clients derive value from their data assets. In this client-facing role, you'll assess business needs, design comprehensive BI strategies, and help implement solutions that drive business growth and efficiency.</p>
+                            <div class="job-listing-content">
+                                <div class="job-description">
+                                    <p>We are seeking a talented Full Stack Developer to join our technology team. In this role, you'll be responsible for developing and implementing custom business intelligence solutions for our clients, working with the latest technologies to create scalable, efficient applications.</p>
+                                </div>
+                                <ul class="job-details-list">
+                                    <li>Design and build advanced applications for various business requirements</li>
+                                    <li>Develop back-end components and connect applications to other web services</li>
+                                    <li>Create and maintain front-end functionality with a focus on user experience</li>
+                                    <li>Optimize applications for maximum performance and scalability</li>
+                                    <li>Collaborate with designers, product managers, and other developers</li>
+                                    <li>Implement security and data protection measures</li>
+                                </ul>
                             </div>
-                            <ul class="job-details-list">
-                                <li>Understand client business needs and translate them into analytical requirements</li>
-                                <li>Design and implement business intelligence roadmaps and strategies</li>
-                                <li>Lead client workshops to identify KPIs and analytical opportunities</li>
-                                <li>Work with technical teams to ensure proper implementation of solutions</li>
-                                <li>Present findings and recommendations to executive stakeholders</li>
-                                <li>Stay current with industry trends and best practices</li>
-                            </ul>
+                            <div class="job-requirements">
+                                <h4>Requirements:</h4>
+                                <ul>
+                                    <li>Bachelor's degree in Computer Science or related field</li>
+                                    <li>3+ years experience in full stack development</li>
+                                    <li>Proficiency in JavaScript and at least one modern framework (React, Angular, Vue)</li>
+                                    <li>Experience with server-side languages (Python, Node.js, etc.)</li>
+                                    <li>Familiarity with database technology (SQL, NoSQL)</li>
+                                    <li>Understanding of API design and development</li>
+                                </ul>
+                            </div>
+                            <div class="job-listing-footer">
+                                <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                                <div class="job-date">Posted: April 28, 2025</div>
+                            </div>
                         </div>
-                        <div class="job-requirements">
-                            <h4>Requirements:</h4>
-                            <ul>
-                                <li>Bachelor's degree in Business, Finance, Computer Science, or related field</li>
-                                <li>5+ years experience in business intelligence or data consulting</li>
-                                <li>Strong understanding of data warehousing principles and BI methodologies</li>
-                                <li>Experience with major BI platforms and tools</li>
-                                <li>Excellent communication and presentation skills</li>
-                                <li>Ability to translate complex technical concepts to non-technical audiences</li>
-                            </ul>
-                        </div>                        <div class="job-listing-footer">
-                            <a href="#" class="job-apply-btn" data-job-title="Business Intelligence Consultant">Apply Now</a>
-                            <div class="job-date">Posted: May 8, 2025</div>
-                        </div>
-                    </div>
 
-                    <!-- Operations Manager Job -->
-                    <div class="job-listing-card reveal-animation" data-delay="450" data-category="operations">
-                        <div class="job-listing-header">
-                            <div class="job-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24">
-                                    <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.8,2 12.5,2H11.5Z" />
-                                </svg>
-                            </div>
-                            <div class="job-title-group">
-                                <h2 class="job-category-name">Operations Manager</h2>
-                                <div class="job-meta">
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-                                        </svg>
-                                        Full-time
-                                    </div>
-                                    <div class="job-meta-item">
-                                        <svg viewBox="0 0 24 24" width="16" height="16">
-                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
-                                        </svg>
-                                        On-site
+                        <!-- Business Consultant Job -->
+                        <div class="job-listing-card reveal-animation" data-delay="300" data-category="consulting">
+                            <div class="job-listing-header">
+                                <div class="job-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M8,3A2,2 0 0,0 6,5V9A2,2 0 0,1 4,11H3V13H4A2,2 0 0,1 6,15V19A2,2 0 0,0 8,21H10V19H8V14A2,2 0 0,0 6,12A2,2 0 0,0 8,10V5H10V3M16,3A2,2 0 0,1 18,5V9A2,2 0 0,0 20,11H21V13H20A2,2 0 0,0 18,15V19A2,2 0 0,1 16,21H14V19H16V14A2,2 0 0,1 18,12A2,2 0 0,1 16,10V5H14V3H16Z" />
+                                    </svg>
+                                </div>
+                                <div class="job-title-group">
+                                    <h2 class="job-category-name">Business Intelligence Consultant</h2>
+                                    <div class="job-meta">
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                            </svg>
+                                            Full-time
+                                        </div>
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                            </svg>
+                                            Hybrid (flexible)
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="job-listing-content">
-                            <div class="job-description">
-                                <p>We are seeking an experienced Operations Manager to oversee our daily business operations and ensure they run smoothly and efficiently. This role will be responsible for developing and implementing operational strategies, processes, and policies that support our company's growth and delivery of exceptional client service.</p>
+                            <div class="job-listing-content">
+                                <div class="job-description">
+                                    <p>We're looking for a Business Intelligence Consultant to help our clients derive value from their data assets. In this client-facing role, you'll assess business needs, design comprehensive BI strategies, and help implement solutions that drive business growth and efficiency.</p>
+                                </div>
+                                <ul class="job-details-list">
+                                    <li>Understand client business needs and translate them into analytical requirements</li>
+                                    <li>Design and implement business intelligence roadmaps and strategies</li>
+                                    <li>Lead client workshops to identify KPIs and analytical opportunities</li>
+                                    <li>Work with technical teams to ensure proper implementation of solutions</li>
+                                    <li>Present findings and recommendations to executive stakeholders</li>
+                                    <li>Stay current with industry trends and best practices</li>
+                                </ul>
                             </div>
-                            <ul class="job-details-list">
-                                <li>Develop and implement operational strategies, policies, and procedures</li>
-                                <li>Oversee project management processes and ensure timely delivery</li>
-                                <li>Manage resource allocation and team scheduling</li>
-                                <li>Implement quality control procedures and process improvements</li>
-                                <li>Liaise between leadership, clients, and delivery teams</li>
-                                <li>Monitor operational performance metrics and KPIs</li>
-                            </ul>
+                            <div class="job-requirements">
+                                <h4>Requirements:</h4>
+                                <ul>
+                                    <li>Bachelor's degree in Business, Finance, Computer Science, or related field</li>
+                                    <li>5+ years experience in business intelligence or data consulting</li>
+                                    <li>Strong understanding of data warehousing principles and BI methodologies</li>
+                                    <li>Experience with major BI platforms and tools</li>
+                                    <li>Excellent communication and presentation skills</li>
+                                    <li>Ability to translate complex technical concepts to non-technical audiences</li>
+                                </ul>
+                            </div>
+                            <div class="job-listing-footer">
+                                <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                                <div class="job-date">Posted: May 8, 2025</div>
+                            </div>
                         </div>
-                        <div class="job-requirements">
-                            <h4>Requirements:</h4>
-                            <ul>
-                                <li>Bachelor's degree in Business Administration or related field</li>
-                                <li>5+ years experience in operations management, preferably in consulting</li>
-                                <li>Strong leadership and team management skills</li>
-                                <li>Experience with project management methodologies</li>
-                                <li>Excellent communication and interpersonal skills</li>
-                                <li>Ability to multi-task and manage competing priorities</li>
-                            </ul>
-                        </div>                        <div class="job-listing-footer">
-                            <a href="#" class="job-apply-btn" data-job-title="Operations Manager">Apply Now</a>
-                            <div class="job-date">Posted: May 5, 2025</div>
+
+                        <!-- Operations Manager Job -->
+                        <div class="job-listing-card reveal-animation" data-delay="450" data-category="operations">
+                            <div class="job-listing-header">
+                                <div class="job-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="currentColor" d="M12,15C7.58,15 4,16.79 4,19V21H20V19C20,16.79 16.42,15 12,15M8,9A4,4 0 0,0 12,13A4,4 0 0,0 16,9M11.5,2C11.2,2 11,2.21 11,2.5V5.5H10V3C10,3 7.75,3.86 7.75,6.75C7.75,6.75 7,6.89 7,8H17C16.95,6.89 16.25,6.75 16.25,6.75C16.25,3.86 14,3 14,3V5.5H13V2.5C13,2.21 12.8,2 12.5,2H11.5Z" />
+                                    </svg>
+                                </div>
+                                <div class="job-title-group">
+                                    <h2 class="job-category-name">Operations Manager</h2>
+                                    <div class="job-meta">
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                            </svg>
+                                            Full-time
+                                        </div>
+                                        <div class="job-meta-item">
+                                            <svg viewBox="0 0 24 24" width="16" height="16">
+                                                <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                            </svg>
+                                            On-site
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-listing-content">
+                                <div class="job-description">
+                                    <p>We are seeking an experienced Operations Manager to oversee our daily business operations and ensure they run smoothly and efficiently. This role will be responsible for developing and implementing operational strategies, processes, and policies that support our company's growth and delivery of exceptional client service.</p>
+                                </div>
+                                <ul class="job-details-list">
+                                    <li>Develop and implement operational strategies, policies, and procedures</li>
+                                    <li>Oversee project management processes and ensure timely delivery</li>
+                                    <li>Manage resource allocation and team scheduling</li>
+                                    <li>Implement quality control procedures and process improvements</li>
+                                    <li>Liaise between leadership, clients, and delivery teams</li>
+                                    <li>Monitor operational performance metrics and KPIs</li>
+                                </ul>
+                            </div>
+                            <div class="job-requirements">
+                                <h4>Requirements:</h4>
+                                <ul>
+                                    <li>Bachelor's degree in Business Administration or related field</li>
+                                    <li>5+ years experience in operations management, preferably in consulting</li>
+                                    <li>Strong leadership and team management skills</li>
+                                    <li>Experience with project management methodologies</li>
+                                    <li>Excellent communication and interpersonal skills</li>
+                                    <li>Ability to multi-task and manage competing priorities</li>
+                                </ul>
+                            </div>
+                            <div class="job-listing-footer">
+                                <a href="contact.html" class="job-apply-btn">Apply Now</a>
+                                <div class="job-date">Posted: May 5, 2025</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -508,7 +515,8 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo" class="footer-logo-img">
-                </div>                <div class="footer-links">
+                </div>
+                <div class="footer-links">
                     <div class="footer-column">
                         <h3>Quick Links</h3>
                         <ul>
@@ -523,15 +531,6 @@
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="services.html#accounting">Accounting & Financial Management</a></li>
-                            <li><a href="services.html#tax">Tax Advisory & Compliance</a></li>
-                            <li><a href="services.html#consulting">Consulting & Strategy</a></li>
-                            <li><a href="services.html#audit">Audit & Assurance</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
                         <h3>External Links</h3>
                         <ul>
                             <li><a href="https://portal.ssnit.org.gh/" target="_blank">SSNIT</a></li>
@@ -542,287 +541,48 @@
                             <li><a href="https://rgd.gov.gh/" target="_blank">Registrar of Companies</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column">                        <h3>Contact</h3>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html#accounting">Accounting & Financial Management</a></li>
+                            <li><a href="services.html#tax">Tax Advisory & Compliance</a></li>
+                            <li><a href="services.html#consulting">Consulting & Strategy</a></li>
+                            <li><a href="services.html#audit">Audit & Assurance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact</h3>
                         <address>
-                            <p>Accra, Achimota Office</p>
-                            <p>House No. 21, Nii Kwame Str.</p>
-                            <p>GA-348-3449</p>
-                            <p><a href="tel:+15551234567">+233 [0] 55 682 3445</a></p>
-                            <p><a href="tel:+15551234567">+233 [0] 24 124 1810</a></p>
-                            <p><a href="mailto:manager@nexusbi.co">manager@nexusbi.co</a></p>
-                            <p><a href="mailto:partner@nexusbi.co">partner@nexusbi.co</a></p>
+                            <p>123 Business Avenue</p>
+                            <p>Suite 500, Tech City</p>
+                            <p>California, 94103</p>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            <p><a href="mailto:contact@nexusbi.com">contact@nexusbi.com</a></p>
                         </address>
+                        <ul>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>            <div class="footer-bottom">
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2025 NexusBI. All rights reserved.</p>
-                <p id="bi-tip-container">BI Tip: <span id="bi-tip">Loading...</span></p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"></path></svg></a>
-                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
-                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
-                </div>
             </div>
         </div>
-    </footer>    <!-- AI Consultation Widget -->
+    </footer>
+
+    <!-- AI Consultation Widget -->
     <div id="ai-widget-container" class="ai-widget-container">
         <button id="ai-widget-toggle" class="ai-widget-toggle" aria-label="Open chat assistant">
             <svg viewBox="0 0 24 24" width="24" height="24">
                 <path fill="currentColor" d="M12,2C6.486,2,2,6.486,2,12v0.031C2,17.514,6.486,22,12,22s10-4.486,10-10v-0.031C22,6.486,17.514,2,12,2z M12,20 c-4.411,0-8-3.589-8-8v-0.031c0-4.411,3.589-8,8-8s8,3.589,8,8V12C20,16.411,16.411,20,12,20z M13,7h-2v6h2V7z M13,15h-2v2h2 V15z" />
             </svg>
         </button>
-    </div>    <!-- Job Application Modal -->
-    <div id="application-modal" class="application-modal">
-        <div class="application-modal-content">
-            <div class="modal-header">
-                <h3>Apply for <span id="job-title-placeholder">Position</span></h3>
-                <button class="modal-close" id="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <!-- Progress Bar -->
-                <div class="form-progress">
-                    <div class="progress-bar" id="progress-bar"></div>
-                    <div class="step active" data-step="1">
-                        1
-                        <span class="step-label">Personal Info</span>
-                    </div>
-                    <div class="step" data-step="2">
-                        2
-                        <span class="step-label">Resume</span>
-                    </div>
-                    <div class="step" data-step="3">
-                        3
-                        <span class="step-label">Experience</span>
-                    </div>
-                    <div class="step" data-step="4">
-                        4
-                        <span class="step-label">Final Step</span>
-                    </div>
-                </div>
-                  <form id="job-application-form" class="application-form">
-                    <!-- Step 1: Personal Information -->
-                    <div class="form-step active" data-step="1">
-                        <h3 class="step-title">Personal Information</h3>
-                        <div class="form-group">
-                            <label for="full-name">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                                    </svg>
-                                </span>
-                                Full Name
-                            </label>
-                            <input type="text" id="full-name" name="full-name" required>
-                            <span class="error-message">Please enter your full name</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
-                                    </svg>
-                                </span>
-                                Email Address
-                            </label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message">Please enter a valid email address</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
-                                    </svg>
-                                </span>
-                                Phone Number
-                            </label>
-                            <input type="tel" id="phone" name="phone" required>
-                            <span class="error-message">Please enter a valid phone number</span>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="nav-button next-btn" data-next="2">
-                                Next Step
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                      <!-- Step 2: Resume Upload -->
-                    <div class="form-step" data-step="2">
-                        <h3 class="step-title">Resume Upload</h3>
-                        <div class="form-group">
-                            <label for="resume">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M13,13V16H10V13H8L12,9L16,13H13Z" />
-                                    </svg>
-                                </span>
-                                Resume/CV
-                            </label>
-                            <div class="file-input-container">
-                                <label for="resume" class="file-input-button">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" style="margin-right: 8px;">
-                                        <path fill="currentColor" d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" />
-                                    </svg>
-                                    Choose File or Drop Here
-                                </label>
-                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required style="display: none;">
-                                <div class="file-name" id="file-name">No file chosen</div>
-                            </div>
-                            <span class="error-message">Please upload your resume/CV</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="cover-letter">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M21,6V8H3V6H21M3,18H12V16H3V18M3,13H21V11H3V13Z" />
-                                    </svg>
-                                </span>
-                                Cover Letter (Optional)
-                            </label>
-                            <textarea id="cover-letter" name="cover-letter" rows="4"></textarea>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="nav-button prev-btn" data-prev="1">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-                                </svg>
-                                Previous
-                            </button>
-                            <button type="button" class="nav-button next-btn" data-next="3">
-                                Next Step
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                      <!-- Step 3: Work Experience -->
-                    <div class="form-step" data-step="3">
-                        <h3 class="step-title">Work Experience</h3>
-                        <div class="form-group">
-                            <label for="current-company">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M18,15H16V17H18M18,11H16V13H18M20,19H12V17H14V15H12V13H14V11H12V9H20M10,7H8V5H10M10,11H8V9H10M10,15H8V13H10M10,19H8V17H10M6,7H4V5H6M6,11H4V9H6M6,15H4V13H6M6,19H4V17H6M12,7V3H2V21H22V7H12Z" />
-                                    </svg>
-                                </span>
-                                Current Company (Optional)
-                            </label>
-                            <input type="text" id="current-company" name="current-company">
-                        </div>
-                        <div class="form-group">
-                            <label for="experience">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M20,6H16V4A2,2 0 0,0 14,2H10C8.89,2 8,2.89 8,4V6H4C2.89,6 2,6.89 2,8V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V8A2,2 0 0,0 20,6M10,4H14V6H10V4M12,9A2.5,2.5 0 0,1 14.5,11.5A2.5,2.5 0 0,1 12,14A2.5,2.5 0 0,1 9.5,11.5A2.5,2.5 0 0,1 12,9M17,19H7V17.75C7,16.37 9.24,15.25 12,15.25C14.76,15.25 17,16.37 17,17.75V19Z" />
-                                    </svg>
-                                </span>
-                                Years of Experience
-                            </label>
-                            <select id="experience" name="experience" required>
-                                <option value="">Select experience</option>
-                                <option value="0-1">Less than 1 year</option>
-                                <option value="1-3">1-3 years</option>
-                                <option value="3-5">3-5 years</option>
-                                <option value="5-10">5-10 years</option>
-                                <option value="10+">10+ years</option>
-                            </select>
-                            <span class="error-message">Please select your experience level</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="skills">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-                                    </svg>
-                                </span>
-                                Key Skills (Separate with commas)
-                            </label>
-                            <input type="text" id="skills" name="skills" required>
-                            <span class="error-message">Please enter at least one skill</span>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="nav-button prev-btn" data-prev="2">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-                                </svg>
-                                Previous
-                            </button>
-                            <button type="button" class="nav-button next-btn" data-next="4">
-                                Next Step
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                      <!-- Step 4: Final Details -->
-                    <div class="form-step" data-step="4">
-                        <h3 class="step-title">Final Details</h3>
-                        <div class="form-group">
-                            <label for="start-date">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
-                                    </svg>
-                                </span>
-                                Available Start Date
-                            </label>
-                            <input type="date" id="start-date" name="start-date" required>
-                            <span class="error-message">Please select an available start date</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="salary">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-                                    </svg>
-                                </span>
-                                Salary Expectation (Optional)
-                            </label>
-                            <input type="text" id="salary" name="salary" placeholder="e.g. $50,000 - $60,000">
-                        </div>
-                        <div class="form-group">
-                            <label for="referral">
-                                <span class="label-icon">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M16,9C18.33,9 23,10.17 23,12.5V15H17V12.5C17,11 16.19,9.89 15.04,9.05L16,9M8,9C10.33,9 15,10.17 15,12.5V15H1V12.5C1,10.17 5.67,9 8,9M8,7A3,3 0 0,1 5,4A3,3 0 0,1 8,1A3,3 0 0,1 11,4A3,3 0 0,1 8,7M16,7A3,3 0 0,1 13,4A3,3 0 0,1 16,1A3,3 0 0,1 19,4A3,3 0 0,1 16,7Z" />
-                                    </svg>
-                                </span>
-                                How did you hear about us? (Optional)
-                            </label>
-                            <select id="referral" name="referral">
-                                <option value="">Select an option</option>
-                                <option value="linkedin">LinkedIn</option>
-                                <option value="job-board">Job Board</option>
-                                <option value="website">Company Website</option>
-                                <option value="employee">Employee Referral</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-navigation">
-                            <button type="button" class="nav-button prev-btn" data-prev="3">
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-                                </svg>
-                                Previous
-                            </button>
-                            <button type="submit" class="nav-button submit-btn">
-                                Submit Application
-                                <svg viewBox="0 0 24 24" width="18" height="18">
-                                    <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
-    <script src="./js/script.js"></script>    <script>
+    <script src="./js/script.js"></script>
+    <script>
         // Animation for number counting
         document.addEventListener('DOMContentLoaded', function() {
             // Function to animate counting
@@ -914,267 +674,6 @@
             // Observe job content sections
             document.querySelectorAll('.job-listing-content').forEach(content => {
                 jobDetailsObserver.observe(content);
-            });            // Application Modal Functionality
-            const modal = document.getElementById('application-modal');
-            const closeBtn = document.getElementById('modal-close');
-            const jobTitlePlaceholder = document.getElementById('job-title-placeholder');
-            const applyButtons = document.querySelectorAll('.job-apply-btn');
-            const progressBar = document.getElementById('progress-bar');
-            const steps = document.querySelectorAll('.step');
-            const formSteps = document.querySelectorAll('.form-step');
-            const nextButtons = document.querySelectorAll('.next-btn');
-            const prevButtons = document.querySelectorAll('.prev-btn');
-            const fileInput = document.getElementById('resume');
-            const fileName = document.getElementById('file-name');
-            let currentStep = 1;
-            
-            // File input change handler
-            fileInput.addEventListener('change', function() {
-                if (this.files.length > 0) {
-                    fileName.textContent = this.files[0].name;
-                    fileName.style.color = 'var(--color-primary)';
-                } else {
-                    fileName.textContent = 'No file chosen';
-                    fileName.style.color = 'var(--color-text-muted)';
-                }
-            });
-            
-            // Drag and drop functionality for file input
-            const fileInputButton = document.querySelector('.file-input-button');
-            
-            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-                fileInputButton.addEventListener(eventName, preventDefaults, false);
-            });
-            
-            function preventDefaults(e) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            
-            ['dragenter', 'dragover'].forEach(eventName => {
-                fileInputButton.addEventListener(eventName, highlight, false);
-            });
-            
-            ['dragleave', 'drop'].forEach(eventName => {
-                fileInputButton.addEventListener(eventName, unhighlight, false);
-            });
-            
-            function highlight() {
-                fileInputButton.style.background = 'rgba(206, 166, 78, 0.3)';
-                fileInputButton.style.borderColor = 'var(--color-primary)';
-            }
-            
-            function unhighlight() {
-                fileInputButton.style.background = 'rgba(206, 166, 78, 0.15)';
-                fileInputButton.style.borderColor = 'var(--color-primary)';
-            }
-            
-            fileInputButton.addEventListener('drop', handleDrop, false);
-            
-            function handleDrop(e) {
-                const dt = e.dataTransfer;
-                const files = dt.files;
-                fileInput.files = files;
-                
-                if (files.length > 0) {
-                    fileName.textContent = files[0].name;
-                    fileName.style.color = 'var(--color-primary)';
-                }
-            }
-            
-            // Update progress bar
-            function updateProgressBar() {
-                const percent = ((currentStep - 1) / (steps.length - 1)) * 100;
-                progressBar.style.width = `${percent}%`;
-            }
-            
-            // Update active step
-            function updateSteps() {
-                steps.forEach(step => {
-                    const stepNum = parseInt(step.getAttribute('data-step'));
-                    step.classList.remove('active', 'complete');
-                    
-                    if (stepNum === currentStep) {
-                        step.classList.add('active');
-                    } else if (stepNum < currentStep) {
-                        step.classList.add('complete');
-                        step.innerHTML = `
-                            <svg viewBox="0 0 24 24" width="16" height="16">
-                                <path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-                            </svg>
-                        `;
-                    } else {
-                        step.textContent = stepNum;
-                    }
-                });
-            }
-            
-            // Show current step
-            function showCurrentStep() {
-                formSteps.forEach(step => {
-                    step.classList.remove('active');
-                    if (parseInt(step.getAttribute('data-step')) === currentStep) {
-                        step.classList.add('active');
-                    }
-                });
-            }
-            
-            // Validate current step
-            function validateStep(stepNumber) {
-                const currentFormStep = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
-                const inputs = currentFormStep.querySelectorAll('input[required], select[required], textarea[required]');
-                let isValid = true;
-                
-                inputs.forEach(input => {
-                    const formGroup = input.closest('.form-group');
-                    formGroup.classList.remove('has-error');
-                    
-                    if (!input.value) {
-                        formGroup.classList.add('has-error');
-                        isValid = false;
-                    } else if (input.type === 'email' && !validateEmail(input.value)) {
-                        formGroup.classList.add('has-error');
-                        isValid = false;
-                    }
-                });
-                
-                return isValid;
-            }
-            
-            function validateEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-            
-            // Next button click handler
-            nextButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const nextStep = parseInt(this.getAttribute('data-next'));
-                    
-                    if (validateStep(currentStep)) {
-                        currentStep = nextStep;
-                        updateProgressBar();
-                        updateSteps();
-                        showCurrentStep();
-                    }
-                });
-            });
-            
-            // Previous button click handler
-            prevButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const prevStep = parseInt(this.getAttribute('data-prev'));
-                    currentStep = prevStep;
-                    updateProgressBar();
-                    updateSteps();
-                    showCurrentStep();
-                });
-            });
-            
-            // Initialize progress bar
-            updateProgressBar();
-            
-            // Open modal when Apply Now button is clicked
-            applyButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const jobTitle = this.getAttribute('data-job-title');
-                    jobTitlePlaceholder.textContent = jobTitle;
-                    modal.classList.add('modal-open');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
-                    
-                    // Reset form to first step
-                    currentStep = 1;
-                    updateProgressBar();
-                    updateSteps();
-                    showCurrentStep();
-                    
-                    // Reset form fields
-                    document.getElementById('job-application-form').reset();
-                    fileName.textContent = 'No file chosen';
-                    fileName.style.color = 'var(--color-text-muted)';
-                    
-                    // Remove any error states
-                    document.querySelectorAll('.form-group').forEach(group => {
-                        group.classList.remove('has-error');
-                    });
-                });
-            });
-            
-            // Close modal when X button is clicked
-            closeBtn.addEventListener('click', function() {
-                modal.classList.remove('modal-open');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            });
-            
-            // Close modal when clicking outside the modal content
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.classList.remove('modal-open');
-                    document.body.style.overflow = ''; // Re-enable scrolling
-                }
-            });
-            
-            // Create confetti effect
-            function createConfetti() {
-                const confettiContainer = document.querySelector('.modal-body');
-                const colors = ['#CEA64E', '#E0C088', '#F0D6A0', '#FFFFFF'];
-                
-                for (let i = 0; i < 100; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.width = Math.random() * 10 + 5 + 'px';
-                    confetti.style.height = Math.random() * 10 + 5 + 'px';
-                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
-                    confetti.style.animationDelay = Math.random() * 2 + 's';
-                    confettiContainer.appendChild(confetti);
-                }
-                
-                // Remove confetti after animation
-                setTimeout(() => {
-                    const confettiElements = document.querySelectorAll('.confetti');
-                    confettiElements.forEach(element => {
-                        element.remove();
-                    });
-                }, 5000);
-            }
-            
-            // Handle form submission
-            const applicationForm = document.getElementById('job-application-form');
-            applicationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                if (validateStep(currentStep)) {
-                    // Here you would typically send the form data to a server
-                    // For now, let's just show a success message with confetti
-                    createConfetti();
-                    
-                    applicationForm.innerHTML = `
-                        <div class="success-message">
-                            <div class="success-icon">
-                                <svg viewBox="0 0 24 24" width="100%" height="100%">
-                                    <path fill="var(--color-primary)" d="M12,2C6.5,2 2,6.5 2,12C2,17.5 6.5,22 12,22C17.5,22 22,17.5 22,12C22,6.5 17.5,2 12,2M10,17L5,12L6.41,10.59L10,14.17L17.59,6.58L19,8L10,17Z" />
-                                </svg>
-                            </div>
-                            <h4>Application Submitted!</h4>
-                            <p>Thank you for your interest in joining NexusBI. We've received your application and will review it carefully. Expect to hear from our team within the next few days.</p>
-                        </div>
-                    `;
-                    
-                    // Close the modal after 5 seconds
-                    setTimeout(function() {
-                        modal.classList.remove('modal-open');
-                        document.body.style.overflow = ''; // Re-enable scrolling
-                        
-                        // Reset the form after it's closed
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 500);
-                    }, 5000);
-                }
             });
         });
     </script>

@@ -687,3 +687,152 @@
   color: var(--color-text-muted);
   font-size: 0.95rem;
 }
+
+/* Career Opportunities Section */
+.career-opportunities {
+  padding: var(--space-xl) 0;
+  background: var(--color-bg-secondary);
+}
+
+.opportunities-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.opportunity-card {
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px; /* Ensure minimum height for the card */
+}
+
+/* Reverse layout for the second card */
+.opportunity-card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+.opportunity-image {
+  flex: 0 0 40%; /* Fixed width of 40% */
+  position: relative;
+  overflow: hidden;
+}
+
+.opportunity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.opportunity-content {
+  flex: 1;
+  padding: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-m);
+  background: rgba(7, 32, 48, 0.6); /* Add background to content area */
+}
+
+.opportunity-content .btn-primary {
+  align-self: flex-start;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-text-dark);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.opportunity-content .btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+@media (max-width: 768px) {
+  .opportunity-card,
+  .opportunity-card:nth-child(2) {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .opportunity-image {
+    flex: 0 0 200px;
+    width: 100%;
+  }
+}
+
+/* Job Listings Modal */
+.job-listings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow-y: auto;
+  backdrop-filter: blur(5px);
+}
+
+.job-listings-modal.active {
+  display: block;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: var(--color-bg-secondary);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: var(--space-l);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-primary);
+}
+
+.modal-body {
+  padding: var(--space-l);
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
