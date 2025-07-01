@@ -474,17 +474,14 @@ header.scrolled {
 
 .footer-links {
   display: flex;
-  flex-direction: row; /* Changed from column to row */
+  flex-direction: column;
   gap: var(--space-l);
   width: 100%;
-  justify-content: space-between; /* Added to distribute columns evenly */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .footer-column {
-  min-width: 150px; /* Adjusted from 100% to provide better column width */
-  text-align: left;
-  flex: 1; /* Allow columns to grow */
+  min-width: 100%;
+  text-align: left; /* Changed from center to left */
 }
 
 .footer-column h3 {
@@ -992,17 +989,17 @@ header.scrolled {
   .split-section.reverse .split-content {
     direction: ltr;
   }
-    .footer-content {
+  
+  .footer-content {
     flex-direction: row;
-    justify-content: flex-start; /* Changed from space-between to flex-start */
+    justify-content: space-between;
     align-items: flex-start;
-    gap: var(--space-xl); /* Added gap for spacing between logo and columns */
   }
   
   .footer-links {
+    justify-content: flex-end;
     flex: 1;
-    justify-content: space-between; /* Ensure even spacing between columns */
-    max-width: unset; /* Remove the max-width restriction */
+    max-width: 70%;
   }
   
   .footer-column {
