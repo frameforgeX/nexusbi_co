@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Positions - NexusBI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/careers.css">
+    <style>
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .job-listings-section {
+            padding: 60px 0;
+        }
+
+        .job-listing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .job-listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .job-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(206, 166, 78, 0.1);  /* Changed to match primary color with opacity */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);  /* Using primary color variable */
+        }
+
+        .job-title-group {
+            flex-grow: 1;
+        }
+
+        .job-listing-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+        }
+
+        .job-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .job-details-list, .job-requirements ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .job-details-list li, .job-requirements ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .job-listing-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .job-apply {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--color-primary);  /* Using primary color variable */
+            color: var(--color-bg);
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .job-apply:hover {
+            background: #d4b36b;  /* Lighter shade of primary color */
+            transform: translateY(-2px);
+        }
+
+        .job-date {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+        }
+
+        .site-footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Adjust hero section to avoid overlap with back button */
+        .page-hero {
+            padding-top: 160px; /* Increased from 100px to account for the back button */
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="dropdown">
+                    <a href="studios.html">Studios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="studios.html#business-solutions">Business Solutions</a></li>
+                        <li><a href="studios.html#regulatory-reporting">Regulatory Reporting</a></li>
+                        <li><a href="studios.html#corporate-services">Corporate Services</a></li>
+                        <li><a href="studios.html#digital-strategy">Digital Strategy & Innovation</a></li>
+                    </ul>
+                </li>
+                <li><a href="teams.html">Team</a></li>
+                <li><a href="careers.html" class="active">Careers</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <a href="careers.html" class="back-button">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
+        </svg>
+        Back to Careers
+    </a>
+
+    <main>
+        <!-- Page Hero Section -->
+        <section class="page-hero careers-hero">
+            <div class="container">
+                <div class="page-hero-content reveal-animation">
+                    <h1>Professional Positions</h1>
+                    <p class="lead">Join our team of experts and shape the future of business intelligence</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Listings Section -->
+        <section class="job-listings-section">
+            <div class="container">
+                <div class="job-listings-grid">
+                    <!-- Senior Business Intelligence Analyst -->
+                    <div class="job-listing-card reveal-animation" data-category="analytics">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h3 class="job-category-name">Senior Business Intelligence Analyst</h3>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        Accra, Ghana (Hybrid)
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>We are seeking an experienced Senior Business Intelligence Analyst to lead data analysis initiatives and provide actionable insights to our clients.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Design and implement BI solutions using modern tools and technologies</li>
+                                <li>Lead client engagements and provide technical guidance to junior analysts</li>
+                                <li>Develop data visualization dashboards and reports</li>
+                                <li>Collaborate with cross-functional teams to understand business requirements</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>5+ years of experience in business intelligence and analytics</li>
+                                <li>Expertise in SQL, Power BI, and data modeling</li>
+                                <li>Strong project management and client communication skills</li>
+                                <li>Bachelor's degree in Computer Science, Statistics, or related field</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply">Closed</a>
+                            <div class="job-date">Posted June 1, 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Technology Consultant -->
+                    <div class="job-listing-card reveal-animation" data-category="consulting">
+                        <div class="job-listing-header">
+                            <div class="job-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M11.8,10.9C9.53,10.31 8.8,9.7 8.8,8.75C8.8,7.66 9.81,6.9 11.5,6.9C13.28,6.9 13.94,7.75 14,9H16.21C16.14,7.28 15.09,5.7 13,5.19V3H10V5.16C8.06,5.58 6.5,6.84 6.5,8.77C6.5,11.08 8.41,12.23 11.2,12.9C13.7,13.5 14.2,14.38 14.2,15.31C14.2,16 13.71,17.1 11.5,17.1C9.44,17.1 8.63,16.18 8.5,15H6.32C6.44,17.19 8.08,18.42 10,18.83V21H13V18.85C14.95,18.5 16.5,17.35 16.5,15.3C16.5,12.46 14.07,11.49 11.8,10.9Z" />
+                                </svg>
+                            </div>
+                            <div class="job-title-group">
+                                <h3 class="job-category-name">Financial Technology Consultant</h3>
+                                <div class="job-meta">
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+                                        </svg>
+                                        Accra, Ghana (On-site)
+                                    </div>
+                                    <div class="job-meta-item">
+                                        <svg viewBox="0 0 24 24" width="16" height="16">
+                                            <path fill="currentColor" d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
+                                        </svg>
+                                        Full-time
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="job-listing-content">
+                            <div class="job-description">
+                                <p>Join our consulting team to help financial institutions modernize their technology infrastructure and implement innovative solutions.</p>
+                            </div>
+                            <ul class="job-details-list">
+                                <li>Assess client's financial technology needs and propose solutions</li>
+                                <li>Lead implementation of financial software and systems</li>
+                                <li>Provide training and support to client teams</li>
+                                <li>Develop strategic roadmaps for digital transformation</li>
+                            </ul>
+                        </div>
+                        <div class="job-requirements">
+                            <h4>Requirements</h4>
+                            <ul>
+                                <li>4+ years experience in financial technology consulting</li>
+                                <li>Strong understanding of banking systems and fintech solutions</li>
+                                <li>Experience with regulatory compliance frameworks</li>
+                                <li>Master's degree in Finance, Technology, or related field preferred</li>
+                            </ul>
+                        </div>
+                        <div class="job-listing-footer">
+                            <a href="#" class="job-apply">Closed</a>
+                            <div class="job-date">Posted June 5, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo" class="footer-logo-img">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NexusBI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

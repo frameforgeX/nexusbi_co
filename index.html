@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NexusBI - Business Intelligence Solutions</title>    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>NexusBI - Business Intelligence Solutions</title>    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
-    <meta name="description" content="NexusBI provides business intelligence solutions that transform data into actionable insights for your business">
+    <link rel="stylesheet" href="./css/footer-fix.css">    <meta name="description" content="NexusBI provides business intelligence solutions that transform data into actionable insights for your business">
     <meta name="theme-color" content="#0B3040">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="./Assets/Images/logo.png">
+    <link rel="apple-touch-icon" href="./Assets/Images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="./Assets/Images/logo.png">
     <!-- Particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <!-- Particles background container -->
     <div id="particles-js"></div>
-    
+
     <header>
         <nav class="glass-nav">
             <div class="logo">
@@ -28,7 +29,8 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active"></a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li class="dropdown">
                     <a href="studios.html">Studios</a>
@@ -39,10 +41,10 @@
                         <li><a href="studios.html#digital-strategy">Digital Strategy & Innovation</a></li>
                     </ul>
                 </li>
+                
                 <li><a href="teams.html">Team</a></li>
                 <li><a href="careers.html">Careers</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <!-- <li><a href="news.html">News</a></li> -->
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <div class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
@@ -58,9 +60,10 @@
         <section id="hero" class="hero-section">
             <div class="container">
                 <div class="hero-content reveal-animation">
-                    <h1 id="typing-text" aria-live="polite"></h1>
+                    <h1 id="#" aria-live="polite">Decision Backed by Data.<br>Growth Powered by Insight</h1>
                     <p class="subheading">Your trusted partner for data-driven business insights</p>
-                    <button class="cta-button pulse-animation" aria-label="Explore Our Solutions">Explore Our Solutions</button>                </div><!-- data-flow-animation removed to keep only particles.js background -->
+                    <a href="services.html" class="cta-button pulse-animation" aria-label="Our Solutions">Our Solutions</a>
+                </div>
             </div>
         </section>
 
@@ -70,7 +73,10 @@
                 <div class="split-section">
                     <div class="split-content reveal-animation">
                         <h2 class="section-title">Visualize Your Business Potential</h2>
-                        <p class="reveal-animation" data-delay="100">Our custom dashboard solutions help you <span class="accent-text">transform complex data</span> into clear, actionable insights that drive strategic decision-making.</p>
+                        <p class="reveal-animation" data-delay="100">Our custom dashboard solutions help you
+                            <span style="color: var(--color-primary-deep);" class="accent-text">transform complex data</span>
+                            into clear, actionable insights that drive strategic decision-making.
+                        </p>
                     </div>
                     <div class="split-image reveal-animation" data-delay="200">
                         <img src="./Assets/Images/sample_design.jpg" alt="Sample Dashboard Design" class="sample-design-image" loading="lazy">
@@ -85,7 +91,10 @@
                 <div class="split-section">
                     <div class="split-content">
                         <h2 class="section-title reveal-animation">Empowering SMEs for Growth</h2>
-                        <p class="reveal-animation" data-delay="100">At Nexus BI, we are <span class="accent-text">unwavering in our commitment</span> to empowering and fostering the growth of Small and Medium-sized Enterprises (SMEs).</p>
+                        <p class="reveal-animation" data-delay="100">At Nexus BI, we are 
+                            <span class="accent-text">unwavering in our commitment</span>
+                            to empowering and fostering the growth of Small and Medium-sized Enterprises (SMEs).
+                        </p>
                         
                         <div class="highlight-box reveal-animation" data-delay="200">
                             <p>We provide the strategic guidance and data-driven tools that enable businesses to excel in today's competitive landscape.</p>
@@ -117,7 +126,7 @@
                         </div>
                         
                         <div class="about-cta reveal-animation" data-delay="400">
-                            <a href="index.html#about-section" class="learn-more">Discover Our Story</a>
+                            <a href="about.html" class="learn-more">Discover Our Story</a>
                         </div>
                     </div>
                     <div class="split-image reveal-animation" data-delay="200">
@@ -136,7 +145,7 @@
                                     <span class="stat-label">Avg. Growth Rate</span>
                                 </div>
                             </div>
-                            <p class="highlight-box" style="margin-bottom: 0;">Our mission is to offer comprehensive support through expert insights, structured solutions, and professional assistance—enabling businesses to operate with greater efficiency and scale with confidence.</p>
+                            <!-- <p class="highlight-box" style="margin-bottom: 0;">Our mission is to offer comprehensive support through expert insights, structured solutions, and professional assistance—enabling businesses to operate with greater efficiency and scale with confidence.</p> -->
                         </div>
                     </div>
                 </div>
@@ -182,23 +191,28 @@
                                     Retail & E-Commerce
                                 </li>
                             </ul>
-                            
-
                             <a href="services.html" class="learn-more">Explore Our Services</a>
                         </div>
+
+                            <!-- ADDED THIS FRAME EDIT -->
+                        <div class="highlight-box">
+                            <p style="color: var(--color-bg-alt);" >At Nexus BI, we take a tailored, client-centric approach to each project, ensuring that our solutions are precisely aligned with the unique needs and strategic objectives of your organization.</p>
+                        </div>
+
                     </div>
+
                     <div class="split-content reveal-animation" data-delay="100">
-                        <h2 class="section-title">Our Expertise</h2>
-                        <p>Our team comprises <span class="accent-text">seasoned professionals</span> with extensive expertise across various industries. We bring practical, results-driven solutions to every client engagement.</p>
+                        <h2 style="color: var(--color-bg-alt);" class="section-title">Our Expertise</h2>
+                        <p style="color: var(--color-bg-alt);">Our team comprises <span style="color: var(--color-primary-deep);" class="accent-text">seasoned professionals</span> with extensive expertise across various industries. We bring practical, results-driven solutions to every client engagement.</p>
                         
                         <div class="feature-list">
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24">
-                                        <path fill="currentColor" d="M21,8H3V6H21M9,13H3V11H9M21,13H11V11H21M3,18V16H21V18H3Z" />
+                                        <path fill="#916f26" d="M21,8H3V6H21M9,13H3V11H9M21,13H11V11H21M3,18V16H21V18H3Z" />
                                     </svg>
                                 </div>
-                                <div class="feature-text">
+                                <div style="color: var(--color-bg-alt);" class="feature-text">
                                     <h4>Data Analysis</h4>
                                     <p>Transform raw data into actionable business insights</p>
                                 </div>
@@ -206,10 +220,10 @@
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24">
-                                        <path fill="currentColor" d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" />
+                                        <path fill="#916f26" d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" />
                                     </svg>
                                 </div>
-                                <div class="feature-text">
+                                <div style="color: var(--color-bg-alt);" class="feature-text">
                                     <h4>Dashboard Development</h4>
                                     <p>Visualize KPIs that matter most to your business</p>
                                 </div>
@@ -217,10 +231,10 @@
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24">
-                                        <path fill="currentColor" d="M12,3C10.73,3 9.6,3.8 9.18,5H3V7H4.95C4.5,8.25 4.5,9.75 4.95,11H3V13H9.18C9.6,14.2 10.73,15 12,15C13.27,15 14.4,14.2 14.82,13H21V11H19.05C19.5,9.75 19.5,8.25 19.05,7H21V5H14.82C14.4,3.8 13.27,3 12,3M12,5A1,1 0 0,1 13,6A1,1 0 0,1 12,7A1,1 0 0,1 11,6A1,1 0 0,1 12,5M12,9A1,1 0 0,1 13,10A1,1 0 0,1 12,11A1,1 0 0,1 11,10A1,1 0 0,1 12,9M12,13A1,1 0 0,1 13,14A1,1 0 0,1 12,15A1,1 0 0,1 11,14A1,1 0 0,1 12,13Z" />
+                                        <path fill="#916f26" d="M12,3C10.73,3 9.6,3.8 9.18,5H3V7H4.95C4.5,8.25 4.5,9.75 4.95,11H3V13H9.18C9.6,14.2 10.73,15 12,15C13.27,15 14.4,14.2 14.82,13H21V11H19.05C19.5,9.75 19.5,8.25 19.05,7H21V5H14.82C14.4,3.8 13.27,3 12,3M12,5A1,1 0 0,1 13,6A1,1 0 0,1 12,7A1,1 0 0,1 11,6A1,1 0 0,1 12,5M12,9A1,1 0 0,1 13,10A1,1 0 0,1 12,11A1,1 0 0,1 11,10A1,1 0 0,1 12,9M12,13A1,1 0 0,1 13,14A1,1 0 0,1 12,15A1,1 0 0,1 11,14A1,1 0 0,1 12,13Z" />
                                     </svg>
                                 </div>
-                                <div class="feature-text">
+                                <div style="color: var(--color-bg-alt);" class="feature-text">
                                     <h4>Process Optimization</h4>
                                     <p>Identify bottlenecks and streamline workflows</p>
                                 </div>
@@ -228,25 +242,28 @@
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24">
-                                        <path fill="currentColor" d="M20,6C20.58,6 21.05,6.2 21.42,6.59C21.8,7 22,7.45 22,8V19C22,20.11 21.8,20.65 21.42,21.05C21.05,21.45 20.58,21.8 20,22H4C3.42,22 2.95,21.8 2.58,21.05C2.2,20.65 2,20.11 2,19V8C2,7.45 2.2,7 2.58,6.59C2.95,6.2 3.42,6 4,6H8V4C8,3.42 8.2,2.95 8.58,2.58C8.95,2.2 9.42,2 10,2H14C14.58,2 15.05,2.2 15.42,2.58C15.8,2.95 16,3.42 16,4V6H20M4,8V19H20V8H4M14,6V4H10V6H14Z" />
+                                        <path fill="#916f26" d="M20,6C20.58,6 21.05,6.2 21.42,6.59C21.8,7 22,7.45 22,8V19C22,20.11 21.8,20.65 21.42,21.05C21.05,21.45 20.58,21.8 20,22H4C3.42,22 2.95,21.8 2.58,21.05C2.2,20.65 2,20.11 2,19V8C2,7.45 2.2,7 2.58,6.59C2.95,6.2 3.42,6 4,6H8V4C8,3.42 8.2,2.95 8.58,2.58C8.95,2.2 9.42,2 10,2H14C14.58,2 15.05,2.2 15.42,2.58C15.8,2.95 16,3.42 16,4V6H20M4,8V19H20V8H4M14,6V4H10V6H14Z" />
                                     </svg>
                                 </div>
-                                <div class="feature-text">
+                                <div style="color: var(--color-bg-alt);" class="feature-text">
                                     <h4>Strategic Planning</h4>
                                     <p>Develop data-backed strategies for sustainable growth</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="highlight-box">
-                            <p>At Nexus BI, we take a tailored, client-centric approach to each project, ensuring that our solutions are precisely aligned with the unique needs and strategic objectives of your organization.</p>
-                        </div>
+                        <!-- <div class="highlight-box">
+                            <p style="color: var(--color-bg-alt);" >At Nexus BI, we take a tailored, client-centric approach to each project, ensuring that our solutions are precisely aligned with the unique needs and strategic objectives of your organization.</p>
+                        </div> -->
+
+                       
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Services Overview Section -->
+        <!--
         <section id="services-overview" class="services-section">
             <div class="container">
                 <h2 class="section-title reveal-animation">Our Services</h2>
@@ -329,10 +346,10 @@
                     <a href="services.html" class="btn-secondary">View All Services</a>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Our Studios Section -->
-        <section id="studios-overview" class="studios-section">
+        <!-- <section id="studios-overview" class="studios-section">
             <div class="container">
                 <h2 class="section-title reveal-animation">Our Studios</h2>
                 <p class="section-subtitle reveal-animation" data-delay="100">Specialized teams focused on delivering exceptional outcomes</p>
@@ -569,13 +586,15 @@
                     <a href="studios.html" class="btn-secondary">Explore All Studios</a>
                 </div>
             </div>
-        </section>        <!-- Contact CTA Section -->
+        </section> -->
+        
+        <!-- Contact CTA Section -->
         <section id="contact-cta" class="contact-cta-section">
             <div class="container">
                 <div class="cta-content reveal-animation">
                     <h2>Ready to Transform Your Business?</h2>
                     <p>Schedule a consultation with our experts and discover how NexusBI can help you achieve your business goals.</p>
-                    <a href="index.html#contact-cta" class="cta-button">Get Started Today</a>
+                    <a href="contact.html" class="cta-button">Get Started Today</a>
                 </div>
             </div>
         </section>
@@ -583,10 +602,10 @@
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">                <div class="footer-logo">
+            <div class="footer-content">
+                <div class="footer-logo">
                     <img src="./Assets/Images/Nexus BI.svg" alt="NexusBI Logo" class="footer-logo-img">
-                </div>
-                <div class="footer-links">
+                </div>                <div class="footer-links">
                     <div class="footer-column">
                         <h3>Quick Links</h3>
                         <ul>
@@ -601,12 +620,12 @@
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h3>Services</h3>
+                        <h3>Our Studios</h3>
                         <ul>
-                            <li><a href="services.html#accounting">Accounting & Financial Management</a></li>
-                            <li><a href="services.html#tax">Tax Advisory & Compliance</a></li>
-                            <li><a href="services.html#consulting">Consulting & Strategy</a></li>
-                            <li><a href="services.html#audit">Audit & Assurance</a></li>
+                            <li><a href="studios.html#business-solutions">Business Solutions</a></li>
+                            <li><a href="studios.html#regulatory-reporting">Regulatory Reporting</a></li>
+                            <li><a href="studios.html#corporate-services">Corporate Services</a></li>
+                            <li><a href="studios.html#digital-strategy">Digital Strategy & Innovation</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -623,11 +642,12 @@
                     <div class="footer-column">
                         <h3>Contact</h3>
                         <address>
-                            <p>123 Business Avenue</p>
-                            <p>Suite 500, Tech City</p>
-                            <p>California, 94103</p>
-                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-                            <p><a href="mailto:contact@nexusbi.com">contact@nexusbi.com</a></p>
+                            <p>Accra, Achimota Office</p>
+                            <p>House No. 21, Nii Kwame Str.</p>
+                            <p>GA-348-3449</p>
+                            <p><a href="tel:+15551234567">+233 [0] 55 682 3445</a></p>
+                            <p><a href="tel:+15551234567">+233 [0] 24 124 1810</a></p>
+                            <p><a href="mailto:info@nexusbi.co">info@nexusbi.co</a></p>
                         </address>
                     </div>
                 </div>

@@ -1,0 +1,55 @@
+/* Footer Column Arrangement */
+@media (min-width: 768px) {
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    gap: var(--space-l);
+  }
+  
+  .footer-column {
+    min-width: 150px;
+    flex: 1;
+  }
+  
+  /* Ensure footer logo doesn't take too much space */
+  .footer-logo {
+    flex: 0 0 auto;
+    max-width: 150px;
+  }
+}
+
+/* Additional tweaks for very large screens */
+@media (min-width: 1200px) {
+  .footer-links {
+    gap: var(--space-xl);
+  }
+  
+  .footer-column {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-l);
+  }
+  
+  .footer-column {
+    min-width: 100%;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

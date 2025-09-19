@@ -1,0 +1,40 @@
+<div id="particles-js"></div>
+
+MANAGEMENT TEAM 
+<!-- Eric Boateng Siaw - Manager, Business Solutions -->
+                    <div class="leadership-card reveal-animation" data-delay="300">
+                        <div class="card-hover-effect"></div>
+                        <div class="member-image-container">
+                            <img src="./Assets/Images/managers/04.png" alt="Eric Boateng Siaw" class="member-image">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Eric Boateng Siaw</h3>
+                            <p class="member-bio">Cross-border expert in advisory, audit, and finance. Ex-Ernst & Young (Ghana, Sierra Leone, Liberia). ICAG finalist, B.Com (1st Class), FMVA & BIDA certified. Strong in risk management, data-driven insights, and regulatory compliance.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="leadership-card reveal-animation" data-delay="400">
+                        <div class="card-hover-effect"></div>
+                        <div class="member-image-container">
+                            <img src="./Assets/Images/managers/05.png" alt="Caleb Tagoe" class="member-image">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Caleb Tagoe</h3>
+                            <p class="member-bio">5+ years in accounting, audit, and financial management across commerce, healthcare, and oil & gas. ICAG finalist, proficient in QuickBooks, tax, and financial reporting. Hands-on problem-solver with strong compliance expertise.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div> -->

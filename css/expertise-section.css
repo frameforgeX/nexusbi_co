@@ -1,0 +1,30 @@
+/* Expertise Section Specific Styles */
+.expertise-section .glass-card {
+    margin-top: -80px;  /* Increased negative margin to move the card higher */
+    color: var(--color-text); /* Ensure text is visible */
+}
+
+.expertise-section .glass-card .sub-heading {
+    color: var(--color-primary); /* Make sub-heading stand out */
+    font-size: 1.5rem;
+    margin-bottom: var(--space-m);
+}
+
+.expertise-section .split-section.reverse {
+    align-items: flex-start;  /* Align items at the top */
+}
+
+.expertise-section .highlight-box {
+    margin-top: 100px;  /* Increased margin to move the highlight box down more */
+    width: 100%;       /* Make highlight box full width */
+}
+
+.expertise-section .split-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure proper spacing between elements */
+.expertise-section .feature-list {
+    margin-bottom: 20px;
+}

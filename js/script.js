@@ -129,15 +129,83 @@ function initTypingAnimation() {
   if (!typingElement) return; // Safety check
   
   const text = "Decisions Backed by Data. Growth Powered by Insight.";
-  let index = 0;
-  let isDeleting = false;
-  let typingInterval;
+  typingElement.textContent = text
+   let index = 0;
+   let isDeleting = false;
+   let typingInterval;
+   let explosionTimeout;
+   const originalText = text;
   
   // Ensure clean start
   clearTimeout(typingInterval);
   typingElement.style.transition = 'none';
   typingElement.style.opacity = '1';
   typingElement.textContent = '|';
+
+  // Function to create the explosion effect
+  function explodeText() {
+    // Clear any existing timeout
+    if (explosionTimeout) {
+      clearTimeout(explosionTimeout);
+    }
+    
+    // Get the current text
+    const currentText = text.substring(0, index);
+    
+    // Clear the typing element
+    typingElement.innerHTML = '';
+    
+    // Create span for each character
+    for (let i = 0; i < currentText.length; i++) {
+      const char = currentText[i];
+      const charSpan = document.createElement('span');
+      charSpan.className = 'exploding-char';
+      charSpan.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
+      charSpan.style.display = 'inline-block';
+      charSpan.style.position = 'relative';
+      charSpan.style.willChange = 'transform, opacity';
+      typingElement.appendChild(charSpan);
+    }
+    
+    // Apply random explosion animations to each character
+    const chars = typingElement.querySelectorAll('.exploding-char');
+    
+    const animations = [
+      'disperse-up', 
+      'disperse-down', 
+      'disperse-left', 
+      'disperse-right',
+      'disperse-diagonal-upleft',
+      'disperse-diagonal-upright',
+      'disperse-diagonal-downleft',
+      'disperse-diagonal-downright'
+    ];
+    
+    chars.forEach(charSpan => {
+      // Select a random animation
+      const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+      // Random duration between 0.5 and 1.5 seconds
+      const duration = 0.5 + Math.random();
+      // Random delay up to 0.3 seconds for more natural effect
+      const delay = Math.random() * 0.3;
+      
+      charSpan.style.animation = `${randomAnim} ${duration}s ease-out ${delay}s forwards`;
+    });
+    
+    // Reset after the explosion is complete
+    explosionTimeout = setTimeout(() => {
+      // Reset index and prepare for typing again
+      typingElement.innerHTML = '';
+      index = 0;
+      typingElement.textContent = '|';
+      isDeleting = false;
+      
+      // Start typing again
+      setTimeout(() => {
+        typingInterval = setTimeout(type, 300);
+      }, 500);
+    }, 2000); // Wait 2 seconds after the explosion starts
+  }
 
   function type() {
     // Clear any existing timeouts to prevent animation issues
@@ -154,38 +222,15 @@ function initTypingAnimation() {
       index++;
       typingInterval = setTimeout(type, 80 + Math.random() * 30); // Reduced randomness for stability
     } else if (isDeleting) {
-      // Smooth disappear effect using CSS opacity
-      typingElement.style.transition = 'opacity 0.8s ease-out';
-      typingElement.style.opacity = '0';
-      
-      // After the fade-out completes, reset text and fade back in
-      setTimeout(() => {
-        // Reset transition to none for immediate reset
-        typingElement.style.transition = 'none';
-        index = 0;
-        typingElement.textContent = '|';
-        isDeleting = false;
-        
-        // Force browser reflow to ensure transition is applied
-        typingElement.offsetHeight;
-        
-        // Now fade back in
-        setTimeout(() => {
-          typingElement.style.transition = 'opacity 0.6s ease-in';
-          typingElement.style.opacity = '1';
-          
-          // Start typing again after fade-in completes
-          setTimeout(() => {
-            typingInterval = setTimeout(type, 200);
-          }, 600);
-        }, 50);
-      }, 800);
+      // Start explosion effect instead of fade out
+      explodeText();
     } else {
       // Full text displayed, pause before disappearing
       isDeleting = true;
       typingInterval = setTimeout(type, 2000);
     }
   }
+  
   // Start typing animation with a small delay to ensure DOM is ready
   setTimeout(type, 100);
   
@@ -193,6 +238,9 @@ function initTypingAnimation() {
   window.addEventListener('beforeunload', () => {
     if (typingInterval) {
       clearTimeout(typingInterval);
+    }
+    if (explosionTimeout) {
+      clearTimeout(explosionTimeout);
     }
   });
 }
@@ -1316,9 +1364,6 @@ function setupEnhancedFeedbackButtons() {
   });
 }
 
-// Handle feedback on FAQ answers
-// Function removed as it has been replaced by setupEnhancedFeedbackButtons
-
 // DOM Content Loaded event
 document.addEventListener('DOMContentLoaded', function() {
     // Rest of your existing script.js code below
@@ -1485,69 +1530,130 @@ function ensureFolderStructure() {
   // This would require backend functionality, but we're doing frontend only
 }
 
-// Job Listings Modal Functionality
+// Subheading Explosion Effect function has been removed
+// The explosion effect is now directly integrated into the initTypingAnimation() function
+
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('jobListingsModal');
-    const closeBtn = modal.querySelector('.modal-close');
-    const jobButtons = document.querySelectorAll('.open-jobs');
-    const jobListings = document.querySelectorAll('.job-listing-card');
-
-    // Open modal and filter jobs
-    jobButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.dataset.category;
-            filterJobs(category);
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    // Close modal
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-
-    // Close modal when clicking outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-
-    // Filter jobs by category
-    function filterJobs(category) {
-        const title = modal.querySelector('.modal-title');
-        title.textContent = getCategoryTitle(category);
-
-        jobListings.forEach(job => {
-            const jobCategory = getJobCategory(job, category);
-            job.style.display = jobCategory ? 'block' : 'none';
-        });
-    }
-
-    // Helper function to get category title
-    function getCategoryTitle(category) {
-        const titles = {
-            'professional': 'Professional Positions',
-            'nss': 'NSS Positions',
-            'internship': 'Internship Opportunities'
-        };
-        return titles[category] || 'Available Positions';
-    }
-
-    // Helper function to determine if a job matches the category
-    function getJobCategory(job, category) {
-        switch(category) {
-            case 'professional':
-                return ['analysis', 'technology', 'consulting', 'operations'].includes(job.dataset.category);
-            case 'nss':
-                return job.dataset.category === 'nss';
-            case 'internship':
-                return job.dataset.category === 'internship';
-            default:
-                return true;
-        }
+    // Careers page functionality
+    if (document.querySelector('.careers-section')) {
+        initCareersPage();
     }
 });
+
+// Careers page initialization
+function initCareersPage() {
+    // Stats Counter Animation
+    const statsContainer = document.querySelector('.stats-container');
+    if (statsContainer) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counterElements = entry.target.querySelectorAll('.stat-number');
+                    counterElements.forEach(animateCounter);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(statsContainer);
+    }
+
+    // Initialize particles.js
+    if (document.getElementById('particles-js')) {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                opacity: {
+                    value: 0.1
+                },
+                size: {
+                    value: 3
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ffffff',
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    }
+}
+
+// Career page specific functions
+function initCareersAnimations() {
+    // Intersection Observer for section animations
+    const sections = document.querySelectorAll('.application-process, .benefits-section, .culture-section, .careers-cta-section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Mouse move effect for cards
+    const cards = document.querySelectorAll('.process-step, .benefit-card, .culture-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        });
+    });
+}
+
+// Add to the existing initCareersPage function
+function initCareersPage() {
+    // ...existing code...
+    initCareersAnimations();
+    
+    // Add loading state
+    document.body.classList.add('loading');
+    window.addEventListener('load', () => {
+        document.body.classList.remove('loading');
+        document.body.classList.add('loaded');
+    });
+}
